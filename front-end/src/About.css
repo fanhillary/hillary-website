@@ -1,7 +1,13 @@
-.about-container {
+.about-blue-container {
     padding: 300px;
-    margin-top: -150px;
     color: white;
     background: #2d55aa;
+    transition: 0.1s all;
+}
+
+.about-container {
+    padding: 300px;
+    color: white;
+    transition: 0.5s all;
 
 }

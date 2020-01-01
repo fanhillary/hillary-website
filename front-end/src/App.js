@@ -3,6 +3,7 @@ import './App.css';
 import Home from './Home.js';
 import Navigation from './Navigation.js';
 import About from './About.js';
+import Portfolio from './Portfolio.js';
 
 export default class App extends React.Component {
   constructor() {
@@ -10,11 +11,13 @@ export default class App extends React.Component {
     this.body = React.createRef();
     this.state = {
       background: 'sky-bg',
+      aboutBackground: 'about-blue-container',
     }
     this.handleScroll = this.handleScroll.bind(this)
   }
 
   componentDidMount() {
+    this.handleScroll();
     window.addEventListener('scroll', this.handleScroll);
   }
   
@@ -23,15 +26,18 @@ export default class App extends React.Component {
   }
   
   handleScroll(e) {
-    if (window.scrollY > 700) {
-      this.setState({background: 'ocean-bg'})
-      // and remove about.css background color
-    } else if (window.scrollY > 1000) {
-      this.setState({background: 'black-bg'})
-    } else if (window.scrollY <= 500) {
+    var doc = document.documentElement;
+    var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+    if (top <= 700) {
       this.setState({background: 'sky-bg'})
-      // and add about.css background color
-    }
+      this.setState({aboutBackground: 'about-blue-container'})
+    } else if (top > 700 && top <=1400) {
+      this.setState({background: 'ocean-bg'});
+      this.setState({aboutBackground: 'about-container'})
+    } else if (top > 1400) {
+      this.setState({background: 'black-bg'})
+      this.setState({aboutBackground: 'about-container'})
+    } 
   }
 
   render() {
@@ -39,7 +45,8 @@ export default class App extends React.Component {
       <div className = {this.state.background}>
        <Navigation/>
         <Home/>
-        <About/>
+        <About bg={this.state.aboutBackground}/>
+        <Portfolio/>
       </div>
       );
   }

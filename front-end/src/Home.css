@@ -1,9 +1,10 @@
 .parallax > use{
   animation:move-forever 12s linear infinite;
 }
-.parallax:nth-child(1){animation-delay:-2s; -webkit-animation-delay:-2s;}
-.parallax:nth-child(2){animation-delay:-2s; animation-duration:5s; -webkit-animation-delay:-2s; -webkit-animation-duration:5s} /* Safari and Chrome */
-.parallax:nth-child(3){animation-delay:-4s; animation-duration:3s; -webkit-animation-delay:-4s; -webkit-animation-duration:3s}
+
+.parallax>use:nth-child(1){animation-delay:-2s; animation-duration:5s}
+.parallax>use:nth-child(2){animation-delay:-2s; animation-duration:9s}
+.parallax>use:nth-child(3){animation-delay:-4s; animation-duration:7s}
 
 @keyframes move-forever{
   0%{transform: translate(-90px , 0%)}
@@ -46,7 +47,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     width: 100px;
-    margin-top: 350px;
+    margin-top: 200px;
     left:0;
     right:0;
     text-align: center;
@@ -54,6 +55,7 @@ body {
 }
 
 .fa-chevron-down {
+    color: white;
     cursor: pointer;
 }
 

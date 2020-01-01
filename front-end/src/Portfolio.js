@@ -1,11 +1,13 @@
 import React from 'react';
-import './About.css';
+import './Portfolio.css';
+import Particles from 'react-particles-js';
 
-let About = ({bg}) => {
+function Portfolio() {
     return (
-        <div className={bg}>
-            <section>
-                <h1> About Me </h1>
+        <div>
+            <Particles/>
+            <section className="portfolio">
+                <h1> Portfolio </h1>
                 <main className="pa3 pa5-ns">
                     <p className="f4 lh-copy measure">
                         Typography has one plain duty before it and that is to convey information
@@ -18,4 +20,4 @@ let About = ({bg}) => {
         </div>
     )
 }
-export default About;
+export default Portfolio;
