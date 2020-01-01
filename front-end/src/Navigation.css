@@ -1,0 +1,21 @@
+.header-link {
+    text-decoration: none;
+    padding: 20px;
+    color: white;
+}
+
+.header-link:hover {
+    text-decoration: underline;
+    color: gray;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+body{
+    font-family: 'Ibarra Real Nova', serif;
+}

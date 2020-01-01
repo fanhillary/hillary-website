@@ -4,9 +4,7 @@ function Home() {
     return (
         <div>
             <div class = "title">
-                <h1> Developer. </h1>
-                <h1> Engineer. </h1>
-                <h1> Travel Seeker.</h1>
+                <h1> Hey! I'm Hillary. </h1>
             </div>
             <svg class="editorial"
                 viewBox="0 24 150 28"
