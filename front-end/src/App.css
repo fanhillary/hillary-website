@@ -1,8 +1,12 @@
 .App {
   text-align: center;
-  background: lightskyblue;
-  font-family: 'Ibarra Real Nova', serif;
-  overflow: visible;
-
+  font-family: 'Lora', serif;
+  /* display: flex;
+  align-items: center;
+  flex-direction: column; */
 }
 
+body {
+  background: lightskyblue;
+  transition: 0.3s all;
+}

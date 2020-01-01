@@ -1,11 +1,17 @@
 import React from 'react';
-import './Home.css';
+import './About.css';
 function About() {
     return (
-        <div class = "container">
-            <a name="about"></a>
-
-            <h1> About Me </h1>
+        <div className="about-container">
+            <section>
+                <h1> About Me </h1>
+                <h1> About Me </h1>
+                <h1> About Me </h1>
+                <h1> About Me </h1>
+                <h1> About Me </h1>
+                <h1> About Me </h1>
+                <h1> About Me </h1>
+            </section>
         </div>
     )
 }
