@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import Home from './Home.js';
-import Navigation from './Navigation.js';
-import About from './About.js';
-import Portfolio from './Portfolio.js';
+import Home from './components/Home/Home.js';
+import Navigation from './Navigation/Navigation.js';
+import About from './components/About/About.js';
+import Portfolio from './components/Portfolio/Portfolio.js';
 
 export default class App extends React.Component {
   constructor() {
