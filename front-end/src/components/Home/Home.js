@@ -25,9 +25,9 @@ let Home = ({waveColor}) => {
                     v44h-352z" />
                 </defs>
                 <g className="parallax">
-                    <use xlinkHref="#gentle-wave" x="50" y="0" fill={waveColor == "blue"? "#4579e2" : "#425866"}/>
-                    <use xlinkHref="#gentle-wave" x="50" y="3" fill={waveColor == "blue"? "#3461c1" : "#1B2A33"}/>
-                    <use xlinkHref="#gentle-wave" x="50" y="6" fill={waveColor == "blue"? "#2d55aa": "#0C1419"}/>  
+                    <use xlinkHref="#gentle-wave" x="50" y="0" fill={waveColor === "blue"? "#4579e2" : "#425866"}/>
+                    <use xlinkHref="#gentle-wave" x="50" y="3" fill={waveColor === "blue"? "#3461c1" : "#1B2A33"}/>
+                    <use xlinkHref="#gentle-wave" x="50" y="6" fill={waveColor === "blue"? "#2d55aa": "#0C1419"}/>  
                 </g>
                 </svg>   
                 <span className="chevron">

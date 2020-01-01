@@ -10,11 +10,50 @@ import Particles from 'react-particles-js';
 const particlesOptions = {
     particles: {
       number: { 
-        value: 100,
+        value: 80,
         density: {
           enable: true, 
           value_area: 800
         }
+      },
+      color: {
+        value: "#fff",
+      },
+      opacity: {
+        value: .4,
+        anim: {
+          enable: true,
+          speed: 8,
+          opacity_min: 0.1,
+          sync: false
+        }
+      },
+      shape: {
+        type: "circle"
+         // type: "image",
+        // image: {
+        //    src: "../public/star.png",
+        //    width: 1,
+        //    height: 1
+        // }   
+      },
+      size: {
+        value: 4,
+        random: true
+      },
+    },
+    interactivity: {
+      events: {
+          onhover: {
+              enable: true,
+              mode: "repulse"
+          }
+      },
+      modes: {
+        repulse: {
+          distance: 100,
+          duration: 0.4
+        },
       }
     }
   }
@@ -25,7 +64,8 @@ export default class App extends React.Component {
     this.body = React.createRef();
     this.state = {
       aboutBackground: 'about-blue-container',
-      waveColor: 'blue'
+      waveColor: 'blue',
+      particlesVisible: 'particles-hidden'
     }
     this.handleScroll = this.handleScroll.bind(this)
   }
@@ -45,23 +85,28 @@ export default class App extends React.Component {
     if (top <= 700) {
       this.setState({waveColor: 'blue'})
       this.setState({aboutBackground: 'about-blue'})
+      this.setState({particlesVisible: 'particles-hidden'})
+
     } else if (top > 700 && top <=1400) {
       this.setState({waveColor: 'black'})
       this.setState({aboutBackground: 'about-black'})
+      this.setState({particlesVisible: 'particles-visible'})
+
     } else if (top > 1400) {
       this.setState({waveColor: 'black'})
       this.setState({aboutBackground: 'about-black'})
+      this.setState({particlesVisible: 'particles-visible'})
+
     } 
   }
 
   render() {
     return (
-      // <div className = {this.state.background}>
       <div className = "sky-bg">
 
         <Navigation/>
         <Home waveColor={this.state.waveColor} />
-        <Particles className='particles' params={particlesOptions} />
+        <Particles className={'particles ' + this.state.particlesVisible} params={particlesOptions} />
         <About bg={this.state.aboutBackground}/>
         <Portfolio/>
       </div>

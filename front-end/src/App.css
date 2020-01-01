@@ -8,8 +8,16 @@ body {
 }
 
 .particles {
-  position: fixed;
+  position: absolute;
+  width: 100%;
   z-index: 1;
-  top: 700px;
-  left: 0;
+  top: 900px;
+}
+
+.particles-visible {
+  visibility: visible;
+}
+
+.particles-hidden {
+  visibility: hidden;
 }
