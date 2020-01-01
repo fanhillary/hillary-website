@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './Home.js';
 import Navigation from './Navigation.js';
+import About from './About.js';
 
 
 export default class App extends React.Component {
@@ -11,6 +12,7 @@ export default class App extends React.Component {
       <div>
        <Navigation/>
         <Home/>
+        <About/>
       </div>
       );
   }

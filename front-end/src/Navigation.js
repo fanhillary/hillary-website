@@ -4,9 +4,9 @@ function Navigation() {
     return (
         <div class="container">
         <div class="flex">
-            <a class="header-link" href="/learn-php.html">Home</a> 
-            <a class="header-link" href="/learn-html.html">About</a> 
-            <a class="header-link" href="/learn-css.html">Portfolio</a> 
+            <a class="header-link" href="#home">Home</a> 
+            <a class="header-link" href="#about">About</a> 
+            <a class="header-link" href="#portfolio">Portfolio</a> 
             <a class="f6 grow no-underline br-pill ba bw1 ph3 pv2 mb4 mr2 dib near-white" href="#0">Resume</a>
             <a class="f6 grow no-underline br-pill ba bw1 ph3 pv2 mb4 dib near-white" href="#0">Contact</a>
             {/* <a class="no-underline near-white bg-animate bg-near-black hover-bg-gray inline-flex items-center ma2 tc br2 pa2" href="https://github.com/mrmrs" title="GitHub">

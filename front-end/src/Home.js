@@ -2,9 +2,11 @@ import React from 'react';
 import './Home.css';
 function Home() {
     return (
-        <div>
+        <div class = "container">
+            <a name="home"></a>
             <div class = "title">
                 <h1> Hey! I'm Hillary. </h1>
+                <h2> Scroll down to learn more about me. </h2>
             </div>
             <svg class="editorial"
                 viewBox="0 24 150 28"
@@ -24,6 +26,9 @@ function Home() {
                 <use xlinkHref="#gentle-wave" x="50" y="6" fill="#2d55aa"/>  
             </g>
             </svg>   
+            <span class="chevron">
+                <i class="fa fa-chevron-down"></i>
+            </span>
         </div>
     )
 }

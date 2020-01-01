@@ -11,12 +11,12 @@
 }
 
 .title {
-    position: absolute;
-    bottom: 45%;
-    right: 50%;
-    font-family: 'Ibarra Real Nova', serif;
+    width: 70%;
     color: white;
-    font-size: 3vh;
+    font-size: 3.5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .editorial {
@@ -31,14 +31,20 @@
 
 body {
   background: lightskyblue;
-  margin: 0;max-height: 100vh; overflow:hidden;
-  padding: 9em 0 0 0;
 }
 
 /*prevent many large-by-comparison ripples by shrinking the height*/
 @media (max-width:50em){
-  .content h1{font-size: 12vmax}
   .editorial{height:17vw;}
 }
 
-h1{outline:none}
+.chevron {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    margin-top: 350px;
+    left:0;
+    right:0;
+    text-align: center;
+    z-index: 99;
+}
