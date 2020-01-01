@@ -1,13 +1,18 @@
-.about-blue-container {
-    padding: 300px;
-    color: white;
+.about-blue {
     background: #2d55aa;
-    transition: 0.1s all;
 }
 
+.about-black {
+    background:#0C1419;
+}
 .about-container {
-    padding: 300px;
+    padding-top: 100px;
+    margin-top: -20px;
+    display: block;
+    position: relative;
     color: white;
     transition: 0.5s all;
-
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }

@@ -1,20 +1,15 @@
 body {
-  /* transition: 0.3s all; */
   font-family: 'Lora', serif;
+  position: relative;
 }
 
 .sky-bg {
   background: lightskyblue;
-  transition: 0.3s all;
-
 }
 
-.ocean-bg{
-  background: #2d55aa;
-  transition: 0.3s all;
-}
-.black-bg {
-  background: black;
-  transition: 0.3s all;
-
+.particles {
+  position: fixed;
+  z-index: 1;
+  top: 700px;
+  left: 0;
 }

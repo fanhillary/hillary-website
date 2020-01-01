@@ -1,11 +1,9 @@
 import React from 'react';
 import './Portfolio.css';
-import Particles from 'react-particles-js';
 
 function Portfolio() {
     return (
         <div>
-            <Particles/>
             <section className="portfolio">
                 <h1> Portfolio </h1>
                 <main className="pa3 pa5-ns">
