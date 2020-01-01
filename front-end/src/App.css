@@ -1,12 +1,20 @@
-.App {
-  text-align: center;
+body {
+  transition: 0.3s all;
   font-family: 'Lora', serif;
-  /* display: flex;
-  align-items: center;
-  flex-direction: column; */
 }
 
-body {
+.sky-bg {
   background: lightskyblue;
   transition: 0.3s all;
+
+}
+
+.ocean-bg{
+  background: #2d55aa;
+  transition: 0.3s all;
+}
+.black-bg {
+  background: black;
+  transition: 0.3s all;
+
 }
