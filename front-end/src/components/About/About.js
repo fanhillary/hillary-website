@@ -1,9 +1,9 @@
 import React from 'react';
 import './About.css';
 
-let About = ({bg}) => {
+let About = ({aboutBackground}) => {
     return (
-        <div className={'about-container ' + bg}>
+        <div className={'about-container ' + aboutBackground}>
             <section>
                 <h1> About Me </h1>
                 <main className="pa3 pa5-ns">

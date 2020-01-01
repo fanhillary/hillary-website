@@ -63,9 +63,10 @@ export default class App extends React.Component {
     super();
     this.body = React.createRef();
     this.state = {
-      aboutBackground: 'about-blue-container',
+      aboutBackground: 'about-blue',
       waveColor: 'blue',
-      particlesVisible: 'particles-hidden'
+      particlesVisible: 'particles-hidden',
+      portfolioBackground: 'porfolio-black'
     }
     this.handleScroll = this.handleScroll.bind(this)
   }
@@ -83,20 +84,20 @@ export default class App extends React.Component {
     var doc = document.documentElement;
     var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
     if (top <= 700) {
-      this.setState({waveColor: 'blue'})
-      this.setState({aboutBackground: 'about-blue'})
-      this.setState({particlesVisible: 'particles-hidden'})
-
+      this.setState({waveColor: 'blue'});
+      this.setState({aboutBackground: 'about-blue'});
+      this.setState({particlesVisible: 'particles-hidden'});
+      this.setState({portfolioBackground: 'portfolio-black'});
     } else if (top > 700 && top <=1400) {
-      this.setState({waveColor: 'black'})
-      this.setState({aboutBackground: 'about-black'})
-      this.setState({particlesVisible: 'particles-visible'})
-
+      this.setState({waveColor: 'black'});
+      this.setState({aboutBackground: 'about-black'});
+      this.setState({particlesVisible: 'particles-visible'});
+      this.setState({portfolioBackground: 'portfolio-black'});
     } else if (top > 1400) {
-      this.setState({waveColor: 'black'})
-      this.setState({aboutBackground: 'about-black'})
-      this.setState({particlesVisible: 'particles-visible'})
-
+      this.setState({waveColor: 'black'});
+      this.setState({aboutBackground: 'about-green'});
+      this.setState({particlesVisible: 'particles-visible'});
+      this.setState({portfolioBackground: 'portfolio-green'});
     } 
   }
 
@@ -107,8 +108,8 @@ export default class App extends React.Component {
         <Navigation/>
         <Home waveColor={this.state.waveColor} />
         <Particles className={'particles ' + this.state.particlesVisible} params={particlesOptions} />
-        <About bg={this.state.aboutBackground}/>
-        <Portfolio/>
+        <About aboutBackground={this.state.aboutBackground}/>
+        <Portfolio portfolioBackground={this.state.portfolioBackground}/>
       </div>
     )}
 }

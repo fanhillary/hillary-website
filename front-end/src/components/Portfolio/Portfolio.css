@@ -1,3 +1,20 @@
-.portfolio {
+.portfolio-container {
+    padding-top: 100px;
+    padding-bottom: 150px;
+    margin-top: -20px;
+    display: block;
+    position: relative;
     color: white;
+    transition: 0.5s all;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.portfolio-green {
+    background: #4a5941;
+}
+
+.portfolio-black {
+    background:#0C1419;
 }

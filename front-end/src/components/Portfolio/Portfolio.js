@@ -1,10 +1,10 @@
 import React from 'react';
 import './Portfolio.css';
 
-function Portfolio() {
+let Portfolio = ({portfolioBackground}) => {
     return (
-        <div>
-            <section className="portfolio">
+        <div className={"portfolio-container " + portfolioBackground }>
+            <section>
                 <h1> Portfolio </h1>
                 <main className="pa3 pa5-ns">
                     <p className="f4 lh-copy measure">

@@ -1,6 +1,6 @@
 .parallax > use{
   animation:move-forever 12s linear infinite;
-  transition: 0.6s all;
+  transition: 0.5s all;
 
 }
 
