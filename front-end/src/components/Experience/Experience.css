@@ -23,6 +23,32 @@
     color:white;
 }
 
-.right-leaf {
+
+.leaf {
     z-index: 99;
+    position: absolute;
+    opacity: 60%;
+
+}
+.right-leaf-steep {
+    width: 20%;
+    right: 0;
+    top: 10%;
+}
+
+.right-leaf {
+    width: 30%;
+    right: 0;
+    top: 50%;
+}
+
+.left-leaf-steep {
+    left: 0;
+    top: 60%;
+    width: 20%;
+}
+.tropical-leaf {
+    width: 30%;
+    left: 0;
+    top: 20%;
 }

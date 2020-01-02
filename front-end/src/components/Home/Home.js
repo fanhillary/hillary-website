@@ -1,6 +1,5 @@
 import React from 'react';
 import './Home.css';
-
 let Home = ({waveColor}) => {
     return (
         <div className = "home-container">

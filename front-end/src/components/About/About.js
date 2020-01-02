@@ -1,16 +1,67 @@
 import React from 'react';
 import './About.css';
+import Particles from 'react-particles-js';
 
-let About = ({aboutBackground}) => {
+const particlesOptions = {
+    canvas: {
+      w: "100%",
+      h: "100%"
+    },
+    particles: {
+      number: { 
+        value: 80,
+        density: {
+          enable: true, 
+          value_area: 850
+        }
+      },
+      color: {
+        value: "#fff",
+      },
+      opacity: {
+        value: .3,
+        anim: {
+          enable: true,
+          speed: 4,
+          opacity_min: 0.1,
+          sync: false
+        }
+      },
+      shape: {
+        type: "star"
+      },
+      size: {
+        value: 6,
+        random: true
+      },
+    },
+    interactivity: {
+      events: {
+          onhover: {
+              enable: true,
+              mode: "repulse"
+          }
+      },
+      modes: {
+        repulse: {
+          distance: 100,
+          duration: 0.4
+        },
+      }
+    }
+  }
+
+let About = ({aboutBackground, particlesVisible}) => {
     return (
         <div className={'about-container ' + aboutBackground}>
+            <Particles className={'particles ' + particlesVisible} params={particlesOptions} />
             <section>
                 <h1> About Me </h1>
                 <main className="pa3 pa5-ns">
                     <div className="pb2">
                         <h2> Hi! I'm Hillary, again. </h2>
                         <p className="f4 lh-copy measure">
-                            I am a full-stack developer.
+                            I'm a full-stack developer.
                             I enjoy working on web applications, finding solutions to complex problems, and designing intuitive user experiences.
                             Some of my favorite technologies are ReactJS, Angular, Java, Python, and MongoDB. 
                         </p>

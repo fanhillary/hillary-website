@@ -6,28 +6,14 @@ body {
 .app-container {
   transition: .3s all;
   margin: 0;
+  background: lightskyblue;
 }
 
 .sky-bg {
   background: lightskyblue;
+  transition: .3s all linear;
 }
-
 .sunset-bg {
   background: linear-gradient(#9198e5, #e66465);
-}
-
-.particles {
-  position: absolute;
-  height: 100vh;
-  width: 100%;
-  z-index: 99;
-  top: 800px;
-}
-
-.particles-visible {
-  visibility: visible;
-}
-
-.particles-hidden {
-  visibility: hidden;
+  transition: .3s all linear;
 }

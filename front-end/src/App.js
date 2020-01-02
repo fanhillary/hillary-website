@@ -4,58 +4,8 @@ import Home from './components/Home/Home.js';
 import Navigation from './components/Navigation/Navigation.js';
 import About from './components/About/About.js';
 import Logo from './components/Logo/Logo.js';
-import Particles from 'react-particles-js';
 import Experience from './components/Experience/Experience.js';
 
-
-const particlesOptions = {
-    canvas: {
-      w: "100%",
-      h: "850px"
-    },
-    particles: {
-      number: { 
-        value: 80,
-        density: {
-          enable: true, 
-          value_area: 850
-        }
-      },
-      color: {
-        value: "#fff",
-      },
-      opacity: {
-        value: .3,
-        anim: {
-          enable: true,
-          speed: 4,
-          opacity_min: 0.1,
-          sync: false
-        }
-      },
-      shape: {
-        type: "star"
-      },
-      size: {
-        value: 6,
-        random: true
-      },
-    },
-    interactivity: {
-      events: {
-          onhover: {
-              enable: true,
-              mode: "repulse"
-          }
-      },
-      modes: {
-        repulse: {
-          distance: 100,
-          duration: 0.4
-        },
-      }
-    }
-  }
 
 export default class App extends React.Component {
   constructor() {
@@ -67,7 +17,7 @@ export default class App extends React.Component {
       particlesVisible: 'particles-hidden',
       experienceStyle: 'porfolio-black',
       logoVisible: 'block',
-      ifSunset: 'sky',
+      ifSunset: 'sky-bg',
     }
     this.handleScroll = this.handleScroll.bind(this)
   }
@@ -81,16 +31,17 @@ export default class App extends React.Component {
   }
   
   componentWillUnmount() {
+    // clearInterval(this.toggleOpacity);
     window.removeEventListener('scroll', this.handleScroll);
   }
 
 
   alternateOpacityChevron() {
       const object = document.getElementById('down');
-      const currentOpacity  = object.style.opacity;
-      if (currentOpacity === 1) {
+      let currentOpacity  = object.style.opacity;
+      if (currentOpacity == 1) { // keep as 2 equal signs
           object.style.opacity = .4;
-      } else if (currentOpacity === .4) {
+      } else {
           object.style.opacity = 1;
       }
   }
@@ -99,9 +50,10 @@ export default class App extends React.Component {
     var doc = document.documentElement;
     var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
     if (top <= 250) {
-      this.setState({ifSunset: 'sky'})
+      this.setState({ifSunset: 'sky-bg'})
+      
     } else if (top > 250 && top <=650) { // before waves
-      this.setState({ifSunset: 'sunset'})
+      this.setState({ifSunset: 'sunset-bg'})
       this.setState({waveColor: 'blue'});
       this.setState({aboutBackground: 'about-blue'});
       this.setState({particlesVisible: 'particles-hidden'});
@@ -122,12 +74,12 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className = {this.state.ifSunset === "sunset"? "sunset-bg" : "sky-bg"}>
+      // <div className = {this.state.ifSunset === "sunset"? "sunset-bg" : "sky-bg"}>
+      <div className = {"app-container + " + this.state.ifSunset}>
         <Logo logoVisible={this.state.logoVisible}/>
         <Navigation/>
         <Home waveColor={this.state.waveColor} />
-        <Particles className={'particles ' + this.state.particlesVisible} params={particlesOptions} />
-        <About aboutBackground={this.state.aboutBackground}/>
+        <About particlesVisible={this.state.particlesVisible} aboutBackground={this.state.aboutBackground}/>
         <Experience experienceStyle={this.state.experienceStyle}/>
       </div>
     )}

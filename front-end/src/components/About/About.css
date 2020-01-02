@@ -26,3 +26,18 @@
     flex-direction: column;
     z-index: 10;
 }
+
+.particles {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+  }
+  
+  .particles-visible {
+    visibility: visible;
+  }
+  
+  .particles-hidden {
+    visibility: hidden;
+  }
