@@ -42,6 +42,7 @@
 .editorial {
   width: 100%;
   margin: 0;
+  z-index: 10;
 }
 
 /*prevent many large-by-comparison ripples by shrinking the height*/
@@ -50,18 +51,20 @@
 }
 
 .chevron {
-    position: absolute;
-    width: 100px;
-    text-align: center;
-    z-index: 99;
-    bottom: 10%;
+  position: absolute;
+  width: 100px;
+  text-align: center;
+  z-index: 99;
+  bottom: 10%;
 }
 
 .fa-chevron-down {
-    color: white;
-    cursor: pointer;
+  color: white;
+  cursor: pointer;
+  opacity: 1;
+  transition: .5s all;
 }
 
 .title-button {
-    margin: 30px;
+  margin: 30px;
 }

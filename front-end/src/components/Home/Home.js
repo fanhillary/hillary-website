@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+
 let Home = ({waveColor}) => {
     return (
         <div className = "home-container">
@@ -31,7 +32,7 @@ let Home = ({waveColor}) => {
                 </g>
                 </svg>   
                 <span className="chevron">
-                    <i className="fa fa-chevron-down"></i>
+                    <i id ="down" className="fa fa-chevron-down"></i>
                 </span>
             </div>
         </div>

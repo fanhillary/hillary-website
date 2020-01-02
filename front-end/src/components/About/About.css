@@ -12,7 +12,6 @@
 .about-container {
     padding-top: 100px;
     padding-bottom: 150px;
-    margin-top: -20px;
     display: block;
     position: relative;
     color: white;
@@ -20,4 +19,5 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    z-index: 10;
 }

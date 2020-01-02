@@ -1,18 +1,27 @@
 body {
-  font-family: 'Lora', serif;
+  font-family: 'Fira Sans', sans-serif;
   position: relative;
+}
+
+.app-container {
+  transition: .3s all;
+  margin: 0;
 }
 
 .sky-bg {
   background: lightskyblue;
 }
 
+.sunset-bg {
+  background: linear-gradient(#9198e5, #e66465);
+}
+
 .particles {
   position: absolute;
   height: 100vh;
   width: 100%;
-  z-index: 1;
-  top: 900px;
+  z-index: 99;
+  top: 800px;
 }
 
 .particles-visible {
