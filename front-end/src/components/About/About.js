@@ -55,7 +55,7 @@ let About = ({aboutBackground, particlesVisible}) => {
     return (
         <div className={'about-container ' + aboutBackground}>
             <Particles className={'particles ' + particlesVisible} params={particlesOptions} />
-            <section>
+            <section className = "about-content"> 
                 <h1> About Me </h1>
                 <main className="pa3 pa5-ns">
                     <div className="pb2">

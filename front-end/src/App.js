@@ -18,6 +18,7 @@ export default class App extends React.Component {
       experienceStyle: 'porfolio-black',
       logoVisible: 'block',
       ifSunset: 'sky-bg',
+      leafVisibility: 'hidden',
     }
     this.handleScroll = this.handleScroll.bind(this)
   }
@@ -28,10 +29,10 @@ export default class App extends React.Component {
 
     window.setInterval(this.alternateOpacityChevron, 500);
 
+
   }
   
   componentWillUnmount() {
-    // clearInterval(this.toggleOpacity);
     window.removeEventListener('scroll', this.handleScroll);
   }
 
@@ -59,16 +60,24 @@ export default class App extends React.Component {
       this.setState({particlesVisible: 'particles-hidden'});
       this.setState({experienceStyle: 'experience-black'});
       this.setState({logoVisible: 'inherit'});
-    } else if (top > 650 && top <=1600) { // after waves
+    } else if (top > 650 && top <=1500) { // after waves
       this.setState({waveColor: 'black'});
       this.setState({aboutBackground: 'about-black'});
       this.setState({particlesVisible: 'particles-visible'});
       this.setState({experienceStyle: 'experience-black'});
       this.setState({logoVisible: 'none'});
+      this.setState({leafVisibility: 'hidden'})
+      // const leaves = document.getElementsByClassName('leaf-container');
+      // leaves[0].style.visibility = 'hidden';
 
-    } else if (top > 1600) {
+    } else if (top > 1500) { // into work experience 
       this.setState({aboutBackground: 'about-green'});
       this.setState({experienceStyle: 'experience-green'});
+      this.setState({leafVisibility: 'visible'})
+
+      // const leaves = document.getElementsByClassName('leaf-container');
+      // leaves[0].style.visibility = 'visible';
+
     } 
   }
 
@@ -80,7 +89,7 @@ export default class App extends React.Component {
         <Navigation/>
         <Home waveColor={this.state.waveColor} />
         <About particlesVisible={this.state.particlesVisible} aboutBackground={this.state.aboutBackground}/>
-        <Experience experienceStyle={this.state.experienceStyle}/>
+        <Experience leafVisibility={this.state.leafVisibility} experienceStyle={this.state.experienceStyle}/>
       </div>
     )}
 }

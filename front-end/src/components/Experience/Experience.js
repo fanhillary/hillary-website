@@ -3,16 +3,22 @@ import './Experience.css';
 import rightLeaf from './leaf-right.png';
 import rightLeafSteep from './leaf-right-steep.png';
 import leftLeafSteep from './leaf-left-steep.png';
+import leftLeaf from './leaf-left.png';
+import tropicalLeafRight from './tropical-leaf-right.png';
 import tropicalLeaf from './tropical-leaf.png';
 
-let Experience = ({experienceStyle}) => {
+
+let Experience = ({experienceStyle, leafVisibility}) => {
     return (
         <div className={"experience-container " + experienceStyle}>
-            <img className="leaf right-leaf" src={rightLeaf} alt=""/>
-            <img className="leaf right-leaf-steep" src={rightLeafSteep} alt=""/>
-            <img className="leaf left-leaf-steep" src={leftLeafSteep} alt=""/>
-
-            <img className="leaf tropical-leaf" src={tropicalLeaf} alt=""/>
+            <div className = {"leaf-container " + leafVisibility}>
+                <img className="leaf right-leaf" src={rightLeaf} alt=""/>
+                <img className="leaf right-leaf-steep" src={rightLeafSteep} alt=""/>
+                <img className="leaf left-leaf-steep" src={leftLeafSteep} alt=""/>
+                <img className="leaf left-leaf" src={leftLeaf} alt=""/>
+                <img className="leaf tropical-leaf" src={tropicalLeaf} alt=""/>
+                <img className="leaf tropical-leaf-right" src={tropicalLeafRight} alt=""/>
+            </div>
             <section >
                 <h1> Work Experience</h1>
                 <main className="pa3 pa5-ns">
@@ -51,6 +57,10 @@ let Experience = ({experienceStyle}) => {
                                 Documented Use Cases and Requirements with agile techniques
                             </p>
                         </div>
+                    </div>
+                    <div className="pb2">
+                        <h2> University of California, San Diego </h2>
+                        <p> Graduated: June 2019, Computer Science B.S. </p>
                     </div>
                    
                 </main>
