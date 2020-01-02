@@ -4,17 +4,21 @@ import Home from './components/Home/Home.js';
 import Navigation from './components/Navigation/Navigation.js';
 import About from './components/About/About.js';
 import Logo from './components/Logo/Logo.js';
-import Portfolio from './components/Portfolio/Portfolio.js';
 import Particles from 'react-particles-js';
+import Experience from './components/Experience/Experience.js';
 
 
 const particlesOptions = {
+    canvas: {
+      w: "100%",
+      h: "850px"
+    },
     particles: {
       number: { 
         value: 80,
         density: {
           enable: true, 
-          value_area: 800
+          value_area: 850
         }
       },
       color: {
@@ -24,7 +28,7 @@ const particlesOptions = {
         value: .3,
         anim: {
           enable: true,
-          speed: 6,
+          speed: 4,
           opacity_min: 0.1,
           sync: false
         }
@@ -61,7 +65,7 @@ export default class App extends React.Component {
       aboutBackground: 'about-blue',
       waveColor: 'blue',
       particlesVisible: 'particles-hidden',
-      portfolioBackground: 'porfolio-black',
+      experienceStyle: 'porfolio-black',
       logoVisible: 'block',
       ifSunset: 'sky',
     }
@@ -86,7 +90,7 @@ export default class App extends React.Component {
       const currentOpacity  = object.style.opacity;
       if (currentOpacity === 1) {
           object.style.opacity = .4;
-      } else {
+      } else if (currentOpacity === .4) {
           object.style.opacity = 1;
       }
   }
@@ -101,18 +105,18 @@ export default class App extends React.Component {
       this.setState({waveColor: 'blue'});
       this.setState({aboutBackground: 'about-blue'});
       this.setState({particlesVisible: 'particles-hidden'});
-      this.setState({portfolioBackground: 'portfolio-black'});
+      this.setState({experienceStyle: 'experience-black'});
       this.setState({logoVisible: 'inherit'});
-    } else if (top > 650 && top <=1500) { // after waves
+    } else if (top > 650 && top <=1600) { // after waves
       this.setState({waveColor: 'black'});
       this.setState({aboutBackground: 'about-black'});
       this.setState({particlesVisible: 'particles-visible'});
-      this.setState({portfolioBackground: 'portfolio-black'});
+      this.setState({experienceStyle: 'experience-black'});
       this.setState({logoVisible: 'none'});
 
-    } else if (top > 1500) {
+    } else if (top > 1600) {
       this.setState({aboutBackground: 'about-green'});
-      this.setState({portfolioBackground: 'portfolio-green'});
+      this.setState({experienceStyle: 'experience-green'});
     } 
   }
 
@@ -124,7 +128,7 @@ export default class App extends React.Component {
         <Home waveColor={this.state.waveColor} />
         <Particles className={'particles ' + this.state.particlesVisible} params={particlesOptions} />
         <About aboutBackground={this.state.aboutBackground}/>
-        <Portfolio portfolioBackground={this.state.portfolioBackground}/>
+        <Experience experienceStyle={this.state.experienceStyle}/>
       </div>
     )}
 }
