@@ -4,18 +4,20 @@
     margin-top: -20px;
     display: block;
     position: relative;
-    color: white;
     transition: 0.5s all;
     display: flex;
     align-items: center;
     flex-direction: column;
     z-index: 10;
-    
 }
 
 .experience-green {
-    background: rgb(248, 202, 211);
-    color: #0C1419
+    /* background: rgb(248, 202, 211); */
+    /* color: #0C1419; */
+    /* background:#ff91a4; */
+    color: #dec9bb;
+    background: #142a28;
+
 }
 
 .experience-black {
@@ -27,7 +29,7 @@
 .leaf {
     z-index: 99;
     position: absolute;
-    opacity: 50%;
+    opacity: 30%;
 
 }
 .right-leaf-steep {
@@ -81,3 +83,4 @@
     opacity: 0;
     transition: visibility 0s 2s, opacity 2s linear;
 }
+

@@ -31,7 +31,7 @@ const particlesOptions = {
         type: "star"
       },
       size: {
-        value: 6,
+        value: 7,
         random: true
       },
     },
@@ -67,9 +67,10 @@ let About = ({aboutBackground, particlesVisible}) => {
                         </p>
                     </div>
                     <div className="pb2">
-                        <h2> Life Motto </h2>
+                        <h2> Some Life Mottos </h2>
                         <p className="f4 lh-copy measure">
-                            To end everyday knowing that I have learned something new or improved upon myself.
+                            To get good: To end everyday knowing that I have learned something new or improved upon myself.
+                            To have fun while working and work on things I love. :D
                         </p>
                     </div>
                     <div className="pb2">

@@ -31,7 +31,9 @@ let Home = ({waveColor}) => {
                 </g>
                 </svg>   
                 <span className="chevron">
-                    <i id ="down" className="fa fa-chevron-down"></i>
+                    <a href="#about">
+                        <i id ="down" className="fa fa-chevron-down"></i>
+                    </a>
                 </span>
             </div>
         </div>

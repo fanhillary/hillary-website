@@ -10,8 +10,11 @@
 }
 
 .about-green {
-    background:rgb(248, 202, 211);
-    color: #0C1419;
+    /* background:rgb(248, 202, 211); */
+    /* background:#ff91a4; */
+    background: #142a28;
+    color: #dec9bb;
+    /* color: #0C1419; */
 }
 .about-content {
     padding-top: 50px;
@@ -21,7 +24,6 @@
     padding-bottom: 150px;
     display: block;
     position: relative;
-    color: white;
     transition: 0.5s all;
     display: flex;
     align-items: center;
