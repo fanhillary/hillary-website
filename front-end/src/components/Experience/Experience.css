@@ -1,14 +1,14 @@
 .experience-container {
     padding: 100px 0 150px 0;
     margin-top: -20px;
-    margin-left: -60px;
+    margin-left: -20px;
     position: relative;
     transition: 0.5s all;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     z-index: 100;
+}
+
+.experience-content {
+    width: 60%;
 }
 
 .experience-green {
@@ -67,11 +67,6 @@
     right:0;
     top: 60%;
 }
-
-/* .leaf-container {
-    visibility: hidden;
-    transition: .3s all fade-out;
-} */
 
 .visible {
     visibility: visible;

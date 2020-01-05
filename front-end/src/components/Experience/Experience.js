@@ -7,6 +7,11 @@ import leftLeaf from './leaf-left.png';
 import tropicalLeafRight from './tropical-leaf-right.png';
 import tropicalLeaf from './tropical-leaf.png';
 import ExperienceTile from '../ExperienceTile/ExperienceTile.js';
+import PinkMemphis from './pink-memphis.png';
+import PinkMemphisCounterpart from './pink-memphis-counterpart.png';
+import TealMemphis from './teal-memphis.png';
+import TealMemphisCounterpart from './teal-memphis-counterpart.png';
+
 let Experience = ({experienceStyle, leafVisibility}) => {
     const positions = [
         {
@@ -14,14 +19,16 @@ let Experience = ({experienceStyle, leafVisibility}) => {
             company: 'Cisco Systems',
             position: 'Software Engineer',
             firstPoint: 'Worked with Python, Angular, Docker, and MongoDB to build a natural language processing search engine.',
-            secondPoint: 'Follow Agile methodologies with scrum meetings, retrospectives, code reviews, continuous integration.'
+            secondPoint: 'Follow Agile methodologies with scrum meetings, retrospectives, code reviews, continuous integration.',
+            header: {PinkMemphis}
         },
         {
             date: 'June 2017- April 2018',
             company: 'Teradata',
             position: 'Software Engineer Intern',
             firstPoint: 'Used Angular 4 to build a Web Application that guides user to fix system dependency solutions',
-            secondPoint: 'Designed UX and flow of app through iteration and mock-ups'
+            secondPoint: 'Designed UX and flow of app through iteration and mock-ups',
+            header: {TealMemphis}
         },
         {
             date: 'October 2016 - March 2017',
@@ -29,14 +36,17 @@ let Experience = ({experienceStyle, leafVisibility}) => {
             position: 'Software Engineer Intern',
             firstPoint: 'Used Django/Python and PostgreSQL to create a Web Application for real-time interaction between professors and students in lecture halls',
             secondPoint: 'Documented Use Cases and Requirements with agile techniques',
+            header: {TealMemphisCounterpart}
         },
         {
             date: 'Graduated: June 2019',
             company: 'University of California, San Diego',
             position: 'Computer Science B.S.',
+            header: {PinkMemphisCounterpart}
         },
     ]
 
+    
     // let items = [];
     // for (const [index,position] of positions.entries()) {
     //     console.log(position);
@@ -54,13 +64,15 @@ let Experience = ({experienceStyle, leafVisibility}) => {
                 <img className="leaf tropical-leaf" src={tropicalLeaf} alt=""/>
                 <img className="leaf tropical-leaf-right" src={tropicalLeafRight} alt=""/>
             </div>
-            <div className="w-50">
-                <h1> Work Experience</h1>
-                <div className="flex flex-wrap justify-center">
-                    <ExperienceTile experience={positions[0]}/>
-                    <ExperienceTile experience={positions[1]}/>
-                    <ExperienceTile experience={positions[2]}/>
-                    <ExperienceTile experience={positions[3]}/>
+            <div className="flex flex-wrap justify-center">
+                <div className="experience-content">
+                    <h1 className="pb5"> Work Experience</h1>
+                    <div className="flex flex-wrap justify-center">
+                        <ExperienceTile experience={positions[0]}/>
+                        <ExperienceTile experience={positions[1]}/>
+                        <ExperienceTile experience={positions[2]}/>
+                        <ExperienceTile experience={positions[3]}/>
+                    </div>
                 </div>
             </div>
         </div>

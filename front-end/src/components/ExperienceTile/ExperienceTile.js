@@ -1,26 +1,27 @@
 import React from 'react';
 import './ExperienceTile.css';
-import PinkMemphis from './pink-memphis.png';
-import PinkMemphisCounterpart from './pink-memphis-counterpart.png';
-import TealMemphis from './teal-memphis.png';
-import TealMemphisCounterpart from './teal-memphis-counterpart.png';
 
 let ExperienceTile = ({experience}) => {
-    const itemStyle = [
-        {PinkMemphis}, {PinkMemphisCounterpart}, {TealMemphis}, {TealMemphisCounterpart}
-    ]
-    // console.log(PinkMemphis)
-    console.log(itemStyle.values())
+    // const itemStyle = [
+    //     {PinkMemphis}, {PinkMemphisCounterpart}, {TealMemphis}, {TealMemphisCounterpart}
+    // 
+    console.log(experience['header'])
+    console.log(Object.keys(experience['header']));
+    let header = Object.values(experience['header'])[0]
     return (
         
         <div className="card">
-            <img src={PinkMemphis} alt="header"/>
+            <img src={header} alt="header"/>
             <div className="content">
                 <p className="f6 lh-copy measure"> {experience['date']} </p>
                 <hr></hr>
                 <h1> {experience.company} </h1>
                 <h3> {experience.position} </h3>
                 <hr></hr>
+                {/* <ul>
+                    <li> {experience.firstPoint}</li>
+                    <li> {experience.secondPoint}</li>
+                </ul> */}
                 <p className="f5 lh-copy measure">
                     {experience.firstPoint}
                 </p>
