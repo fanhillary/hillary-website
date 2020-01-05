@@ -6,7 +6,7 @@ import About from './components/About/About.js';
 import Logo from './components/Logo/Logo.js';
 import Experience from './components/Experience/Experience.js';
 import Portfolio from './components/Portfolio/Portfolio.js';
-import ExperienceTile from './components/ExperienceTile/ExperienceTile';
+import PortfolioTile from './components/PortfolioTile/PortfolioTile.js';
 
 
 export default class App extends React.Component {
@@ -19,7 +19,6 @@ export default class App extends React.Component {
       particlesVisible: 'particles-hidden',
       experienceStyle: 'experience-black',
       logoVisible: 'block',
-      ifSunset: 'sky-bg',
       leafVisibility: 'hidden',
       portfolioStyle: 'portfolio-green',
     }
@@ -52,12 +51,10 @@ export default class App extends React.Component {
     var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
 
     if (top <= 250) {
-      this.setState({ifSunset: 'sky-bg'});
       this.setState({waveColor: 'blue'});
       this.setState({logoVisible: 'block'});
       this.setState({aboutStyle: 'about-blue'});
     } else if (top > 250 && top <=650) { // before waves
-      this.setState({ifSunset: 'sunset-bg'})
       this.setState({waveColor: 'blue'});
       this.setState({aboutStyle: 'about-blue'});
       this.setState({particlesVisible: 'particles-hidden'});
@@ -75,7 +72,7 @@ export default class App extends React.Component {
       this.setState({experienceStyle: 'experience-green'});
       this.setState({leafVisibility: 'visible'})
       this.setState({portfolioStyle: 'portfolio-green'});
-    } else if (top > 3100) {
+    } else if (top > 3100) { // into porfolio
       this.setState({experienceStyle: 'experience-purple'});
       this.setState({portfolioStyle: 'portfolio-purple'});
     }
@@ -83,10 +80,10 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className = {"app-container + " + this.state.ifSunset}>
-        <Logo logoVisible={this.state.logoVisible}/>
-        <Navigation/>
+      <div className = "app-container">
         <a name="home">
+          <Logo logoVisible={this.state.logoVisible}/>
+          <Navigation/>
           <Home waveColor={this.state.waveColor} />
         </a>
         <a name="about">
@@ -98,7 +95,7 @@ export default class App extends React.Component {
         <a name="portfolio">
           <Portfolio portfolioStyle={this.state.portfolioStyle}/>
         </a>
-        {/* <ExperienceTile/> */}
+        <PortfolioTile/>
       </div>
     )}
 }

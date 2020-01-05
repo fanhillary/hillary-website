@@ -1,18 +1,13 @@
-.card {
+.portfolio-card {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 7px; /* 5px rounded corners */
-    width: 325px;
-    height: 550px;
-    background: #ecaca4;
+    width: 350px;
+    height: 350px;
+    background: whitesmoke;
     margin: 20px 40px 20px 0px;
-    transition: .1s all;
   }
   
-/* .card:hover {
-    background: whitesmoke;
-    cursor: pointer;
-} */
 /* Add rounded corners to the top left and the top right corner of the image */
 img {
     border-radius: 5px 5px 0 0;

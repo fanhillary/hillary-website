@@ -37,10 +37,15 @@ const particlesOptions = {
     },
     interactivity: {
       events: {
-          onhover: {
-              enable: true,
-              mode: "repulse"
-          }
+        onresize: {
+          enable: true,
+          density_auto: true,
+        },
+        onhover: {
+            enable: true,
+            mode: "repulse"
+        }
+          
       },
       modes: {
         repulse: {

@@ -9,7 +9,7 @@ let Logo = ({logoVisible})=> {
                     <circle cx="50" cy="50" r="35" fill="#b2dffb" opacity="60%"/>
                     <circle cx="50" cy="50" r="45" fill ="#bde4fc" opacity="40%"/>
                     <circle cx="50" cy="50" r="50" fill ="#c8e8fc" opacity="25%"/>
-                    <text x="40" y="55" fontWeight="bold" fill="white">HF</text>
+                    <text x="43" y="55" fontWeight="bold" fill="white">hf</text>
                 </g>
             </svg>
         </div>

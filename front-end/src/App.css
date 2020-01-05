@@ -6,12 +6,5 @@ body {
 .app-container {
   transition: .3s all;
   margin: 0;
-  background: lightskyblue;
-}
-
-.sky-bg {
-  background: lightskyblue;
-}
-.sunset-bg {
   background: linear-gradient(#9198e5, #e66465);
 }
