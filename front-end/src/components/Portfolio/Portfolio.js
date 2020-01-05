@@ -1,11 +1,11 @@
 import React from 'react';
 import './Portfolio.css';
 
-let Portfolio = () => {
+let Portfolio = ({portfolioStyle}) => {
     return (
-        <div>
-            <section >
-                <h1> Portfolio</h1>
+        <div className={"portfolio-container " + portfolioStyle}>
+            <section>
+                <h1> Work Portfolio</h1>
                 <main className="pa3 pa5-ns">
                     <div className="pb3">
                         <h2> Cisco Systems, Software Engineer </h2>

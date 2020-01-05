@@ -1,0 +1,35 @@
+.portfolio-container {
+    padding: 100px;
+    margin-top: -20px;
+    display: block;
+    position: relative;
+    transition: 0.5s all;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.portfolio-green {
+    color: #e5d3c8;
+    background: #142a28;
+
+}
+
+.portfolio-purple {
+    background:#49254d;
+    color: #e5d3c8;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s linear;
+  }
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 2s, opacity 2s linear;
+}
+

@@ -11,9 +11,7 @@ body {
 
 .sky-bg {
   background: lightskyblue;
-  transition: .3s all linear;
 }
 .sunset-bg {
   background: linear-gradient(#9198e5, #e66465);
-  transition: .3s all linear;
 }

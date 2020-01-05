@@ -51,9 +51,9 @@ const particlesOptions = {
     }
   }
 
-let About = ({aboutBackground, particlesVisible}) => {
+let About = ({aboutStyle, particlesVisible}) => {
     return (
-        <div className={'about-container ' + aboutBackground}>
+        <div className={'about-container ' + aboutStyle}>
             <Particles className={'particles ' + particlesVisible} params={particlesOptions} />
             <section className = "about-content"> 
                 <h1> About Me </h1>
@@ -70,7 +70,9 @@ let About = ({aboutBackground, particlesVisible}) => {
                         <h2> Some Life Mottos </h2>
                         <p className="f4 lh-copy measure">
                             To get good: To end everyday knowing that I have learned something new or improved upon myself.
-                            To have fun while working and work on things I love. :D
+                        </p>
+                        <p className="f4 lh-copy measure">
+                          To have fun while working on things I love. :D
                         </p>
                     </div>
                     <div className="pb2">

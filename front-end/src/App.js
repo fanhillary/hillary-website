@@ -6,6 +6,7 @@ import About from './components/About/About.js';
 import Logo from './components/Logo/Logo.js';
 import Experience from './components/Experience/Experience.js';
 import Portfolio from './components/Portfolio/Portfolio.js';
+import ExperienceTile from './components/ExperienceTile/ExperienceTile';
 
 
 export default class App extends React.Component {
@@ -13,13 +14,14 @@ export default class App extends React.Component {
     super();
     this.body = React.createRef();
     this.state = {
-      aboutBackground: 'about-blue',
+      aboutStyle: 'about-blue',
       waveColor: 'blue',
       particlesVisible: 'particles-hidden',
-      experienceStyle: 'porfolio-black',
+      experienceStyle: 'experience-black',
       logoVisible: 'block',
       ifSunset: 'sky-bg',
       leafVisibility: 'hidden',
+      portfolioStyle: 'portfolio-green',
     }
     this.handleScroll = this.handleScroll.bind(this)
   }
@@ -53,31 +55,34 @@ export default class App extends React.Component {
       this.setState({ifSunset: 'sky-bg'});
       this.setState({waveColor: 'blue'});
       this.setState({logoVisible: 'block'});
-      this.setState({aboutBackground: 'about-blue'});
+      this.setState({aboutStyle: 'about-blue'});
     } else if (top > 250 && top <=650) { // before waves
       this.setState({ifSunset: 'sunset-bg'})
       this.setState({waveColor: 'blue'});
-      this.setState({aboutBackground: 'about-blue'});
+      this.setState({aboutStyle: 'about-blue'});
       this.setState({particlesVisible: 'particles-hidden'});
       this.setState({experienceStyle: 'experience-black'});
       this.setState({logoVisible: 'block'});
     } else if (top > 650 && top <=1500) { // after waves
       this.setState({waveColor: 'black'});
-      this.setState({aboutBackground: 'about-black'});
+      this.setState({aboutStyle: 'about-black'});
       this.setState({particlesVisible: 'particles-visible'});
       this.setState({experienceStyle: 'experience-black'});
       this.setState({logoVisible: 'none'});
       this.setState({leafVisibility: 'hidden'})
-    } else if (top > 1500) { // into work experience 
-      this.setState({aboutBackground: 'about-green'});
+    } else if (top > 1500 && top <=3100) { // into work experience 
+      this.setState({aboutStyle: 'about-green'});
       this.setState({experienceStyle: 'experience-green'});
       this.setState({leafVisibility: 'visible'})
-    } 
+      this.setState({portfolioStyle: 'portfolio-green'});
+    } else if (top > 3100) {
+      this.setState({experienceStyle: 'experience-purple'});
+      this.setState({portfolioStyle: 'portfolio-purple'});
+    }
   }
 
   render() {
     return (
-      // <div className = {this.state.ifSunset === "sunset"? "sunset-bg" : "sky-bg"}>
       <div className = {"app-container + " + this.state.ifSunset}>
         <Logo logoVisible={this.state.logoVisible}/>
         <Navigation/>
@@ -85,14 +90,15 @@ export default class App extends React.Component {
           <Home waveColor={this.state.waveColor} />
         </a>
         <a name="about">
-          <About particlesVisible={this.state.particlesVisible} aboutBackground={this.state.aboutBackground}/>
+          <About particlesVisible={this.state.particlesVisible} aboutStyle={this.state.aboutStyle}/>
         </a>
         <a name="experience">
           <Experience leafVisibility={this.state.leafVisibility} experienceStyle={this.state.experienceStyle}/>
         </a>
         <a name="portfolio">
-          <Portfolio/>
+          <Portfolio portfolioStyle={this.state.portfolioStyle}/>
         </a>
+        {/* <ExperienceTile/> */}
       </div>
     )}
 }
