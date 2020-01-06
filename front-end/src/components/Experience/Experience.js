@@ -49,7 +49,6 @@ let Experience = ({experienceStyle, leafVisibility}) => {
     
     let items = [];
     for (const [index,position] of positions.entries()) {
-        console.log(position);
         items.push(<ExperienceTile experience={position} key={index}/>);
     }
 

@@ -1,34 +1,45 @@
 .portfolio-card {
-    transition: 0.3s;
     width: 350px;
     height: 350px;
-    background: #F4F4F4;
-    transition: .2s all;
+    position: relative;
   }
+  
+.default-display {
+  transition: .2s ease;
+  width: 100%;
+  height:100%;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  background: #F4F4F4;
+}
 
 .portfolio-card:hover {
-  background: darkslategray;
+  cursor: pointer;
+}
+.portfolio-card:hover .default-display{
+  opacity: .2;
+}
+
+.portfolio-card:hover .overlay {
+  opacity: .7;
+}
+
+.overlay {
+  background: black;
   color: whitesmoke;
+  transition: .2s ease;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding: 20px;
 }
   
 /* Add rounded corners to the top left and the top right corner of the image */
-.icon {
-    border-radius: 5px 5px 0 0;
+.project-icon {
     width:50%;
-}
-
-/* Add some padding inside the card container */
-.content {
-    padding: 2px 16px;
-    text-align: center;
-    color: #142a28;
-}
-
-hr {
-  border: 0; 
-  height: 1px; 
-  background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
-  background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0); 
 }

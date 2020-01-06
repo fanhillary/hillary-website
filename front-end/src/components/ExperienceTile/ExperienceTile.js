@@ -2,11 +2,6 @@ import React from 'react';
 import './ExperienceTile.css';
 
 let ExperienceTile = ({experience}) => {
-    // const itemStyle = [
-    //     {PinkMemphis}, {PinkMemphisCounterpart}, {TealMemphis}, {TealMemphisCounterpart}
-    // 
-    console.log(experience['header'])
-    console.log(Object.keys(experience['header']));
     let header = Object.values(experience['header'])[0]
     return (
         
