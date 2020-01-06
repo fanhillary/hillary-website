@@ -47,11 +47,11 @@ let Experience = ({experienceStyle, leafVisibility}) => {
     ]
 
     
-    // let items = [];
-    // for (const [index,position] of positions.entries()) {
-    //     console.log(position);
-    //     items.push(<ExperienceTile experience={position} key={index}/>);
-    // }
+    let items = [];
+    for (const [index,position] of positions.entries()) {
+        console.log(position);
+        items.push(<ExperienceTile experience={position} key={index}/>);
+    }
 
 
     return (
@@ -68,10 +68,7 @@ let Experience = ({experienceStyle, leafVisibility}) => {
                 <div className="experience-content">
                     <h1 className="pb5"> Work Experience</h1>
                     <div className="flex flex-wrap justify-center tl">
-                        <ExperienceTile experience={positions[0]}/>
-                        <ExperienceTile experience={positions[1]}/>
-                        <ExperienceTile experience={positions[2]}/>
-                        <ExperienceTile experience={positions[3]}/>
+                        {items}
                     </div>
                 </div>
             </div>

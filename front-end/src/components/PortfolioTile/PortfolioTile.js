@@ -1,13 +1,11 @@
 import React from 'react';
 import './PortfolioTile.css';
-import TimeCapsule from './time-capsule.png'
+import TimeCapsuleIcon from './time-capsule-icon.png'
 
 let PortfolioTile = () => {
     return (
         <div className="portfolio-card">
-            <img src={TimeCapsule} alt="header"/>
-            <div className="content">
-            </div>
+            <img className="icon" src={TimeCapsuleIcon} alt="header"/>
         </div>
     )
 }

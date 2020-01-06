@@ -6,7 +6,6 @@ import About from './components/About/About.js';
 import Logo from './components/Logo/Logo.js';
 import Experience from './components/Experience/Experience.js';
 import Portfolio from './components/Portfolio/Portfolio.js';
-import PortfolioTile from './components/PortfolioTile/PortfolioTile.js';
 
 
 export default class App extends React.Component {
@@ -95,7 +94,6 @@ export default class App extends React.Component {
         <a name="portfolio">
           <Portfolio portfolioStyle={this.state.portfolioStyle}/>
         </a>
-        <PortfolioTile/>
       </div>
     )}
 }
