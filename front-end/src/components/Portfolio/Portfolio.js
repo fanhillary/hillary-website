@@ -78,7 +78,7 @@ let Portfolio = ({portfolioStyle}) => {
     return (
         <div className={"portfolio-container " + portfolioStyle}>
             <section>
-                <h1 className="pb6"> Portfolio</h1>
+                <h1 class="f1 lh-title pb6">Portfolio</h1>
                 <div>
                     <div className="flex flex-wrap justify-center">
                        {items}

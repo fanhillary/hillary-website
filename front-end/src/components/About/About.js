@@ -61,8 +61,8 @@ let About = ({aboutStyle, particlesVisible}) => {
         <div className={'about-container ' + aboutStyle}>
             <Particles className={'particles ' + particlesVisible} params={particlesOptions} />
             <section className = "about-content"> 
-                <h1> About Me </h1>
-                <main className="pa3 pa5-ns">
+              <h1 class="f1 lh-title pb4">About Me</h1>
+                <main className="pa5-ns">
                     <div className="pb2">
                         <h2> Hi! I'm Hillary, again. </h2>
                         <p className="f4 lh-copy measure">

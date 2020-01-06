@@ -59,14 +59,14 @@ let Experience = ({experienceStyle, leafVisibility}) => {
                 <img className="leaf right-leaf" src={rightLeaf} alt=""/>
                 <img className="leaf right-leaf-steep" src={rightLeafSteep} alt=""/>
                 <img className="leaf left-leaf-steep" src={leftLeafSteep} alt=""/>
-                <img className="leaf left-leaf" src={leftLeaf} alt=""/>
+                {/* <img className="leaf left-leaf" src={leftLeaf} alt=""/> */}
                 <img className="leaf tropical-leaf" src={tropicalLeaf} alt=""/>
-                <img className="leaf tropical-leaf-right" src={tropicalLeafRight} alt=""/>
+                {/* <img className="leaf tropical-leaf-right" src={tropicalLeafRight} alt=""/> */}
             </div>
             <div className="flex flex-wrap justify-center">
                 <div className="experience-content">
-                    <h1 className="pb5"> Work Experience</h1>
-                    <div className="flex flex-wrap justify-center tl">
+                    <h1 class="f1 lh-title pb5">Work Experience</h1>
+                    <div className="flex flex-wrap justify-center">
                         {items}
                     </div>
                 </div>
