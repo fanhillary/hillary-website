@@ -1,6 +1,6 @@
 import React from 'react';
 import './Portfolio.css';
-import PortfolioTile from '../PortfolioTile/PortfolioTile.js';
+import PortfolioTile from './PortfolioTile/PortfolioTile.js';
 import FaceRecognitionImage from './face-recognition.png';
 import TimeCapsuleImage from './time-capsule.png';
 import DailyChallengeImage from './daily-challenge.png';
@@ -32,6 +32,7 @@ let Portfolio = ({portfolioStyle}) => {
             name: 'Time Capsule Web Application',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {TimeCapsuleImage},
+            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
             sourceLink: 'https://github.com/fanhillary/time-capsule',
             demoLink: 'https://time-capsule-62e6a.firebaseapp.com/',
             tileColor: 'bg-moon-gray',
@@ -40,6 +41,7 @@ let Portfolio = ({portfolioStyle}) => {
             name: 'What To Eat Slack Command',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {WhatToEatImage},
+            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
             sourceLink: 'https://github.com/fanhillary/what-to-eat',
             tileColor: 'bg-light-gray',
         },
@@ -47,6 +49,7 @@ let Portfolio = ({portfolioStyle}) => {
             name: 'Triton Transit Android App',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {TritonTransitImage},
+            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
             sourceLink: 'https://github.com/fanhillary/TritonTransit',
             tileColor: 'bg-washed-blue',
         },
@@ -54,14 +57,16 @@ let Portfolio = ({portfolioStyle}) => {
             name: 'Flyering Robot',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {FlyeringRobotImage},
-            link: '',
+            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
+            demoLink: '',
             tileColor: 'bg-light-silver',
         },
         {
             name: 'Computer Literacy Initiative',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {ComputerLiteracyImage},
-            link: 'https://www.computerliteracyinitiative.org/the-guide-to-master-your-pc/',
+            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
+            demoLink: 'https://www.computerliteracyinitiative.org/the-guide-to-master-your-pc/',
             tileColor: 'bg-washed-red',
         }
     ]
@@ -73,9 +78,9 @@ let Portfolio = ({portfolioStyle}) => {
     return (
         <div className={"portfolio-container " + portfolioStyle}>
             <section>
-                <h1 className="pb6"> Work Experience</h1>
-                <div className="portfolio-content">
-                    <div className="flex flex-wrap justify-start tl">
+                <h1 className="pb6"> Portfolio</h1>
+                <div>
+                    <div className="flex flex-wrap justify-center">
                        {items}
                     </div>
                 </div>

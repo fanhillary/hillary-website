@@ -1,0 +1,49 @@
+.portfolio-card {
+    width: 350px;
+    height: 350px;
+    position: relative;
+  }
+  
+.default-display {
+  transition: .2s ease;
+  width: 100%;
+  height:100%;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  background: #F4F4F4;
+}
+
+.portfolio-card:hover {
+  cursor: pointer;
+}
+.portfolio-card:hover .default-display{
+  opacity: .2;
+}
+
+.portfolio-card:hover .overlay {
+  opacity: .7;
+}
+
+.overlay {
+  background: black;
+  color: whitesmoke;
+  transition: .2s ease;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding: 40px 10px 40px 10px;
+  
+}
+/* Add rounded corners to the top left and the top right corner of the image */
+.project-icon {
+    width:40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

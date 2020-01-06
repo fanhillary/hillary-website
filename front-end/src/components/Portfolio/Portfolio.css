@@ -9,9 +9,7 @@
     flex-direction: column;
     z-index: 100;
 }
-.portfolio-content {
-    width: 80%;
-}
+
 .portfolio-green {
     color: #e5d3c8;
     background: #142a28;

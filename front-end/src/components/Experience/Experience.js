@@ -6,7 +6,7 @@ import leftLeafSteep from './leaf-left-steep.png';
 import leftLeaf from './leaf-left.png';
 import tropicalLeafRight from './tropical-leaf-right.png';
 import tropicalLeaf from './tropical-leaf.png';
-import ExperienceTile from '../ExperienceTile/ExperienceTile.js';
+import ExperienceTile from './ExperienceTile/ExperienceTile.js';
 import PinkMemphis from './pink-memphis.png';
 import PinkMemphisCounterpart from './pink-memphis-counterpart.png';
 import TealMemphis from './teal-memphis.png';
