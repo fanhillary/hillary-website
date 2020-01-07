@@ -20,6 +20,7 @@ let Experience = ({experienceStyle, leafVisibility}) => {
             position: 'Software Engineer',
             firstPoint: 'Worked with Python, Angular, Docker, and MongoDB to build a natural language processing search engine.',
             secondPoint: 'Follow Agile methodologies with scrum meetings, retrospectives, code reviews, continuous integration.',
+            tags: ['Jenkins', 'Docker', 'MongoDB', 'Angular', 'Continuous Integration'],
             header: {PinkMemphis},
         },
         {
@@ -28,6 +29,7 @@ let Experience = ({experienceStyle, leafVisibility}) => {
             position: 'Software Engineer Intern',
             firstPoint: 'Used Angular 4 to build a Web Application that guides user to fix system dependency solutions',
             secondPoint: 'Designed UX and flow of app through iteration and mock-ups',
+            tags: ['Jenkins', 'Docker', 'MongoDB', 'Angular', 'Continuous Integration'],
             header: {TealMemphis},
         },
         {
@@ -36,12 +38,14 @@ let Experience = ({experienceStyle, leafVisibility}) => {
             position: 'Software Engineer Intern',
             firstPoint: 'Used Django/Python and PostgreSQL to create a Web Application for real-time interaction between professors and students in lecture halls',
             secondPoint: 'Documented Use Cases and Requirements with agile techniques',
+            tags: ['Jenkins', 'Docker', 'MongoDB', 'Angular', 'Continuous Integration'],
             header: {TealMemphisCounterpart},
         },
         {
             date: 'Graduated: June 2019',
             company: 'University of California, San Diego',
             position: 'Computer Science B.S.',
+            tags: ['Jenkins', 'Docker', 'MongoDB', 'Angular', 'Continuous Integration'],
             header: {PinkMemphisCounterpart},
         },
     ]

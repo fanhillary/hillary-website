@@ -26,7 +26,7 @@ let Portfolio = ({portfolioStyle}) => {
             sourceLink: 'https://github.com/fanhillary/daily-challenge',
             demoLink: 'https://daily-random-challenge.herokuapp.com/#/',
             tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
-            tileColor: 'bg-washed-red',
+            tileColor: 'DAD5EB',
         },
         {
             name: 'Time Capsule Web Application',
@@ -35,7 +35,7 @@ let Portfolio = ({portfolioStyle}) => {
             tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
             sourceLink: 'https://github.com/fanhillary/time-capsule',
             demoLink: 'https://time-capsule-62e6a.firebaseapp.com/',
-            tileColor: 'bg-moon-gray',
+            tileColor: 'bcb2db',
         },
         {
             name: 'What To Eat Slack Command',
@@ -51,7 +51,7 @@ let Portfolio = ({portfolioStyle}) => {
             image: {TritonTransitImage},
             tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
             sourceLink: 'https://github.com/fanhillary/TritonTransit',
-            tileColor: 'bg-washed-blue',
+            tileColor: 'e9e6f3',
         },
         {
             name: 'Flyering Robot',
@@ -59,7 +59,7 @@ let Portfolio = ({portfolioStyle}) => {
             image: {FlyeringRobotImage},
             tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
             demoLink: '',
-            tileColor: 'bg-light-silver',
+            tileColor: 'bcb2db',
         },
         {
             name: 'Computer Literacy Initiative',
@@ -67,7 +67,7 @@ let Portfolio = ({portfolioStyle}) => {
             image: {ComputerLiteracyImage},
             tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
             demoLink: 'https://www.computerliteracyinitiative.org/the-guide-to-master-your-pc/',
-            tileColor: 'bg-washed-red',
+            tileColor: 'DAD5EB',
         }
     ]
 

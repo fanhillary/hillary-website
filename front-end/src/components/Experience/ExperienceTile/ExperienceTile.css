@@ -9,10 +9,6 @@
     transition: .1s all;
   }
   
-/* .card:hover {
-    background: whitesmoke;
-    cursor: pointer;
-} */
 /* Add rounded corners to the top left and the top right corner of the image */
 img {
     border-radius: 5px 5px 0 0;
@@ -20,7 +16,7 @@ img {
 }
 
 /* Add some padding inside the card container */
-.content {
+.experience-content {
     padding: 2px 16px;
     text-align: center;
     color: #142a28;

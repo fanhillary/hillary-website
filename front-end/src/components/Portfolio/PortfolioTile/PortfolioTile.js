@@ -1,6 +1,6 @@
 import React from 'react';
 import './PortfolioTile.css';
-import SkillsTag from '../SkillsTag/SkillsTag';
+import SkillsTag from '../../SkillsTag/SkillsTag.js';
 
 let PortfolioTile = ({project}) => {
     let icon = Object.values(project['image'])[0]
