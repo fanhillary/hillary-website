@@ -5,10 +5,13 @@ import SkillsTag from '../../SkillsTag/SkillsTag.js';
 let ExperienceTile = ({experience}) => {
     let header = Object.values(experience['header'])[0]
 
-    let items = [];
-    for (const [index,skill] of experience['tags'].entries()) {
-        items.push(<SkillsTag skill={skill} key={index}/>);
+    let tags = [];
+    if (experience['tags']) {
+        for (const [index,skill] of experience['tags'].entries()) {
+            tags.push(<SkillsTag skill={skill} key={index}/>);
+        }
     }
+
     return (
         
         <div className="card">
@@ -26,7 +29,7 @@ let ExperienceTile = ({experience}) => {
                     {experience.secondPoint}
                 </p>
                 <div className="flex flex-wrap justify-center">
-                    {items}
+                    {tags}
                 </div>
             </div>
         </div>

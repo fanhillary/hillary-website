@@ -60,12 +60,12 @@ let About = ({aboutStyle, particlesVisible}) => {
     return (
         <div className={'about-container ' + aboutStyle}>
             <Particles className={'particles ' + particlesVisible} params={particlesOptions} />
-            <section className = "about-content"> 
-              <h1 class="f1 lh-title pb4">About Me</h1>
-                <main className="pa5-ns">
+            <h1 className="f1 lh-title pb3">About Me</h1>
+            <div className = "about-content"> 
+                <div className="pa5-ns">
                     <div className="pb2">
                         <h2> Hi! I'm Hillary, again. </h2>
-                        <p className="f4 lh-copy measure">
+                        <p className="f4 lh-copy">
                             I'm a full-stack developer.
                             I enjoy working on web applications, finding solutions to complex problems, and designing intuitive user experiences.
                             Some of my favorite technologies are ReactJS, Angular, Java, Python, and MongoDB. 
@@ -90,8 +90,8 @@ let About = ({aboutStyle, particlesVisible}) => {
                     <p className="f4 lh-copy measure"> spotify </p>
                     <p className="f4 lh-copy measure"> spotify </p>
                     <p className="f4 lh-copy measure"> spotify </p>
-                </main>
-            </section>
+                </div>
+            </div>
         </div>
     )
 }

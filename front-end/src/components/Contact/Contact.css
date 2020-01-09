@@ -1,0 +1,15 @@
+.contact-container {
+    margin-top: -10px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    position: relative;
+    transition: 0.5s all;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.contact-blue {
+    background: #15232b;
+}

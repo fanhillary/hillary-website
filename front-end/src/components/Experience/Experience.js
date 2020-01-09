@@ -18,18 +18,18 @@ let Experience = ({experienceStyle, leafVisibility}) => {
             date: 'August 2019 - Present',
             company: 'Cisco Systems',
             position: 'Software Engineer',
-            firstPoint: 'Worked with Python, Angular, Docker, and MongoDB to build a natural language processing search engine.',
-            secondPoint: 'Follow Agile methodologies with scrum meetings, retrospectives, code reviews, continuous integration.',
-            tags: ['Jenkins', 'Docker', 'MongoDB', 'Angular', 'Continuous Integration'],
+            firstPoint: 'Used Python to help transform the old web portal into a machine learning driven web application',
+            secondPoint: 'Built API and scripts to automate collection and processing of training data for natural language processing conversant tool',
+            tags: ['Python', 'Docker', 'MongoDB', 'JavaScript', 'Machine Learning', 'API'],
             header: {PinkMemphis},
         },
         {
             date: 'June 2017- April 2018',
             company: 'Teradata',
             position: 'Software Engineer Intern',
-            firstPoint: 'Used Angular 4 to build a Web Application that guides user to fix system dependency solutions',
-            secondPoint: 'Designed UX and flow of app through iteration and mock-ups',
-            tags: ['Jenkins', 'Docker', 'MongoDB', 'Angular', 'Continuous Integration'],
+            firstPoint: 'Used Angular 4 to build a Web Application that automates the 500+ page manual for solving complicated upgrade dependency issues with Teradata products',
+            secondPoint: 'Designed UX for the app through iteration, mock-ups, and user feedback',
+            tags: ['Angular', 'HTML/CSS', 'Docker & Kubernetes', 'UX Design'],
             header: {TealMemphis},
         },
         {
@@ -37,23 +37,22 @@ let Experience = ({experienceStyle, leafVisibility}) => {
             company: 'Mesh Education',
             position: 'Software Engineer Intern',
             firstPoint: 'Used Django/Python and PostgreSQL to create a Web Application for real-time interaction between professors and students in lecture halls',
-            secondPoint: 'Documented Use Cases and Requirements with agile techniques',
-            tags: ['Jenkins', 'Docker', 'MongoDB', 'Angular', 'Continuous Integration'],
+            secondPoint: 'Follow Agile methodologies with scrum meetings, retrospectives, code reviews, continuous integration.',
+            tags: ['Django/Python', 'PostgreSQL', 'Real-Time', 'Agile', 'SPA'],
             header: {TealMemphisCounterpart},
         },
         {
             date: 'Graduated: June 2019',
             company: 'University of California, San Diego',
             position: 'Computer Science B.S.',
-            tags: ['Jenkins', 'Docker', 'MongoDB', 'Angular', 'Continuous Integration'],
             header: {PinkMemphisCounterpart},
         },
     ]
 
     
-    let items = [];
+    let jobs = [];
     for (const [index,position] of positions.entries()) {
-        items.push(<ExperienceTile experience={position} key={index}/>);
+        jobs.push(<ExperienceTile experience={position} key={index}/>);
     }
 
 
@@ -68,10 +67,10 @@ let Experience = ({experienceStyle, leafVisibility}) => {
                 {/* <img className="leaf tropical-leaf-right" src={tropicalLeafRight} alt=""/> */}
             </div>
             <div className="flex flex-wrap justify-center">
+                <h1 class="f1 lh-title pb6">Work Experience</h1>
                 <div className="experience-content">
-                    <h1 class="f1 lh-title pb5">Work Experience</h1>
                     <div className="flex flex-wrap justify-center">
-                        {items}
+                        {jobs}
                     </div>
                 </div>
             </div>

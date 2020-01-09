@@ -16,7 +16,8 @@ let Portfolio = ({portfolioStyle}) => {
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {FaceRecognitionImage},
             sourceLink: 'https://github.com/fanhillary/face-recognition',
-            tags: ['JavaScript', 'React', 'API', 'Node.js', 'MongoDB', 'Express.js', 'HTML/CSS'],
+            demoLink: 'https://face-recognition-hifan.herokuapp.com',
+            tags: ['JavaScript', 'React', 'API', 'PostgreSQL', 'Node.js',  'Express.js', 'HTML/CSS'],
             tileColor: 'bg-near-white',
         },
         {
@@ -25,14 +26,14 @@ let Portfolio = ({portfolioStyle}) => {
             image: {DailyChallengeImage},
             sourceLink: 'https://github.com/fanhillary/daily-challenge',
             demoLink: 'https://daily-random-challenge.herokuapp.com/#/',
-            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
+            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js', 'Google Charts API'],
             tileColor: 'DAD5EB',
         },
         {
             name: 'Time Capsule Web Application',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {TimeCapsuleImage},
-            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
+            tags: ['React', 'Firebase', 'HTML/CSS', 'Prompt Generation', 'Node.js'],
             sourceLink: 'https://github.com/fanhillary/time-capsule',
             demoLink: 'https://time-capsule-62e6a.firebaseapp.com/',
             tileColor: 'bcb2db',
@@ -41,7 +42,7 @@ let Portfolio = ({portfolioStyle}) => {
             name: 'What To Eat Slack Command',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {WhatToEatImage},
-            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
+            tags: ['Yelp API', 'Conversational Bot', 'HTML/CSS', 'Express.js', 'Node.js'],
             sourceLink: 'https://github.com/fanhillary/what-to-eat',
             tileColor: 'bg-light-gray',
         },
@@ -49,7 +50,7 @@ let Portfolio = ({portfolioStyle}) => {
             name: 'Triton Transit Android App',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {TritonTransitImage},
-            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
+            tags: ['Android Studio', 'Java', 'XML', 'Google Map API', 'HTML/CSS'],
             sourceLink: 'https://github.com/fanhillary/TritonTransit',
             tileColor: 'e9e6f3',
         },
@@ -57,7 +58,7 @@ let Portfolio = ({portfolioStyle}) => {
             name: 'Flyering Robot',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {FlyeringRobotImage},
-            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
+            tags: ['Arduino', 'Java', 'XML'],
             demoLink: '',
             tileColor: 'bcb2db',
         },
@@ -65,7 +66,7 @@ let Portfolio = ({portfolioStyle}) => {
             name: 'Computer Literacy Initiative',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {ComputerLiteracyImage},
-            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js'],
+            tags: ['Writing', 'Publication'],
             demoLink: 'https://www.computerliteracyinitiative.org/the-guide-to-master-your-pc/',
             tileColor: 'DAD5EB',
         }
@@ -77,14 +78,14 @@ let Portfolio = ({portfolioStyle}) => {
     }
     return (
         <div className={"portfolio-container " + portfolioStyle}>
-            <section>
-                <h1 class="f1 lh-title pb6">Portfolio</h1>
+            <h1 class="f1 lh-title pb6">Portfolio</h1>
+            <div>
                 <div>
                     <div className="flex flex-wrap justify-center">
                        {items}
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
     )
 }
