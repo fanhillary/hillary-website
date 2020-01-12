@@ -18,10 +18,8 @@ let ExperienceTile = ({experience}) => {
             <img src={header} alt="header"/>
             <div className="experience-content">
                 <p className="f6 lh-copy measure"> {experience['date']} </p>
-                <hr></hr>
                 <h1> {experience.company} </h1>
                 <h3> {experience.position} </h3>
-                <hr></hr>
                 <p className="point f5 lh-copy measure">
                     {experience.firstPoint}
                 </p>

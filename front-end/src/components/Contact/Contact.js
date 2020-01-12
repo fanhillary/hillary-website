@@ -3,7 +3,7 @@ import './Contact.css';
 
 let Contact = ({contactStyle}) => {
     return (
-        <div className={"contact-container " + contactStyle}>
+        <div className={"container contact-container " + contactStyle}>
             <h1 className="f1 lh-title pb5">Contact Me</h1>
             <form className="mb5"> 
                 <div className="round-input relative" data-validate="Please enter your name">

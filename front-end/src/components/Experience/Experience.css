@@ -1,15 +1,6 @@
-.experience-container {
-    padding: 100px 50px 200px 50px;
-    margin-top: -20px;
-    position: relative;
-    transition: 0.5s all;
-    z-index: 100;
-}
-
 .experience-green {
     color: #e5d3c8;
     background: #142a28;
-
 }
 
 .experience-black {

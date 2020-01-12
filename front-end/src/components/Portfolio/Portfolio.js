@@ -77,7 +77,7 @@ let Portfolio = ({portfolioStyle}) => {
         items.push(<PortfolioTile project={project} key={index}/>);
     }
     return (
-        <div className={"portfolio-container " + portfolioStyle}>
+        <div className={"container " + portfolioStyle}>
             <h1 className="f1 lh-title pb6">Portfolio</h1>
             <div>
                 <div>

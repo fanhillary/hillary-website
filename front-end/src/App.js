@@ -75,12 +75,12 @@ export default class App extends React.Component {
       this.setState({leafVisibility: 'visible'});
       this.setState({logoVisible: 'none'});
       this.setState({skillsStyle: 'skills-green'});
-    } else if (top > 2800 & top <= 3800) { // into Skills
+    } else if (top > 2800 & top <= 3900) { // into Skills
       this.setState({experienceStyle: 'experience-purple'});
       this.setState({skillsStyle: 'skills-purple'});
       this.setState({portfolioStyle: 'portfolio-purple'})
       this.setState({logoVisible: 'none'});
-    } else if (top > 3800 && top <= 5000) {// into portfolio 
+    } else if (top > 3900 && top <= 5000) {// into portfolio 
       this.setState({skillsStyle: 'skills-lavendar'});
       this.setState({portfolioStyle: 'portfolio-lavendar'});
       this.setState({contactStyle: 'contact-lavendar'});

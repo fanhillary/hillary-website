@@ -4,7 +4,7 @@ import './Skills.css';
 let Skills = ({skillsStyle}) => {
    
     return (
-        <div className={"skills-container " + skillsStyle}>
+        <div className={"container " + skillsStyle}>
             <h1 className="f1 lh-title pb6">Skills</h1>
             <div>
                 <div>

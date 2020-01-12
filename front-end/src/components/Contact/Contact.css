@@ -1,13 +1,5 @@
 .contact-container {
-    margin-top: -10px;
     padding: 100px 0 20px 0;
-    position: relative;
-    display: flex;
-    align-items: center;
-    transition: 0.5s all;
-    flex-direction: column;
-    z-index: 10;
-    text-align: center;
 }
 
 .contact-lavendar {

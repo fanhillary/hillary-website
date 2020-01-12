@@ -57,7 +57,7 @@ let Experience = ({experienceStyle, leafVisibility}) => {
 
 
     return (
-        <div className={"experience-container " + experienceStyle}>
+        <div className={"container " + experienceStyle}>
             <div className = {"leaf-container " + leafVisibility}>
                 <img className="leaf right-leaf" src={rightLeaf} alt=""/>
                 <img className="leaf right-leaf-steep" src={rightLeafSteep} alt=""/>
