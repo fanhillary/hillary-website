@@ -22,16 +22,16 @@ let Portfolio = ({portfolioStyle}) => {
         },
         {
             name: 'Daily Challenge Web App',
-            description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
+            description: 'SPA application that gives user a randomly generated challenge everyday and fun analytics to track progress',
             image: {DailyChallengeImage},
             sourceLink: 'https://github.com/fanhillary/daily-challenge',
             demoLink: 'https://daily-random-challenge.herokuapp.com/#/',
-            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js', 'Google Charts API'],
+            tags: ['React', 'SPA', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js', 'Google Charts API'],
             tileColor: 'DAD5EB',
         },
         {
             name: 'Time Capsule Web App',
-            description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
+            description: 'A diary that gives you a new prompt every day and displays your previous year\'s responses',
             image: {TimeCapsuleImage},
             tags: ['React', 'Firebase', 'HTML/CSS', 'Prompt Generation', 'Node.js'],
             sourceLink: 'https://github.com/fanhillary/time-capsule',
@@ -40,7 +40,7 @@ let Portfolio = ({portfolioStyle}) => {
         },
         {
             name: 'What To Eat Slack Command',
-            description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
+            description: 'Slack Messaging App slash command that displays three random restaurant options in the provided area',
             image: {WhatToEatImage},
             tags: ['Yelp API', 'Conversational Bot', 'HTML/CSS', 'Express.js', 'Node.js'],
             sourceLink: 'https://github.com/fanhillary/what-to-eat',
@@ -48,7 +48,7 @@ let Portfolio = ({portfolioStyle}) => {
         },
         {
             name: 'Triton Transit Android App',
-            description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
+            description: 'Helps UCSD students by displaying accurate arrival times, real-time routes of bus lines, and nearby bus stops',
             image: {TritonTransitImage},
             tags: ['Android Studio', 'Java', 'XML', 'Google Map API', 'HTML/CSS'],
             sourceLink: 'https://github.com/fanhillary/TritonTransit',
@@ -56,7 +56,7 @@ let Portfolio = ({portfolioStyle}) => {
         },
         {
             name: 'Flyering Robot',
-            description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
+            description: 'A bluetooth-controlled arduino robot that helped my club organization flyer posters and attract newcomers during recruiting week',
             image: {FlyeringRobotImage},
             tags: ['Arduino', 'Java', 'XML'],
             demoLink: '',
@@ -64,7 +64,7 @@ let Portfolio = ({portfolioStyle}) => {
         },
         {
             name: 'Computer Literacy Initiative',
-            description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
+            description: 'Co-author of a guide that teaches all the necessary skills on a PC. We used this curriculum to hold classes for the elderly and children.',
             image: {ComputerLiteracyImage},
             tags: ['Writing', 'Publication'],
             demoLink: 'https://www.computerliteracyinitiative.org/the-guide-to-master-your-pc/',
