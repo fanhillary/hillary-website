@@ -32,7 +32,7 @@ let Contact = ({contactStyle}) => {
                     <span className="f6 ml3 pr2">LinkedIn</span>
                 </a>
             </div>
-            <div className="mt4"> 
+            <div className="mt2"> 
                 <p> "Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning." -- Albert Einstein </p>
             </div>
         </div>

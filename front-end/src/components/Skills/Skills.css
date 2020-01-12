@@ -4,7 +4,7 @@
 }
 .skills-purple {
     background: #281c3c;
-    color: #e5d3c8;
+    color: #d1d5e9;
 }
 .skills-lavendar {
     background: #8e75bc;
@@ -21,4 +21,5 @@
 
 .skill-card {
     height: 500px;
+    background-color: #e9d1d6;
 }

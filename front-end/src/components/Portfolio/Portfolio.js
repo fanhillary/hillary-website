@@ -17,7 +17,7 @@ let Portfolio = ({portfolioStyle}) => {
             image: {FaceRecognitionImage},
             sourceLink: 'https://github.com/fanhillary/face-recognition',
             demoLink: 'https://face-recognition-hifan.herokuapp.com',
-            tags: ['JavaScript', 'React', 'API', 'PostgreSQL', 'Node.js',  'Express.js', 'HTML/CSS'],
+            tags: ['JavaScript', 'React', 'PostgreSQL', 'Node.js',  'Express.js'],
             tileColor: 'bg-near-white',
         },
         {
@@ -26,7 +26,7 @@ let Portfolio = ({portfolioStyle}) => {
             image: {DailyChallengeImage},
             sourceLink: 'https://github.com/fanhillary/daily-challenge',
             demoLink: 'https://daily-random-challenge.herokuapp.com/#/',
-            tags: ['React', 'SPA', 'Firebase', 'HTML/CSS', 'Heroku', 'Node.js', 'Google Charts API'],
+            tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Google Charts API'],
             tileColor: 'DAD5EB',
         },
         {
@@ -58,7 +58,7 @@ let Portfolio = ({portfolioStyle}) => {
             name: 'Flyering Robot',
             description: 'A bluetooth-controlled arduino robot that helped my club organization flyer posters and attract newcomers during recruiting week',
             image: {FlyeringRobotImage},
-            tags: ['Arduino', 'Java', 'XML'],
+            tags: ['Arduino', 'Java', 'XML', 'Project Management'],
             demoLink: '',
             tileColor: 'bcb2db',
         },
@@ -66,7 +66,7 @@ let Portfolio = ({portfolioStyle}) => {
             name: 'Computer Literacy Initiative',
             description: 'Co-author of a guide that teaches all the necessary skills on a PC. We used this curriculum to hold classes for the elderly and children.',
             image: {ComputerLiteracyImage},
-            tags: ['Writing', 'Publication'],
+            tags: ['Writing', 'Publication', 'Tutoring', 'Photoshop'],
             demoLink: 'https://www.computerliteracyinitiative.org/the-guide-to-master-your-pc/',
             tileColor: 'DAD5EB',
         }
