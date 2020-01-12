@@ -1,18 +1,18 @@
 .contact-container {
     margin-top: -10px;
-    padding: 100px 0 100px 0;
+    padding: 100px 0 20px 0;
     position: relative;
-    transition: 0.5s all;
     display: flex;
     align-items: center;
+    transition: 0.5s all;
     flex-direction: column;
     z-index: 10;
     text-align: center;
 }
 
-.contact-purple {
-    background: #281D3C;
-    color: #e5d3c8;
+.contact-lavendar {
+    background: #8e75bc;
+    color: #403866;
 }
 .contact-white {
     background: #F2F2F2;
@@ -59,6 +59,6 @@ textarea {
 }
 
 .form-button {
-    display: table-cell;
-    vertical-align: middle;
+    line-height: 2;
+    font-weight: bold;
 }

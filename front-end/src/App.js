@@ -7,6 +7,7 @@ import Logo from './components/Logo/Logo.js';
 import Experience from './components/Experience/Experience.js';
 import Portfolio from './components/Portfolio/Portfolio.js';
 import Contact from './components/Contact/Contact.js';
+import Skills from './components/Skills/Skills.js';
 
 export default class App extends React.Component {
   constructor() {
@@ -19,8 +20,9 @@ export default class App extends React.Component {
       experienceStyle: 'experience-black',
       logoVisible: 'block',
       leafVisibility: 'hidden',
-      portfolioStyle: 'portfolio-green',
-      contactStyle: 'contact-purple'
+      portfolioStyle: 'portfolio-purple',
+      contactStyle: 'contact-lavendar',
+      skillsStyle: 'skills-green'
     }
     this.handleScroll = this.handleScroll.bind(this)
   }
@@ -72,15 +74,20 @@ export default class App extends React.Component {
       this.setState({experienceStyle: 'experience-green'});
       this.setState({leafVisibility: 'visible'});
       this.setState({logoVisible: 'none'});
-      this.setState({portfolioStyle: 'portfolio-green'});
-    } else if (top > 2800 & top <= 4000) { // into porfolio
+      this.setState({skillsStyle: 'skills-green'});
+    } else if (top > 2800 & top <= 3800) { // into Skills
       this.setState({experienceStyle: 'experience-purple'});
-      this.setState({portfolioStyle: 'portfolio-purple'});
-      this.setState({contactStyle: 'contact-purple'})
+      this.setState({skillsStyle: 'skills-purple'});
+      this.setState({portfolioStyle: 'portfolio-purple'})
       this.setState({logoVisible: 'none'});
-    } else if (top > 4000) {
+    } else if (top > 3800 && top <= 5000) {// into portfolio 
+      this.setState({skillsStyle: 'skills-lavendar'});
+      this.setState({portfolioStyle: 'portfolio-lavendar'});
+      this.setState({contactStyle: 'contact-lavendar'});
+      this.setState({logoVisible: 'none'});
+    } else if (top > 5000) {
+      this.setState({contactStyle: 'contact-white'});
       this.setState({portfolioStyle: 'portfolio-white'});
-      this.setState({contactStyle: 'contact-white'})
       this.setState({logoVisible: 'none'});
     }
   }
@@ -98,6 +105,9 @@ export default class App extends React.Component {
         </a>
         <a name="experience">
           <Experience leafVisibility={this.state.leafVisibility} experienceStyle={this.state.experienceStyle}/>
+        </a>
+        <a name="skills">
+          <Skills skillsStyle= {this.state.skillsStyle}/>
         </a>
         <a name="portfolio">
           <Portfolio portfolioStyle={this.state.portfolioStyle}/>

@@ -1,4 +1,4 @@
-.portfolio-container {
+.skills-container {
     padding: 100px 0 200px 0;
     margin-top: -20px;
     display: block;
@@ -10,28 +10,19 @@
     z-index: 100;
 }
 
-.portfolio-purple {
+.skills-green {
+    color: #e5d3c8;
+    background: #142a28;
+}
+.skills-purple {
     background: #281c3c;
     color: #e5d3c8;
 }
-
-.portfolio-lavendar {
+.skills-lavendar {
     background: #8e75bc;
-}
-
-.portfolio-white {
-    background: #F2F2F2;
     color: #403866;
 }
-.visible {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 2s linear;
-  }
 
-.hidden {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s 2s, opacity 2s linear;
+.skills-white {
+    background: #F2F2F2;
 }
-
