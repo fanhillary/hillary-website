@@ -62,7 +62,7 @@ let About = ({aboutStyle, particlesVisible}) => {
             <Particles className={'particles ' + particlesVisible} params={particlesOptions} />
             <h1 className="f1 lh-title pb3">About Me</h1>
             <div className = "about-content"> 
-                <div className="pa5-ns">
+                <div className="pa5-ns tc">
                     <div className="pb2">
                         <h2> Hi! I'm Hillary, again. </h2>
                         <p className="f4 lh-copy">
@@ -73,23 +73,23 @@ let About = ({aboutStyle, particlesVisible}) => {
                     </div>
                     <div className="pb2">
                         <h2> Some Life Mottos </h2>
-                        <p className="f4 lh-copy measure">
+                        <p className="f4 lh-copy">
                             To get good: To end everyday knowing that I have learned something new or improved upon myself.
                         </p>
-                        <p className="f4 lh-copy measure">
+                        <p className="f4 lh-copy">
                           To have fun while working on things I love. :D
                         </p>
                     </div>
                     <div className="pb2">
                         <h2> I love: </h2>
-                        <p className="f4 lh-copy measure">
+                        <p className="f4 lh-copy">
                             Late night walks in the city, finding hidden rooftops to view stars, and sharing music I love.
                         </p>
                     </div>
-                    <p className="f4 lh-copy measure">Here's what I'm listening to right now:</p> 
-                    <p className="f4 lh-copy measure"> spotify </p>
-                    <p className="f4 lh-copy measure"> spotify </p>
-                    <p className="f4 lh-copy measure"> spotify </p>
+                    <p className="f4 lh-copy">Here's what I'm listening to right now:</p> 
+                    <p className="f4 lh-copy"> spotify </p>
+                    <p className="f4 lh-copy"> spotify </p>
+                    <p className="f4 lh-copy"> spotify </p>
                 </div>
             </div>
         </div>

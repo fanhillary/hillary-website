@@ -7,10 +7,10 @@ let Home = ({waveColor}) => {
                 <div className = "title">
                     <h1> Hey! I'm Hillary. </h1>
                     <h2> I'm a developer and a nature lover. </h2>
-                    <div>
-                        <a className="title-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 mr2 dib near-white" href="#0">Resume</a>
-                        <a className="title-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 dib near-white" href="#0">Contact</a>
-                    </div>
+                </div>
+                <div>
+                    <a className="title-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 mr2 dib near-white" href="#0">Resume</a>
+                    <a className="title-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 dib near-white" href="#0">Contact</a>
                 </div>
                 <svg className="editorial"
                     viewBox="0 24 150 28"

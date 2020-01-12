@@ -22,10 +22,10 @@ let ExperienceTile = ({experience}) => {
                 <h1> {experience.company} </h1>
                 <h3> {experience.position} </h3>
                 <hr></hr>
-                <p className="f5 lh-copy measure">
+                <p className="point f5 lh-copy measure">
                     {experience.firstPoint}
                 </p>
-                <p className="f5 lh-copy measure">
+                <p className="point f5 lh-copy measure">
                     {experience.secondPoint}
                 </p>
                 <div className="flex flex-wrap justify-center">

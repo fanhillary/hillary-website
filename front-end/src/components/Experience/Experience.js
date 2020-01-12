@@ -27,7 +27,7 @@ let Experience = ({experienceStyle, leafVisibility}) => {
             date: 'June 2017- April 2018',
             company: 'Teradata',
             position: 'Software Engineer Intern',
-            firstPoint: 'Used Angular 4 to build a Web Application that automates the 500+ page manual for solving complicated upgrade dependency issues with Teradata products',
+            firstPoint: 'Used Angular 4 to build a Web Application that automated a 500 page manual for solving complicated upgrade dependency issues with Teradata products',
             secondPoint: 'Designed UX for the app through iteration, mock-ups, and user feedback',
             tags: ['Angular', 'HTML/CSS', 'Docker & Kubernetes', 'UX Design'],
             header: {TealMemphis},

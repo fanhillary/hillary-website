@@ -35,13 +35,13 @@
   padding: 40px 10px 40px 10px;
   
 }
-/* Add rounded corners to the top left and the top right corner of the image */
+
 .project-icon {
     width:40%;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -60%);
 }
 
 .DAD5EB {
@@ -53,5 +53,5 @@
 }
 
 .e9e6f3 {
-  backgroun: #e9e6f3;
+  background: #e9e6f3;
 }

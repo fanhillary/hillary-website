@@ -6,7 +6,7 @@ import About from './components/About/About.js';
 import Logo from './components/Logo/Logo.js';
 import Experience from './components/Experience/Experience.js';
 import Portfolio from './components/Portfolio/Portfolio.js';
-
+import Contact from './components/Contact/Contact.js';
 
 export default class App extends React.Component {
   constructor() {
@@ -20,6 +20,7 @@ export default class App extends React.Component {
       logoVisible: 'block',
       leafVisibility: 'hidden',
       portfolioStyle: 'portfolio-green',
+      contactStyle: 'contact-purple'
     }
     this.handleScroll = this.handleScroll.bind(this)
   }
@@ -72,9 +73,14 @@ export default class App extends React.Component {
       this.setState({leafVisibility: 'visible'});
       this.setState({logoVisible: 'none'});
       this.setState({portfolioStyle: 'portfolio-green'});
-    } else if (top > 2800) { // into porfolio
+    } else if (top > 2800 & top <= 4000) { // into porfolio
       this.setState({experienceStyle: 'experience-purple'});
       this.setState({portfolioStyle: 'portfolio-purple'});
+      this.setState({contactStyle: 'contact-purple'})
+      this.setState({logoVisible: 'none'});
+    } else if (top > 4000) {
+      this.setState({portfolioStyle: 'portfolio-white'});
+      this.setState({contactStyle: 'contact-white'})
       this.setState({logoVisible: 'none'});
     }
   }
@@ -95,6 +101,9 @@ export default class App extends React.Component {
         </a>
         <a name="portfolio">
           <Portfolio portfolioStyle={this.state.portfolioStyle}/>
+        </a>
+        <a name="contact">
+          <Contact contactStyle={this.state.contactStyle}/>
         </a>
       </div>
     )}

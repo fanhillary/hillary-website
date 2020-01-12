@@ -12,7 +12,7 @@ let Portfolio = ({portfolioStyle}) => {
     
     const projects = [
         {
-            name: 'Face Recognition Web Application',
+            name: 'Face Recognition Web App',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {FaceRecognitionImage},
             sourceLink: 'https://github.com/fanhillary/face-recognition',
@@ -21,7 +21,7 @@ let Portfolio = ({portfolioStyle}) => {
             tileColor: 'bg-near-white',
         },
         {
-            name: 'Daily Challenge Web Application',
+            name: 'Daily Challenge Web App',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {DailyChallengeImage},
             sourceLink: 'https://github.com/fanhillary/daily-challenge',
@@ -30,7 +30,7 @@ let Portfolio = ({portfolioStyle}) => {
             tileColor: 'DAD5EB',
         },
         {
-            name: 'Time Capsule Web Application',
+            name: 'Time Capsule Web App',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
             image: {TimeCapsuleImage},
             tags: ['React', 'Firebase', 'HTML/CSS', 'Prompt Generation', 'Node.js'],
@@ -78,7 +78,7 @@ let Portfolio = ({portfolioStyle}) => {
     }
     return (
         <div className={"portfolio-container " + portfolioStyle}>
-            <h1 class="f1 lh-title pb6">Portfolio</h1>
+            <h1 className="f1 lh-title pb6">Portfolio</h1>
             <div>
                 <div>
                     <div className="flex flex-wrap justify-center">

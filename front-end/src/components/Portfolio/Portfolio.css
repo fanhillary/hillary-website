@@ -1,5 +1,5 @@
 .portfolio-container {
-    padding: 100px;
+    padding: 100px 0 200px 0;
     margin-top: -20px;
     display: block;
     position: relative;
@@ -21,6 +21,9 @@
     color: #e5d3c8;
 }
 
+.portfolio-white {
+    background: #F2F2F2;
+}
 .visible {
     visibility: visible;
     opacity: 1;
