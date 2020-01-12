@@ -14,3 +14,11 @@
 .skills-white {
     background: #F2F2F2;
 }
+
+.card img {
+    opacity: 80%;
+}
+
+.skill-card {
+    height: 500px;
+}

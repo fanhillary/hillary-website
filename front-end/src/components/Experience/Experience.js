@@ -29,7 +29,7 @@ let Experience = ({experienceStyle, leafVisibility}) => {
             position: 'Software Engineer Intern',
             firstPoint: 'Used Angular 4 to build a Web Application that automated a 500 page manual for solving complicated upgrade dependency issues with Teradata products',
             secondPoint: 'Designed UX for the app through iteration, mock-ups, and user feedback',
-            tags: ['Angular', 'HTML/CSS', 'Docker & Kubernetes', 'UX Design'],
+            tags: ['Angular', 'HTML/CSS', 'Docker', 'Selenium', 'UX Design'],
             header: {TealMemphis},
         },
         {
