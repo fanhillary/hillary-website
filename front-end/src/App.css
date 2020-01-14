@@ -12,7 +12,6 @@ body {
 
 .container {
   padding: 100px 50px 200px 50px;
-  margin-top: -20px;
   position: relative;
   display: flex;
   align-items: center;

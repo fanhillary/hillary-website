@@ -24,19 +24,38 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: 100px;
   margin: 0;
 }
 
-.title {
-  width: 1000px;
-  color: white;
-  font-size: 3.5vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  margin-bottom: 30px;
+/* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 700px) {
+  .title {
+    width: 70%;
+    color: white;
+    font-size: 150%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 30px;
+    text-align: center;
+    padding-top: 25px;
+
+  }
+}
+@media screen and (min-width: 700px) {
+  .title {
+    width: 1000px;
+    color: white;
+    font-size: 3.5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 30px;
+    padding-top: 100px;
+  }
+  
 }
 
 .editorial {

@@ -22,12 +22,20 @@ export default class App extends React.Component {
       leafVisibility: 'hidden',
       portfolioStyle: 'portfolio-purple',
       contactStyle: 'contact-lavendar',
-      skillsStyle: 'skills-green'
+      skillsStyle: 'skills-green',
+      width: 0,
+      height: 0
     }
     this.handleScroll = this.handleScroll.bind(this)
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }  
 
   componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
     this.handleScroll();
     window.addEventListener('scroll', this.handleScroll);
     window.setInterval(this.alternateOpacityChevron, 500);
@@ -35,6 +43,7 @@ export default class App extends React.Component {
   
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.updateWindowDimensions);
   }
 
 
@@ -96,8 +105,12 @@ export default class App extends React.Component {
     return (
       <div className = "app-container">
         <a name="home">
-          <Logo logoVisible={this.state.logoVisible}/>
-          <Navigation/>
+          {this.state.width > 400 ?
+            <div>
+              {/* <Logo logoVisible={this.state.logoVisible}/> */}
+              <Navigation/>
+            </div>
+            : ""}
           <Home waveColor={this.state.waveColor} />
         </a>
         <a name="about">

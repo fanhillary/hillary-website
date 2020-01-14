@@ -5,8 +5,11 @@ let Home = ({waveColor}) => {
         <div className = "home-container">
             <div className="flex-box">
                 <div className = "title">
-                    <h1> Hey! I'm Hillary. </h1>
-                    <h2> I'm a developer and a nature lover. </h2>
+                    <div className = "flex flex-wrap justify-center">
+                        <h1> Hey! </h1>
+                        <h1 className="pl3"> I'm Hillary. </h1>
+                    </div>
+                    <h2> A developer and nature lover </h2>
                 </div>
                 <div>
                     <a className="title-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 mr2 dib near-white" href="#0">Resume</a>

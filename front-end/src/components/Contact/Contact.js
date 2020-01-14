@@ -92,14 +92,14 @@ export default class Contact extends React.Component {
                     </div>
                     {/* <div className="flex justify-center pt5">
                         <a onClick={this.sendMail} className="form-button f4 grow no-underline br-pill ph4 pv2 dib white bg-purple">
-                            <i className="material-icons mr3">send</i>
+                            
                             Submit
                         </a>
                     </div> */}
                     <div className="flex justify-center">
                         <div className="main">
                             <div className="button">
-                                <div className="text">Submit</div>
+                                <div className="text flex"> <i className="material-icons mr3">send</i> Submit</div>
                             </div>
                             <div className="progress-bar"></div>
                             <svg x="0px" y="0px"
@@ -108,8 +108,6 @@ export default class Contact extends React.Component {
                             </svg>
                         </div>
                     </div>
-
-
                 </form>
                 <div className="flex flex-wrap mb2">
                     <a className="no-underline near-white bg-animate bg-near-black hover-bg-gray inline-flex items-center ma2 tc br2 pa2" href="https://github.com/fanhillary" target="_blank" title="GitHub">
