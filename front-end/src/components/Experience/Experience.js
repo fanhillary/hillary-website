@@ -57,15 +57,15 @@ let Experience = ({experienceStyle, leafVisibility}) => {
 
 
     return (
-        <div className={"container " + experienceStyle}>
-            <div className = {"leaf-container " + leafVisibility}>
+        <div className="container">
+            {/* <div className = {"leaf-container " + leafVisibility}>
                 <img className="leaf right-leaf" src={rightLeaf} alt=""/>
                 <img className="leaf right-leaf-steep" src={rightLeafSteep} alt=""/>
                 <img className="leaf left-leaf-steep" src={leftLeafSteep} alt=""/>
-                {/* <img className="leaf left-leaf" src={leftLeaf} alt=""/> */}
+                <img className="leaf left-leaf" src={leftLeaf} alt=""/>
                 <img className="leaf tropical-leaf" src={tropicalLeaf} alt=""/>
-                {/* <img className="leaf tropical-leaf-right" src={tropicalLeafRight} alt=""/> */}
-            </div>
+                <img className="leaf tropical-leaf-right" src={tropicalLeafRight} alt=""/>
+            </div> */}
             <div className="ml4 flex flex-wrap justify-center">
                 <h1 class="f1 lh-title pb6">Work Experience</h1>
                 <div className="experience-content">

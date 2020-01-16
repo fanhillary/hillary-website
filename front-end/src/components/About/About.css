@@ -13,9 +13,17 @@
     color: #e5d3c8;
 }
 
-.about-content {
-    padding-top: 50px;
+@media screen and (max-width: 1000px) {
+  .about-content {
+    width: 80%
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  .about-content {
     width: 60%;
+    padding-top: 50px;
+  }
 }
 
 .particles {

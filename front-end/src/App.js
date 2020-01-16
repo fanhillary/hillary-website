@@ -8,7 +8,7 @@ import Experience from './components/Experience/Experience.js';
 import Portfolio from './components/Portfolio/Portfolio.js';
 import Contact from './components/Contact/Contact.js';
 import Skills from './components/Skills/Skills.js';
-
+import anime from 'animejs/lib/anime.es.js';
 export default class App extends React.Component {
   constructor() {
     super();
@@ -31,6 +31,7 @@ export default class App extends React.Component {
   }
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
+    console.log(this.state.width);
   }  
 
   componentDidMount() {
@@ -39,6 +40,180 @@ export default class App extends React.Component {
     this.handleScroll();
     window.addEventListener('scroll', this.handleScroll);
     window.setInterval(this.alternateOpacityChevron, 500);
+    this.colorAnimate();
+  }
+
+  colorAnimate() {
+    var c = document.getElementById("c");
+    var ctx = c.getContext("2d");
+    var cH;
+    var cW;
+    var bgColor = "#87cefa";
+    var animations = [];
+    var circles = [];
+
+    var colorPicker = (function() {
+      var colors = ["#ff86aa", "#FFBE53", "#87cefa", "#282741"];
+      var index = 0;
+      function next() {
+        index = index++ < colors.length-1 ? index : 0;
+        return colors[index];
+      }
+      function current() {
+        return colors[index]
+      }
+      return {
+        next: next,
+        current: current
+      }
+    })();
+
+    function removeAnimation(animation) {
+      var index = animations.indexOf(animation);
+      if (index > -1) animations.splice(index, 1);
+    }
+
+    function calcPageFillRadius(x, y) {
+      var l = Math.max(x - 0, cW - x);
+      var h = Math.max(y - 0, cH - y);
+      return Math.sqrt(Math.pow(l, 2) + Math.pow(h, 2));
+    }
+
+    function addClickListeners() {
+      document.addEventListener("touchstart", handleEvent);
+      document.addEventListener("mousedown", handleEvent);
+    };
+
+    function handleEvent(e) {
+        if (e.touches) { 
+          e.preventDefault();
+          e = e.touches[0];
+        }
+        var currentColor = colorPicker.current();
+        var nextColor = colorPicker.next();
+        var targetR = calcPageFillRadius(e.pageX, e.pageY);
+        var rippleSize = Math.min(200, (cW * .4));
+        var minCoverDuration = 750;
+        
+        var pageFill = new Circle({
+          x: e.pageX,
+          y: e.pageY,
+          r: 0,
+          fill: nextColor
+        });
+        var fillAnimation = anime({
+          targets: pageFill,
+          r: targetR,
+          duration:  Math.max(targetR / 2 , minCoverDuration ),
+          easing: "easeOutQuart",
+          complete: function(){
+            removeAnimation(fillAnimation);
+            bgColor = pageFill.fill;
+          }
+        });
+        
+        var ripple = new Circle({
+          x: e.pageX,
+          y: e.pageY,
+          r: 0,
+          fill: currentColor,
+          stroke: {
+            width: 3,
+            color: currentColor
+          },
+          opacity: 1
+        });
+        var rippleAnimation = anime({
+          targets: ripple,
+          r: rippleSize,
+          opacity: 0,
+          easing: "easeOutExpo",
+          duration: 1100,
+          complete: removeAnimation
+        });
+        
+        var particles = [];
+        for (var i=0; i<32; i++) {
+          var particle = new Circle({
+            x: e.pageX,
+            y: e.pageY,
+            fill: currentColor,
+            r: anime.random(24, 48)
+          })
+          particles.push(particle);
+        }
+        var particlesAnimation = anime({
+          targets: particles,
+          x: function(particle){
+            return particle.x + anime.random(rippleSize, -rippleSize);
+          },
+          y: function(particle){
+            return particle.y + anime.random(rippleSize * 1.15, -rippleSize * 1.15);
+          },
+          r: 0,
+          easing: "easeOutExpo",
+          duration: anime.random(1000,1300),
+          complete: removeAnimation
+        });
+        animations.push(fillAnimation, rippleAnimation, particlesAnimation);
+    }
+
+    function extend(a, b){
+      for(var key in b) {
+        if(b.hasOwnProperty(key)) {
+          a[key] = b[key];
+        }
+      }
+      return a;
+    }
+
+    var Circle = function(opts) {
+      extend(this, opts);
+    }
+
+    Circle.prototype.draw = function() {
+      ctx.globalAlpha = this.opacity || 1;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+      if (this.stroke) {
+        ctx.strokeStyle = this.stroke.color;
+        ctx.lineWidth = this.stroke.width;
+        ctx.stroke();
+      }
+      if (this.fill) {
+        ctx.fillStyle = this.fill;
+        ctx.fill();
+      }
+      ctx.closePath();
+      ctx.globalAlpha = 1;
+    }
+
+    var animate = anime({
+      duration: Infinity,
+      update: function() {
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, cW, cH);
+        animations.forEach(function(anim) {
+          anim.animatables.forEach(function(animatable) {
+            animatable.target.draw();
+          });
+        });
+      }
+    });
+
+    var resizeCanvas = function() {
+      cW = window.innerWidth;
+      cH = window.innerHeight;
+      c.width = cW * devicePixelRatio;
+      c.height = cH * devicePixelRatio;
+      ctx.scale(devicePixelRatio, devicePixelRatio);
+    };
+
+    (function init() {
+      resizeCanvas();
+      window.addEventListener("resize", resizeCanvas);
+      addClickListeners();
+    })();
   }
   
   componentWillUnmount() {
@@ -59,75 +234,84 @@ export default class App extends React.Component {
   
   handleScroll(e) {
     var doc = document.documentElement;
-    var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+    var top = (window.clientYOffset || doc.scrollTop)  - (doc.clientTop || 0);
 
     if (top <= 250) {
       this.setState({waveColor: 'blue'});
       this.setState({logoVisible: 'block'});
       this.setState({aboutStyle: 'about-blue'});
-    } else if (top > 250 && top <=650) { // before waves
+    } else if (top > 250 && top <=600) { // before waves
       this.setState({waveColor: 'blue'});
       this.setState({aboutStyle: 'about-blue'});
       this.setState({particlesVisible: 'particles-hidden'});
       this.setState({experienceStyle: 'experience-black'});
       this.setState({logoVisible: 'block'});
-    } else if (top > 650 && top <=1500) { // after waves
-      this.setState({waveColor: 'black'});
+    } else if (top > 600 && top <=1500) { // after waves
+      // this.setState({waveColor: 'black'});
+      this.setState({waveColor: 'blue'});
+
       this.setState({aboutStyle: 'about-black'});
       this.setState({particlesVisible: 'particles-visible'});
       this.setState({experienceStyle: 'experience-black'});
       this.setState({logoVisible: 'none'});
       this.setState({leafVisibility: 'hidden'})
-    } else if (top > 1500 && top <=2800) { // into work experience 
-      this.setState({aboutStyle: 'about-green'});
-      this.setState({experienceStyle: 'experience-green'});
-      this.setState({leafVisibility: 'visible'});
-      this.setState({logoVisible: 'none'});
-      this.setState({skillsStyle: 'skills-green'});
-    } else if (top > 2800 & top <= 3900) { // into Skills
-      this.setState({experienceStyle: 'experience-purple'});
-      this.setState({skillsStyle: 'skills-purple'});
-      this.setState({portfolioStyle: 'portfolio-purple'})
-      this.setState({logoVisible: 'none'});
-    } else if (top > 3900 && top <= 5000) {// into portfolio 
-      this.setState({skillsStyle: 'skills-lavendar'});
-      this.setState({portfolioStyle: 'portfolio-lavendar'});
-      this.setState({contactStyle: 'contact-lavendar'});
-      this.setState({logoVisible: 'none'});
-    } else if (top > 5000) {
-      this.setState({contactStyle: 'contact-white'});
-      this.setState({portfolioStyle: 'portfolio-white'});
-      this.setState({logoVisible: 'none'});
-    }
+    } 
+    
+    // else if (top > 1500 && top <=2800) { // into work experience 
+    //   this.setState({aboutStyle: 'about-green'});
+    //   this.setState({experienceStyle: 'experience-green'});
+    //   this.setState({leafVisibility: 'visible'});
+    //   this.setState({logoVisible: 'none'});
+    //   this.setState({skillsStyle: 'skills-green'});
+    // } else if (top > 2800 & top <= 3900) { // into Skills
+    //   this.setState({experienceStyle: 'experience-purple'});
+    //   this.setState({skillsStyle: 'skills-purple'});
+    //   this.setState({portfolioStyle: 'portfolio-purple'})
+    //   this.setState({logoVisible: 'none'});
+    // } else if (top > 3900 && top <= 5000) {// into portfolio 
+    //   this.setState({skillsStyle: 'skills-lavendar'});
+    //   this.setState({portfolioStyle: 'portfolio-lavendar'});
+    //   this.setState({contactStyle: 'contact-lavendar'});
+    //   this.setState({logoVisible: 'none'});
+    // } else if (top > 5000) {
+    //   this.setState({contactStyle: 'contact-white'});
+    //   this.setState({portfolioStyle: 'portfolio-white'});
+    //   this.setState({logoVisible: 'none'});
+    // }
   }
 
   render() {
     return (
       <div className = "app-container">
-        <a name="home">
-          {this.state.width > 400 ?
-            <div>
-              {/* <Logo logoVisible={this.state.logoVisible}/> */}
-              <Navigation/>
-            </div>
-            : ""}
-          <Home waveColor={this.state.waveColor} />
-        </a>
-        <a name="about">
-          <About particlesVisible={this.state.particlesVisible} aboutStyle={this.state.aboutStyle}/>
-        </a>
-        <a name="experience">
-          <Experience leafVisibility={this.state.leafVisibility} experienceStyle={this.state.experienceStyle}/>
-        </a>
-        <a name="skills">
-          <Skills skillsStyle= {this.state.skillsStyle}/>
-        </a>
-        <a name="portfolio">
-          <Portfolio portfolioStyle={this.state.portfolioStyle}/>
-        </a>
-        <a name="contact">
-          <Contact contactStyle={this.state.contactStyle}/>
-        </a>
+        <div className="relative">
+          <canvas id="c"></canvas>
+          <a name="home">
+            {this.state.width > 400 ?
+              <div>
+                <Logo logoVisible={this.state.logoVisible}/>
+                <Navigation/>
+              </div>
+              : ""}
+            <Home waveColor={this.state.waveColor} />
+          </a>
+        </div>
+        <div id="under-ocean">
+          <a name="about">
+            <About particlesVisible={this.state.particlesVisible} aboutStyle={this.state.aboutStyle}/>
+          </a>
+          <a name="experience">
+            <Experience leafVisibility={this.state.leafVisibility}/>
+          </a>
+          <a name="skills">
+            <Skills/>
+          </a>
+          <a name="portfolio">
+            <Portfolio/>
+          </a>
+          <a name="contact">
+            <Contact/>
+          </a>
+        </div>
       </div>
     )}
 }

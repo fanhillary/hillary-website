@@ -74,11 +74,14 @@ export default class Contact extends React.Component {
         $(".text").click(function() {
         basicTimeline.play();
         });
+        $(".check-svg").click(function() {
+        basicTimeline.play();
+        });
     }
     render() {
         let {contactStyle} = this.props;
         return (
-            <div className={"container contact-container " + contactStyle}>
+            <div className="container contact-container ">
                 <h1 className="f1 lh-title pb5">Contact Me!</h1>
                 <form className="mb5"> 
                     <div className="round-input relative" data-validate="Please enter your name">

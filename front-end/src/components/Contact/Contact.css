@@ -86,6 +86,7 @@ textarea {
     transform: translateY(-52%) translateX(-50%);
     left: 50%;
     right: 0;
+    cursor: pointer;
 }
 
 .progress-bar {
@@ -115,5 +116,6 @@ textarea {
     transform: translateY(-50%) translateX(-50%);
     left: 50%;
     right: 0;
+    cursor: pointer;
     background-blend-mode: isolate;
 }

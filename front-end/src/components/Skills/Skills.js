@@ -33,7 +33,7 @@ let Skills = ({skillsStyle}) => {
         miscSkill.push(<p className="f5 lh-copy measure" key={index}> {skill} </p>);
     }
     return (
-        <div className={"container " + skillsStyle}>
+        <div className="container">
             <h1 className="f1 lh-title pb6">Skills</h1>
             <div className="ml4 flex flex-wrap justify-center">
                 <div className="skill-card card">

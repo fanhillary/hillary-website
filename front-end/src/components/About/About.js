@@ -58,8 +58,8 @@ const particlesOptions = {
 
 let About = ({aboutStyle, particlesVisible}) => {
     return (
-        <div className={'container ' + aboutStyle}>
-            <Particles className={'particles ' + particlesVisible} params={particlesOptions} />
+        <div className="container">
+            {/* <Particles className={'particles ' + particlesVisible} params={particlesOptions} /> */}
             <h1 className="f1 lh-title pb3">About Me</h1>
             <div className = "about-content"> 
                 <div className="pa5-ns tc">

@@ -2,8 +2,10 @@ body {
   font-family: 'Ubuntu', sans-serif;
   position: relative;
   cursor: default;
-  background: linear-gradient(#9198e5, #e66465);
+  /* background: linear-gradient(#9198e5, #e66465); */
+  background: #2d55aa;
   transition: .3s all;
+  color: white;
 }
 
 .app-container {
@@ -19,4 +21,14 @@ body {
   flex-direction: column;
   z-index: 10;
   text-align: center;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
