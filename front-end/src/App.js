@@ -24,14 +24,15 @@ export default class App extends React.Component {
       contactStyle: 'contact-lavendar',
       skillsStyle: 'skills-green',
       width: 0,
-      height: 0
+      height: 0,
+      bgColorIndex: 0,
     }
     this.handleScroll = this.handleScroll.bind(this)
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
   }
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
-    console.log(this.state.width);
   }  
 
   componentDidMount() {
@@ -53,7 +54,7 @@ export default class App extends React.Component {
     var circles = [];
 
     var colorPicker = (function() {
-      var colors = ["#ff86aa", "#FFBE53", "#87cefa", "#282741"];
+      var colors = ["#87cefa", "#282741", "#ff86aa", "#FFBE53",];
       var index = 0;
       function next() {
         index = index++ < colors.length-1 ? index : 0;
@@ -85,6 +86,7 @@ export default class App extends React.Component {
     };
 
     function handleEvent(e) {
+      
         if (e.touches) { 
           e.preventDefault();
           e = e.touches[0];
@@ -101,6 +103,8 @@ export default class App extends React.Component {
           r: 0,
           fill: nextColor
         });
+
+        
         var fillAnimation = anime({
           targets: pageFill,
           r: targetR,
@@ -292,7 +296,7 @@ export default class App extends React.Component {
                 <Navigation/>
               </div>
               : ""}
-            <Home waveColor={this.state.waveColor} />
+            <Home/>
           </a>
         </div>
         <div id="under-ocean">
