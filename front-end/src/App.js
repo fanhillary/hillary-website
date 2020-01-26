@@ -48,7 +48,7 @@ export default class App extends React.Component {
     var circles = [];
 
     var colorPicker = (function() {
-      var colors = ["#7a95e2", "#EBA7AC", "#f2cd97", "#DFACF6"];
+      var colors = ["#7a95e2", "#EBA7AC", "#eec874", "#DFACF6"];
       var index = 0;
       function next() {
         index = index++ < colors.length-1 ? index : 0;
