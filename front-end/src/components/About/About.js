@@ -56,7 +56,7 @@ const particlesOptions = {
     }
   }
 
-let About = ({aboutStyle, particlesVisible}) => {
+let About = ({particlesVisible}) => {
     return (
         <div className="container">
             {/* <Particles className={'particles ' + particlesVisible} params={particlesOptions} /> */}

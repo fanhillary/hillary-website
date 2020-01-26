@@ -2,10 +2,11 @@ body {
   font-family: 'Ubuntu', sans-serif;
   position: relative;
   cursor: default;
-  /* background: linear-gradient(#9198e5, #e66465); */
-  background: #2d55aa;
-  transition: .5s all;
   color: white;
+}
+
+#under-ocean {
+  transition: .5s all;
 }
 
 .app-container {

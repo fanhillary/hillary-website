@@ -4,9 +4,9 @@ export default class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            lightestWave: "#4579e2",
-            mediumWave: "#3461c1",
-            darkestWave: "#2d55aa",
+            lightestWave: "#282F6B",
+            mediumWave: "#151755",
+            darkestWave: "#090839",
             waveColorIndex: 0,
         }
         this.changeWaveColor = this.changeWaveColor.bind(this);
@@ -14,28 +14,37 @@ export default class Home extends React.Component {
 
 
     changeWaveColor() {
-        var colors = ["blue", "black", "pink", "yellow"];
+        var colors = ["blue", "pink", "brown", "purple"];
         let nextColor = this.state.waveColorIndex < colors.length -1 ? this.state.waveColorIndex + 1 : 0;
         this.setState({waveColorIndex: nextColor});
-        if (colors[this.state.waveColorIndex] === "blue") {
-            this.setState({lightestWave: "#4579e2"});
-            this.setState({mediumWave: "#3461c1"});
-            this.setState({darkestWave: "#2d55aa"});
-            document.body.style.background = "#2d55aa";
-
-        } else if (colors[this.state.waveColorIndex] === 'black') {
-            this.setState({lightestWave: "#425866"});
-            this.setState({mediumWave: "#1B2A33"});
-            this.setState({darkestWave: "#0C1419"});
-            document.body.style.background = "#0C1419";
-
+        let currColor = colors[this.state.waveColorIndex];
+        if (currColor === "blue") {
+            this.setState({lightestWave: "#282F6B"});
+            this.setState({mediumWave: "#151755"});
+            this.setState({darkestWave: "#090839"});
+        } else if (currColor === 'purple') {
+            this.setState({lightestWave: "#9754CA"});
+            this.setState({mediumWave: "#6337A1"});
+            this.setState({darkestWave: "#280F4F"});
+        } else if (currColor === "brown") {
+            this.setState({lightestWave: "#D5B397"});
+            this.setState({mediumWave:  "#896856"});
+            this.setState({darkestWave: "#44362E"});
+        } else if (currColor === "pink") {
+            this.setState({lightestWave: "#e86774"});
+            this.setState({mediumWave:  "#d75271"});
+            this.setState({darkestWave: "#be3b57"});
+            
         }
+
+        document.getElementById("under-ocean").style.background = this.state.darkestWave;
+
       }
 
     componentDidMount() {
         document.addEventListener("touchstart", this.changeWaveColor);
         document.addEventListener("mousedown", this.changeWaveColor);
-        
+        document.getElementById("under-ocean").style.background = this.state.darkestWave;
     }
     
     render() {

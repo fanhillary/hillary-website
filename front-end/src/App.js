@@ -14,15 +14,9 @@ export default class App extends React.Component {
     super();
     this.body = React.createRef();
     this.state = {
-      aboutStyle: 'about-blue',
-      waveColor: 'blue',
       particlesVisible: 'particles-hidden',
-      experienceStyle: 'experience-black',
       logoVisible: 'block',
       leafVisibility: 'hidden',
-      portfolioStyle: 'portfolio-purple',
-      contactStyle: 'contact-lavendar',
-      skillsStyle: 'skills-green',
       width: 0,
       height: 0,
       bgColorIndex: 0,
@@ -49,12 +43,12 @@ export default class App extends React.Component {
     var ctx = c.getContext("2d");
     var cH;
     var cW;
-    var bgColor = "#87cefa";
+    var bgColor = "#7a95e2";
     var animations = [];
     var circles = [];
 
     var colorPicker = (function() {
-      var colors = ["#87cefa", "#282741", "#ff86aa", "#FFBE53",];
+      var colors = ["#7a95e2", "#EBA7AC", "#f2cd97", "#DFACF6"];
       var index = 0;
       function next() {
         index = index++ < colors.length-1 ? index : 0;
@@ -241,47 +235,18 @@ export default class App extends React.Component {
     var top = (window.clientYOffset || doc.scrollTop)  - (doc.clientTop || 0);
 
     if (top <= 250) {
-      this.setState({waveColor: 'blue'});
       this.setState({logoVisible: 'block'});
-      this.setState({aboutStyle: 'about-blue'});
     } else if (top > 250 && top <=600) { // before waves
-      this.setState({waveColor: 'blue'});
-      this.setState({aboutStyle: 'about-blue'});
       this.setState({particlesVisible: 'particles-hidden'});
-      this.setState({experienceStyle: 'experience-black'});
       this.setState({logoVisible: 'block'});
     } else if (top > 600 && top <=1500) { // after waves
-      // this.setState({waveColor: 'black'});
-      this.setState({waveColor: 'blue'});
-
-      this.setState({aboutStyle: 'about-black'});
       this.setState({particlesVisible: 'particles-visible'});
-      this.setState({experienceStyle: 'experience-black'});
       this.setState({logoVisible: 'none'});
       this.setState({leafVisibility: 'hidden'})
-    } 
-    
-    // else if (top > 1500 && top <=2800) { // into work experience 
-    //   this.setState({aboutStyle: 'about-green'});
-    //   this.setState({experienceStyle: 'experience-green'});
-    //   this.setState({leafVisibility: 'visible'});
-    //   this.setState({logoVisible: 'none'});
-    //   this.setState({skillsStyle: 'skills-green'});
-    // } else if (top > 2800 & top <= 3900) { // into Skills
-    //   this.setState({experienceStyle: 'experience-purple'});
-    //   this.setState({skillsStyle: 'skills-purple'});
-    //   this.setState({portfolioStyle: 'portfolio-purple'})
-    //   this.setState({logoVisible: 'none'});
-    // } else if (top > 3900 && top <= 5000) {// into portfolio 
-    //   this.setState({skillsStyle: 'skills-lavendar'});
-    //   this.setState({portfolioStyle: 'portfolio-lavendar'});
-    //   this.setState({contactStyle: 'contact-lavendar'});
-    //   this.setState({logoVisible: 'none'});
-    // } else if (top > 5000) {
-    //   this.setState({contactStyle: 'contact-white'});
-    //   this.setState({portfolioStyle: 'portfolio-white'});
-    //   this.setState({logoVisible: 'none'});
-    // }
+    } else if (top > 1500 && top <=2800) { // into work experience 
+      this.setState({leafVisibility: 'visible'});
+      this.setState({logoVisible: 'none'});
+    }
   }
 
   render() {
@@ -301,7 +266,7 @@ export default class App extends React.Component {
         </div>
         <div id="under-ocean">
           <a name="about">
-            <About particlesVisible={this.state.particlesVisible} aboutStyle={this.state.aboutStyle}/>
+            <About particlesVisible={this.state.particlesVisible}/>
           </a>
           <a name="experience">
             <Experience leafVisibility={this.state.leafVisibility}/>
