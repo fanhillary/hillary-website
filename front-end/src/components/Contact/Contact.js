@@ -4,14 +4,22 @@ import anime from 'animejs/lib/anime.es.js';
 import $ from 'jquery';
 
 export default class Contact extends React.Component {
-    sendMail() {
-        console.log('hello');
-        const objects = document.getElementsByTagName('input');
-        const name = objects[0];
-        const email = objects[1];
-        const message = document.getElementsByName('message')[0];
-        window.open('mailto:hillary.fan123@gmail.com?subject=' + name + '&body=' + message + "\n email back: " + email);
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            email: '',
+            message: ''
+        }
     }
+    // sendMail() {
+    //     console.log('hello');
+    //     const objects = document.getElementsByTagName('input');
+    //     const name = objects[0];
+    //     const email = objects[1];
+    //     const message = document.getElementsByName('message')[0];
+    //     window.open('mailto:hillary.fan123@gmail.com?subject=' + name + '&body=' + message + "\n email back: " + email);
+    // }
     
     componentDidMount() {
         let basicTimeline = anime.timeline({
@@ -78,21 +86,54 @@ export default class Contact extends React.Component {
         basicTimeline.play();
         });
     }
+    changeName(e) {
+        this.setState({name: e.target.value});
+    }
+    changeEmail(e) {
+        this.setState({email: e.target.value});
+    }
+    changeMessage(e) {
+        this.setState({message: e.target.value});
+    }
+    handleSubmit(e) {
+        e.preventDefault();
+        fetch('http://localhost:3001/sendEmail',{
+            method: "POST",
+            body: JSON.stringify(this.state),
+            headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+            },
+        }).then((response) => response.json())
+        .then((response)=>{
+            if (response === 'Success'){
+                setTimeout(() => {  this.resetForm(); }, 2000);
+            }else if(response === 'Fail'){
+                console.log("Error sending email.");
+            }
+        })
+    }
+
+    resetForm() {
+        this.setState({name: ""});
+        this.setState({email: ""});
+        this.setState({message: ""});
+    }
     render() {
         return (
             <div className="container contact-container ">
                 <h1 className="f1 lh-title pb5">Contact Me!</h1>
-                <form className="mb5"> 
-                    <div className="round-input relative" data-validate="Please enter your name">
-                        <input className="contact-input" type="text" name="name" placeholder="Your Name*"/>
+                <form className="mb5" method="POST"> 
+                    <div className="round-input relative">
+                        <input className="contact-input" type="text" name="name" placeholder="Your Name*" value={this.state.name} onChange={this.changeName.bind(this)}/>
                     </div>
-                    <div className="round-input relative" data-validate="Please enter your email: e@a.x">
-                        <input className="contact-input" type="text" name="email" placeholder="Your E-mail*"/>
+                    <div className="round-input relative">
+                        <input className="contact-input" type="text" name="email" placeholder="Your E-mail*"  value={this.state.email} onChange={this.changeEmail.bind(this)}/>
                     </div>
-                    <div className="round-input relative" data-validate="Please enter your message">
-                        <textarea className="contact-input" name="message" placeholder="Your Message*"></textarea>
+                    <div className="round-input relative">
+                        <textarea className="contact-input" name="message" placeholder="Your Message*"  value={this.state.message} onChange={this.changeMessage.bind(this)}></textarea>
                     </div>
-                    <div className="flex justify-center">
+                    <div onClick={this.handleSubmit.bind(this)} className="flex justify-center">
                         <div className="main">
                             <div className="button">
                                 <div className="text flex"> <i className="material-icons mr3">send</i> Submit</div>
