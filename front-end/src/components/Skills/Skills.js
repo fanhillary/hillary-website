@@ -5,33 +5,35 @@ import languagesImage from './languages.png';
 import backendImage from './backend.png';
 import miscellaneousImage from './miscellaneous.png';
 
-let Skills = ({skillsStyle}) => {
+let Skills = () => {
+    let frontSkill = [];
+    let backSkill = [];
+    let languageSkill = [];
+    let miscSkill = [];
+
     let skills = {
-        frontend: ['HTML/CSS', 'Angular', 'React.js', 'JavaScript', 'User Experience Design', 'Responsive Web Design'],
-        backend: ['Django', 'Node.js', 'Express.js', 'PostgreSQL', 'MongoDB'],
-        languages: ['Python', 'JavaScript', 'Java', 'TypeScript', 'C'],
-        misc: ['Docker', 'Version Control/git', 'Selenium Webdriver', 'Jenkins', 'Heroku', 'Firesbase']
+        frontend: [{name: "HTML/CSS", icon: "fa-html5"}, {name: 'Angular', icon: 'fa-angular'}, {name: 'React.js', icon: 'fa-react'}, {name: 'User Experience Design', icon: 'fas fa-paint-brush'}, {name: 'Responsive Web Design', icon: 'fas fa-mobile-alt'}],
+        backend: [{name: 'Node.js', icon: 'fa-node-js'}, {name: 'Express.js', icon: 'fas fa-mug-hot'}, {name: 'PostgreSQL', icon: 'fas fa-database'}, {name: 'MongoDB', icon: 'fa-envira'}, {name: 'Django', icon: 'fa-python'}],
+        languages: [{name:'Python', icon: 'fa-python'}, {name: 'JavaScript', icon: 'fa-js-square'}, {name: 'Java', icon: 'b fa-java'}, {name: 'TypeScript', icon: 'fa-angular'}, {name: 'C', icon: 'fas fa-code'}],
+        misc: [{name: 'Docker', icon: 'fa-docker'}, {name: 'Version Control/git', icon: 'fas fa-code-branch'}, {name: 'Jenkins', icon: 'b fa-jenkins'}, {name: 'Heroku', icon: 'fas fa-hippo'}, {name: 'Firebase', icon: 'fa-hotjar'}]
     }
    
-    let frontSkill = [];
-    for (const [index,skill] of skills.frontend.entries()) {
-        frontSkill.push(<p className="f5 lh-copy measure" key={index}> {skill} </p>);
+    for (const element in skills) {
+        for (const [index,skill] of skills[element].entries()) {
+            let skillName = skill.name;
+            let skillIcon = skill.icon;
+            if (element === "frontend") {
+                frontSkill.push(<div className="flex justify-center items-center"> <div className="mr2"><i class={"fab f4 " + skillIcon}></i></div> <div><p className="f5 lh-copy measure" key={index}> {skillName} </p></div></div>);
+            } else if (element === "backend") {
+                backSkill.push(<div className="flex justify-center items-center"> <div className="mr2"><i class={"fab f4 " + skillIcon}></i></div> <div><p className="f5 lh-copy measure" key={index}> {skillName} </p></div></div>);
+            } else if (element === "languages") {
+                languageSkill.push(<div className="flex justify-center items-center"> <div className="mr2"><i class={"fab f4 " + skillIcon}></i></div> <div><p className="f5 lh-copy measure" key={index}> {skillName} </p></div></div>);
+            } else if (element === "misc") {
+                miscSkill.push(<div className="flex justify-center items-center"> <div className="mr2"><i class={"fab f4 " + skillIcon}></i></div> <div><p className="f5 lh-copy measure" key={index}> {skillName} </p></div></div>);
+            }
+        }
     }
 
-    let backskill = [];
-    for (const [index,skill] of skills.backend.entries()) {
-        backskill.push(<p className="f5 lh-copy measure" key={index}> {skill} </p>);
-    }
-
-    let languageSkill = [];
-    for (const [index,skill] of skills.languages.entries()) {
-        languageSkill.push(<p className="f5 lh-copy measure" key={index}> {skill} </p>);
-    }
-
-    let miscSkill = [];
-    for (const [index,skill] of skills.misc.entries()) {
-        miscSkill.push(<p className="f5 lh-copy measure" key={index}> {skill} </p>);
-    }
     return (
         <div className="container">
             <h1 className="f1 lh-title pb6">Skills</h1>
@@ -47,7 +49,7 @@ let Skills = ({skillsStyle}) => {
                     <img src={backendImage} alt="header"/>
                     <div className="experience-content">
                         <h1> Back End </h1>
-                        {backskill}
+                        {backSkill}
                     </div>
                 </div>
                 <div className="skill-card card">

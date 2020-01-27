@@ -12,7 +12,7 @@ import PinkMemphisCounterpart from './pink-memphis-counterpart.png';
 import TealMemphis from './teal-memphis.png';
 import TealMemphisCounterpart from './teal-memphis-counterpart.png';
 
-let Experience = ({experienceStyle, leafVisibility}) => {
+let Experience = ({leafVisibility}) => {
     const positions = [
         {
             date: 'August 2019 - Present',

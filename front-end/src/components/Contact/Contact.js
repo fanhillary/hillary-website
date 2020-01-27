@@ -79,7 +79,6 @@ export default class Contact extends React.Component {
         });
     }
     render() {
-        let {contactStyle} = this.props;
         return (
             <div className="container contact-container ">
                 <h1 className="f1 lh-title pb5">Contact Me!</h1>

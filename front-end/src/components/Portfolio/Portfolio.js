@@ -8,7 +8,7 @@ import WhatToEatImage from './what-to-eat.png';
 import TritonTransitImage from './triton-transit.png';
 import FlyeringRobotImage from './flyering-robot.png';
 import ComputerLiteracyImage from './computer-literacy.png';
-let Portfolio = ({portfolioStyle}) => {
+let Portfolio = () => {
     
     const projects = [
         {
