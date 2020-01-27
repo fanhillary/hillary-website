@@ -48,7 +48,7 @@ export default class App extends React.Component {
     var circles = [];
 
     var colorPicker = (function() {
-      var colors = ["#7a95e2", "#EBA7AC", "#eec874", "#DFACF6"];
+      var colors = ["#7a95e2", "#d37071","#a889d8", "#a0726f"];
       var index = 0;
       function next() {
         index = index++ < colors.length-1 ? index : 0;
@@ -80,7 +80,8 @@ export default class App extends React.Component {
     };
 
     function handleEvent(e) {
-      
+      console.log(e);
+      if (e.pageY < 1500) {
         if (e.touches) { 
           e.preventDefault();
           e = e.touches[0];
@@ -154,6 +155,7 @@ export default class App extends React.Component {
           complete: removeAnimation
         });
         animations.push(fillAnimation, rippleAnimation, particlesAnimation);
+      }
     }
 
     function extend(a, b){
@@ -257,7 +259,7 @@ export default class App extends React.Component {
           <a name="home">
             {this.state.width > 400 ?
               <div>
-                <Logo logoVisible={this.state.logoVisible}/>
+                {/* <Logo logoVisible={this.state.logoVisible}/> */}
                 <Navigation/>
               </div>
               : ""}

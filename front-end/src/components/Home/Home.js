@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import resume from './Resume_HFan.pdf';
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -13,32 +14,33 @@ export default class Home extends React.Component {
     }
 
 
-    changeWaveColor() {
-        var colors = ["blue", "pink", "brown", "purple"];
-        let nextColor = this.state.waveColorIndex < colors.length -1 ? this.state.waveColorIndex + 1 : 0;
-        this.setState({waveColorIndex: nextColor});
-        let currColor = colors[this.state.waveColorIndex];
-        if (currColor === "blue") {
-            this.setState({lightestWave: "#282F6B"});
-            this.setState({mediumWave: "#151755"});
-            this.setState({darkestWave: "#090839"});
-        } else if (currColor === 'purple') {
-            this.setState({lightestWave: "#9754CA"});
-            this.setState({mediumWave: "#6337A1"});
-            this.setState({darkestWave: "#280F4F"});
-        } else if (currColor === "brown") {
-            this.setState({lightestWave: "#a3806b"});
-            this.setState({mediumWave:  "#684f41"});
-            this.setState({darkestWave: "#271f1a"});
-        } else if (currColor === "pink") {
-            this.setState({lightestWave: "#e86774"});
-            this.setState({mediumWave:  "#d75271"});
-            this.setState({darkestWave: "#be3b57"});
-            
+    changeWaveColor(e) {
+        if (e.pageY < 1500) {
+            var colors = ["blue", "brown", "purple", "pink"];
+            let nextColor = this.state.waveColorIndex < colors.length -1 ? this.state.waveColorIndex + 1 : 0;
+            this.setState({waveColorIndex: nextColor});
+            let currColor = colors[this.state.waveColorIndex];
+            if (currColor === "blue") {
+                this.setState({lightestWave: "#282F6B"});
+                this.setState({mediumWave: "#151755"});
+                this.setState({darkestWave: "#090839"});
+            } else if (currColor === 'purple') {
+                this.setState({lightestWave: "#9754CA"});
+                this.setState({mediumWave: "#6337A1"});
+                this.setState({darkestWave: "#280F4F"});
+            } else if (currColor === "brown") {
+                this.setState({lightestWave: "#996764"});
+                this.setState({mediumWave:  "#5D3F3D"});
+                this.setState({darkestWave: "#271f1a"});
+            } else if (currColor === "pink") {
+                this.setState({lightestWave: "#eb828c"});
+                this.setState({mediumWave:  "#dc6882"});
+                this.setState({darkestWave: "#c84f6a"});
+                
+            }
+
+            document.getElementById("under-ocean").style.background = this.state.darkestWave;
         }
-
-        document.getElementById("under-ocean").style.background = this.state.darkestWave;
-
       }
 
     componentDidMount() {
@@ -60,8 +62,8 @@ export default class Home extends React.Component {
                         <h2> A developer and nature lover </h2>
                     </div>
                     <div>
-                        <a className="title-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 mr2 dib near-white" href="#0">Resume</a>
-                        <a className="title-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 dib near-white" href="#0">Contact</a>
+                        <a className="title-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 mr2 dib near-white" href={resume} download>Resume</a>
+                        <a className="title-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 dib near-white" href="#contact">Contact</a>
                     </div>
                     <svg className="editorial"
                         viewBox="0 24 150 28"
