@@ -141,12 +141,12 @@ export default class Contact extends React.Component {
                         <div className="validation"><p className="mr2">Invalid Email</p><i class="mr2 fas f4 fa-exclamation-circle"></i></div>
                     </div>
                     <div className="round-input relative">
-                        <textarea className="contact-input" name="message" placeholder="Your Message*"  value={this.state.message} onChange={this.changeMessage.bind(this)}></textarea>
+                        <textarea className="contact-input w-100" name="message" placeholder="Your Message"  value={this.state.message} onChange={this.changeMessage.bind(this)}></textarea>
                     </div>
-                    <div onClick={this.handleSubmit.bind(this)} className="flex justify-center">
+                    <div className="flex justify-center">
                         <div className="main">
-                            <div className="button">
-                                <div className="text flex"> <i className="material-icons mr3">send</i> Submit</div>
+                            <div className="button" onClick={this.handleSubmit.bind(this)}>
+                                <div className="text flex" onClick={this.handleSubmit.bind(this)}> <i className="material-icons mr3">send</i> Submit</div>
                             </div>
                             <div className="progress-bar"></div>
                             <svg x="0px" y="0px"

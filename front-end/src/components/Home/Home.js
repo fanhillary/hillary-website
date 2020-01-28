@@ -23,14 +23,14 @@ export default class Home extends React.Component {
             if (currColor === "blue") {
                 this.setState({lightestWave: "#282F6B"});
                 this.setState({mediumWave: "#151755"});
-                this.setState({darkestWave: "#090839"});
+                this.setState({darkestWave: "#0c0a4a"});
             } else if (currColor === 'purple') {
                 this.setState({lightestWave: "#9754CA"});
                 this.setState({mediumWave: "#6337A1"});
                 this.setState({darkestWave: "#280F4F"});
             } else if (currColor === "brown") {
-                this.setState({lightestWave: "#996764"});
-                this.setState({mediumWave:  "#5D3F3D"});
+                this.setState({lightestWave: "#7a5f52"});
+                this.setState({mediumWave:  "#463730"});
                 this.setState({darkestWave: "#271f1a"});
             } else if (currColor === "pink") {
                 this.setState({lightestWave: "#eb828c"});
