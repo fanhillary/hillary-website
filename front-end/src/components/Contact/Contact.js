@@ -2,6 +2,9 @@ import React from 'react';
 import './Contact.css';
 import anime from 'animejs/lib/anime.es.js';
 import $ from 'jquery';
+let basicTimeline = anime.timeline({
+    autoplay: false
+  });
 
 export default class Contact extends React.Component {
     constructor(props) {
@@ -9,24 +12,13 @@ export default class Contact extends React.Component {
         this.state = {
             name: '',
             email: '',
-            message: ''
+            message: '',
         }
     }
-    // sendMail() {
-    //     console.log('hello');
-    //     const objects = document.getElementsByTagName('input');
-    //     const name = objects[0];
-    //     const email = objects[1];
-    //     const message = document.getElementsByName('message')[0];
-    //     window.open('mailto:hillary.fan123@gmail.com?subject=' + name + '&body=' + message + "\n email back: " + email);
-    // }
-    
-    componentDidMount() {
-        let basicTimeline = anime.timeline({
-            autoplay: false
-          });
 
+    componentDidMount() { 
         var pathEls = $(".check");
+
         for (let i = 0; i < pathEls.length; i++) {
           var pathEl = pathEls[i];
           var offset = anime.setDashoffset(pathEl);
@@ -74,17 +66,6 @@ export default class Contact extends React.Component {
             duration: 200,
             easing: "easeInOutSine"
         })
-        
-        $(".button").click(function() {
-        basicTimeline.play();
-        });
-        
-        $(".text").click(function() {
-        basicTimeline.play();
-        });
-        $(".check-svg").click(function() {
-        basicTimeline.play();
-        });
     }
     changeName(e) {
         this.setState({name: e.target.value});
@@ -95,23 +76,27 @@ export default class Contact extends React.Component {
     changeMessage(e) {
         this.setState({message: e.target.value});
     }
+
     handleSubmit(e) {
         e.preventDefault();
-        fetch('http://localhost:3001/sendEmail',{
-            method: "POST",
-            body: JSON.stringify(this.state),
-            headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-            },
-        }).then((response) => response.json())
-        .then((response)=>{
-            if (response === 'Success'){
-                setTimeout(() => {  this.resetForm(); }, 2000);
-            }else if(response === 'Fail'){
-                console.log("Error sending email.");
-            }
-        })
+        if (this.validateForm()) {
+            fetch('http://localhost:3001/sendEmail',{
+                method: "POST",
+                body: JSON.stringify(this.state),
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+            }).then((response) => response.json())
+            .then((response)=>{
+                if (response === 'Success'){
+                    setTimeout(() => {  this.resetForm(); }, 2000);
+                    basicTimeline.play();
+                }else if(response === 'Fail'){
+                    console.log("Error sending email.");
+                }
+            })
+        }
     }
 
     resetForm() {
@@ -119,16 +104,41 @@ export default class Contact extends React.Component {
         this.setState({email: ""});
         this.setState({message: ""});
     }
+
+    validateForm() {
+        var nameValidation = document.getElementsByClassName('validation')[0];
+        var emailValidation = document.getElementsByClassName('validation')[1];
+
+        if (this.state.name === "" && this.state.email === "") {
+            nameValidation.style.opacity = "100%";
+            emailValidation.style.opacity = "100%";
+            return false;
+        } else if (this.state.name === "") {
+            nameValidation.style.opacity = "100%";
+            emailValidation.style.opacity = "0%";
+            return false;
+        } else if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.state.email))) {
+            emailValidation.style.opacity = "100%";
+            nameValidation.style.opacity = "0%";
+            return false;
+        }
+        emailValidation.style.opacity = "0%";
+        nameValidation.style.opacity = "0%";
+        return true;
+    }
+
     render() {
         return (
             <div className="container contact-container ">
                 <h1 className="f1 lh-title pb5">Contact Me!</h1>
                 <form className="mb5" method="POST"> 
-                    <div className="round-input relative">
+                    <div className="round-input relative flex items-center">
                         <input className="contact-input" type="text" name="name" placeholder="Your Name*" value={this.state.name} onChange={this.changeName.bind(this)}/>
+                        <div className="validation"><p className="mr2">Missing Name</p><i class="mr2 fas f4 fa-exclamation-circle"></i></div>
                     </div>
-                    <div className="round-input relative">
+                    <div className="round-input relative flex items-center">
                         <input className="contact-input" type="text" name="email" placeholder="Your E-mail*"  value={this.state.email} onChange={this.changeEmail.bind(this)}/>
+                        <div className="validation"><p className="mr2">Invalid Email</p><i class="mr2 fas f4 fa-exclamation-circle"></i></div>
                     </div>
                     <div className="round-input relative">
                         <textarea className="contact-input" name="message" placeholder="Your Message*"  value={this.state.message} onChange={this.changeMessage.bind(this)}></textarea>

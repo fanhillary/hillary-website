@@ -34,13 +34,31 @@ input {
 .contact-input {
     position: relative;
     display: block;
-    width: 100%;
+    width: 80%;
     background: #fff;
     border-radius: 31px;
     font-size: 18px;
     color: #8f8fa1;
     font-weight: bold;
     line-height: 1.2;
+}
+
+.validation {
+    opacity: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    transition: 0.2s all;
+    position: relative;
+    right: 10px;
+    width: 20%;
+    height: 40px;
+    border: 2px solid red;
+    border-radius: 31px;
+    font-size: 12px;
+    color: red;
+    font-weight: bold;
+    z-index: 2;
 }
 
 textarea {
@@ -77,6 +95,9 @@ textarea {
     border-radius: 4px;
 }
 
+.main:hover .button{
+    background: grey;
+}
 .text {
     color: #F2F2F2;
     font-weight: bold;
