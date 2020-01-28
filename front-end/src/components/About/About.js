@@ -70,14 +70,14 @@ let About = ({particlesVisible}) => {
                             I enjoy working on web applications, finding solutions to complex problems, and designing intuitive user experiences.
                             Some of my favorite technologies are ReactJS, Angular, Java, Python, and MongoDB. 
                         </p>
+                        <p className="f3 lh-copy">
+                            People describe me as patient, mediator, flexible, and calm like water.
+                        </p>
                     </div>
                     <div className="pb2">
-                      <p className="f2 b"> Some Life Mottos </p>
+                      <p className="f2 b"> My Life Motto </p>
                         <p className="f3 lh-copy">
-                            To get good: To end everyday knowing that I have learned something new or improved upon myself.
-                        </p>
-                        <p className="f3 lh-copy">
-                          To have fun while working on things I love. :D
+                            To end everyday knowing that I have learned something new or improved upon myself.
                         </p>
                     </div>
                     <div className="pb2">
@@ -89,7 +89,7 @@ let About = ({particlesVisible}) => {
                             Finding hidden rooftops to view stars
                         </p>
                         <p className="f3 lh-copy">
-                            Sharing music I love.
+                            And sharing music I love
                         </p>
                     </div>
                     <p className="f4 lh-copy">Here's what I'm listening to right now:</p> 
