@@ -67,7 +67,7 @@ let Experience = ({leafVisibility}) => {
                 <img className="leaf tropical-leaf-right" src={tropicalLeafRight} alt=""/>
             </div> */}
             <div className="ml4 flex flex-wrap justify-center">
-                <h1 class="f1 lh-title pb6">Work Experience</h1>
+                <h1 class="subheader lh-title pb5">Work Experience</h1>
                 <div className="experience-content">
                     <div className="flex flex-wrap justify-center">
                         {jobs}

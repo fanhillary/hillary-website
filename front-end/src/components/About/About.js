@@ -60,30 +60,36 @@ let About = ({particlesVisible}) => {
     return (
         <div className="container">
             {/* <Particles className={'particles ' + particlesVisible} params={particlesOptions} /> */}
-            <h1 className="f1 lh-title pb3">About Me</h1>
+            <h1 className="subheader lh-title">About Me</h1>
             <div className = "about-content"> 
                 <div className="pa5-ns tc">
                     <div className="pb2">
-                        <h2> Hi! I'm Hillary, again. </h2>
-                        <p className="f4 lh-copy">
+                        <p className="f2 b"> Hi! I'm Hillary, again </p>
+                        <p className="f3 lh-copy">
                             I'm a full-stack developer.
                             I enjoy working on web applications, finding solutions to complex problems, and designing intuitive user experiences.
                             Some of my favorite technologies are ReactJS, Angular, Java, Python, and MongoDB. 
                         </p>
                     </div>
                     <div className="pb2">
-                        <h2> Some Life Mottos </h2>
-                        <p className="f4 lh-copy">
+                      <p className="f2 b"> Some Life Mottos </p>
+                        <p className="f3 lh-copy">
                             To get good: To end everyday knowing that I have learned something new or improved upon myself.
                         </p>
-                        <p className="f4 lh-copy">
+                        <p className="f3 lh-copy">
                           To have fun while working on things I love. :D
                         </p>
                     </div>
                     <div className="pb2">
-                        <h2> I love: </h2>
-                        <p className="f4 lh-copy">
-                            Late night walks in the city, finding hidden rooftops to view stars, and sharing music I love.
+                      <p className="f2 b"> Things I love </p>
+                        <p className="f3 lh-copy">
+                            Late night walks in the city
+                        </p>
+                        <p className="f3 lh-copy">
+                            Finding hidden rooftops to view stars
+                        </p>
+                        <p className="f3 lh-copy">
+                            Sharing music I love.
                         </p>
                     </div>
                     <p className="f4 lh-copy">Here's what I'm listening to right now:</p> 

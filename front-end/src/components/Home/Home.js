@@ -56,8 +56,8 @@ export default class Home extends React.Component {
                 <div className="flex-box">
                     <div className = "title">
                         <div className = "flex flex-wrap justify-center">
-                            <h1> Hey! </h1>
-                            <h1 className="pl3"> I'm Hillary. </h1>
+                            <h1 className="f-headline lh-title">Hey!</h1>
+                            <h1 className="f-headline lh-title pl3">I'm Hillary.</h1>
                         </div>
                         <h2> A developer and nature lover </h2>
                     </div>

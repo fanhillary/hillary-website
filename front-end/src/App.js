@@ -43,12 +43,12 @@ export default class App extends React.Component {
     var ctx = c.getContext("2d");
     var cH;
     var cW;
-    var bgColor = "#7a95e2";
+    var bgColor = "#8ea6e7";
     var animations = [];
     var circles = [];
 
     var colorPicker = (function() {
-      var colors = ["#7a95e2", "#d37071","#a889d8", "#a0726f"];
+      var colors = ["#8ea6e7", "#d37071","#a889d8", "#e1b7a2"];
       var index = 0;
       function next() {
         index = index++ < colors.length-1 ? index : 0;

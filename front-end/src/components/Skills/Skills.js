@@ -36,7 +36,7 @@ let Skills = () => {
 
     return (
         <div className="container">
-            <h1 className="f1 lh-title pb6">Skills</h1>
+            <h1 className="subheader lh-title pb5">Skills</h1>
             <div className="ml4 flex flex-wrap justify-center">
                 <div className="skill-card card">
                     <img src={frontEndImage} alt="header"/>

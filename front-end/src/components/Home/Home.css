@@ -39,8 +39,6 @@
     align-content: center;
     margin-bottom: 30px;
     text-align: center;
-    padding-top: 25px;
-
   }
 }
 @media screen and (min-width: 700px) {
@@ -53,7 +51,7 @@
     justify-content: center;
     align-content: center;
     margin-bottom: 30px;
-    padding-top: 100px;
+    padding-top: 50px;
   }
   
 }

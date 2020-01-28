@@ -78,7 +78,7 @@ let Portfolio = () => {
     }
     return (
         <div className="container">
-            <h1 className="f1 lh-title pb6">Portfolio</h1>
+            <h1 className="subheader lh-title pb5">Portfolio</h1>
             <div>
                 <div>
                     <div className="flex flex-wrap justify-center">

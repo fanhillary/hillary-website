@@ -95,7 +95,7 @@ textarea {
     border-radius: 4px;
 }
 
-.main:hover .button{
+.button:hover{
     background: grey;
 }
 .text {
