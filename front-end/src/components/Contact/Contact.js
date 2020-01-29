@@ -93,7 +93,7 @@ export default class Contact extends React.Component {
                 if (response === 'Success'){
                     setTimeout(() => {  this.resetForm(); }, 2000);
                     basicTimeline.play();
-                }else if(response === 'Fail'){
+                }else{
                     console.log("Error sending email.");
                 }
             })
@@ -132,7 +132,7 @@ export default class Contact extends React.Component {
         return (
             <div className="container contact-container ">
                 <h1 className="subheader pb5">Contact Me</h1>
-                <form className="mb5" method="POST"> 
+                <form className="mb5" method="POST" autocomplete="off"> 
                     <div className="round-input relative flex items-center">
                         <input className="contact-input" type="text" name="name" placeholder="Your Name*" value={this.state.name} onChange={this.changeName.bind(this)}/>
                         <div className="validation"><p className="mr2">Missing Name</p><i class="mr2 fas f4 fa-exclamation-circle"></i></div>

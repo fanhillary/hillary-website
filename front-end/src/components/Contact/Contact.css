@@ -41,6 +41,7 @@ input {
     color: #8f8fa1;
     font-weight: bold;
     line-height: 1.2;
+    outline:none;
 }
 
 .validation {
