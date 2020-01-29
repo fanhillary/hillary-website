@@ -88,12 +88,12 @@ export default class Contact extends React.Component {
                 'Content-Type': 'application/json'
                 },
             }).then((response) => response.json())
-            .then((response)=>{
+            .then((response)=> {
                 console.log(response);
                 if (response === 'Success'){
                     setTimeout(() => {  this.resetForm(); }, 2000);
                     basicTimeline.play();
-                }else{
+                }else {
                     console.log("Error sending email.");
                 }
             })
