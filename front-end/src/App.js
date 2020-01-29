@@ -224,7 +224,7 @@ export default class App extends React.Component {
   alternateOpacityChevron() {
       const object = document.getElementById('down');
       let currentOpacity  = object.style.opacity;
-      if (currentOpacity == 1) { // keep as 2 equal signs
+      if (currentOpacity == 1) { // IMPORTANT: keep as 2 equal signs
           object.style.opacity = .4;
       } else {
           object.style.opacity = 1;
