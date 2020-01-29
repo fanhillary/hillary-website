@@ -4,6 +4,10 @@
     color: white;
 }
 
+.header-link:focus {
+    outline: none;
+}
+
 .header-link:hover {
     color: black;
 }
