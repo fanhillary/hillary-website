@@ -80,7 +80,7 @@ export default class Contact extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.validateForm()) {
-            fetch('https://stark-bayou-29179.herokuapp.com/sendEmail',{
+            fetch('https://hillary-fan-server.herokuapp.com/sendEmail',{
                 method: "POST",
                 body: JSON.stringify(this.state),
                 headers: {
