@@ -80,7 +80,6 @@ export default class App extends React.Component {
     };
 
     function handleEvent(e) {
-      console.log(e);
       if (e.pageY < 1500) {
         if (e.touches) { 
           e.preventDefault();

@@ -80,7 +80,7 @@ export default class Contact extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         if (this.validateForm()) {
-            fetch('http://localhost:3001/sendEmail',{
+            fetch('https://stark-bayou-29179.herokuapp.com/sendEmail',{
                 method: "POST",
                 body: JSON.stringify(this.state),
                 headers: {
@@ -89,6 +89,7 @@ export default class Contact extends React.Component {
                 },
             }).then((response) => response.json())
             .then((response)=>{
+                console.log(response);
                 if (response === 'Success'){
                     setTimeout(() => {  this.resetForm(); }, 2000);
                     basicTimeline.play();
