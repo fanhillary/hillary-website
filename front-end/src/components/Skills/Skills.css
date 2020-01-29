@@ -17,6 +17,7 @@
 
 .card img {
     opacity: 80%;
+    z-index: 100;
 }
 
 .skill-card {

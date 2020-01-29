@@ -4,9 +4,7 @@ body {
   cursor: default;
   color: white;
 }
-img {
-  z-index: 2;
-}
+
 #under-ocean {
   transition: .5s all;
 }
