@@ -5,7 +5,7 @@
 }
 
 .header-link:focus {
-    outline: none;
+    outline: 0;
 }
 
 .header-link:hover {
