@@ -7,10 +7,10 @@ import leftLeaf from './leaf-left.png';
 import tropicalLeafRight from './tropical-leaf-right.png';
 import tropicalLeaf from './tropical-leaf.png';
 import ExperienceTile from './ExperienceTile/ExperienceTile.js';
-import PinkMemphis from './pink-memphis.png';
-import PinkMemphisCounterpart from './pink-memphis-counterpart.png';
-import TealMemphis from './teal-memphis.png';
-import TealMemphisCounterpart from './teal-memphis-counterpart.png';
+import PinkMemphis from '../../images/pink-memphis.png';
+import PinkMemphisCounterpart from '../../images/pink-memphis-counterpart.png';
+import TealMemphis from '../../images/teal-memphis.png';
+import TealMemphisCounterpart from '../../images/teal-memphis-counterpart.png';
 
 let Experience = ({leafVisibility}) => {
     const positions = [

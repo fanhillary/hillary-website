@@ -1,9 +1,9 @@
 import React from 'react';
 import './Skills.css';
-import frontEndImage from './front-end.png';
-import languagesImage from './languages.png';
-import backendImage from './backend.png';
-import miscellaneousImage from './miscellaneous.png';
+import frontEndImage from '../../images/front-end.png';
+import languagesImage from '../../images/languages.png';
+import backendImage from '../../images/backend.png';
+import miscellaneousImage from '../../images/miscellaneous.png';
 
 let Skills = () => {
     let frontSkill = [];
@@ -39,28 +39,28 @@ let Skills = () => {
             <h1 className="subheader lh-title pb5">Skills</h1>
             <div className="ml4 flex flex-wrap justify-center">
                 <div className="skill-card card">
-                    <img className="skillImg" src={frontEndImage} alt="header"/>
+                    <img src={frontEndImage} alt="header"/>
                     <div className="experience-content">
                         <h1> Front End </h1>
                         {frontSkill}
                     </div>
                 </div>
                 <div className="skill-card card">
-                    <img className="skillImg" src={backendImage} alt="header"/>
+                    <img src={backendImage} alt="header"/>
                     <div className="experience-content">
                         <h1> Back End </h1>
                         {backSkill}
                     </div>
                 </div>
                 <div className="skill-card card">
-                    <img className="skillImg" src={languagesImage} alt="header"/>
+                    <img src={languagesImage} alt="header"/>
                     <div className="experience-content">
                         <h1> Languages </h1>
                         {languageSkill}
                     </div>
                 </div>
                 <div className="skill-card card">
-                    <img className="skillImg" src={miscellaneousImage} alt="header"/>
+                    <img src={miscellaneousImage} alt="header"/>
                     <div className="experience-content">
                         <h1> Miscellaneous </h1>
                         {miscSkill}

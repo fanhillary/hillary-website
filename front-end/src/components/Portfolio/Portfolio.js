@@ -1,13 +1,13 @@
 import React from 'react';
 import './Portfolio.css';
 import PortfolioTile from './PortfolioTile/PortfolioTile.js';
-import FaceRecognitionImage from './face-recognition.png';
-import TimeCapsuleImage from './time-capsule.png';
-import DailyChallengeImage from './daily-challenge.png';
-import WhatToEatImage from './what-to-eat.png';
-import TritonTransitImage from './triton-transit.png';
-import FlyeringRobotImage from './flyering-robot.png';
-import ComputerLiteracyImage from './computer-literacy.png';
+import FaceRecognitionImage from '../../images/face-recognition.png';
+import TimeCapsuleImage from '../../images/time-capsule.png';
+import DailyChallengeImage from '../../images/daily-challenge.png';
+import WhatToEatImage from '../../images/what-to-eat.png';
+import TritonTransitImage from '../../images/triton-transit.png';
+import FlyeringRobotImage from '../../images/flyering-robot.png';
+import ComputerLiteracyImage from '../../images/computer-literacy.png';
 let Portfolio = () => {
     
     const projects = [

@@ -3,8 +3,7 @@ import './ExperienceTile.css';
 import SkillsTag from '../../SkillsTag/SkillsTag.js';
 
 let ExperienceTile = ({experience}) => {
-    let header = Object.values(experience['header'])[0]
-
+    let header = Object.values(experience['header'])[0];
     let tags = [];
     if (experience['tags']) {
         for (const [index,skill] of experience['tags'].entries()) {
@@ -15,7 +14,7 @@ let ExperienceTile = ({experience}) => {
     return (
         
         <div className="card">
-            <img src={header} alt="header"/>
+            <img className="experience-image" src={header} alt="header"/>
             <div className="experience-content">
                 <p className="f6 lh-copy measure"> {experience['date']} </p>
                 <h1> {experience.company} </h1>

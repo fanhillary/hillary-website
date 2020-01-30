@@ -45,7 +45,6 @@ export default class App extends React.Component {
     var cW;
     var bgColor = "#8ea6e7";
     var animations = [];
-    var circles = [];
 
     var colorPicker = (function() {
       var colors = ["#8ea6e7", "#d37071","#a889d8", "#e1b7a2"];
@@ -88,7 +87,7 @@ export default class App extends React.Component {
         var currentColor = colorPicker.current();
         var nextColor = colorPicker.next();
         var targetR = calcPageFillRadius(e.pageX, e.pageY);
-        var rippleSize = Math.min(200, (cW * .4));
+        var rippleSize = Math.min(200, (cW * .5));
         var minCoverDuration = 750;
         
         var pageFill = new Circle({
@@ -108,26 +107,6 @@ export default class App extends React.Component {
             removeAnimation(fillAnimation);
             bgColor = pageFill.fill;
           }
-        });
-        
-        var ripple = new Circle({
-          x: e.pageX,
-          y: e.pageY,
-          r: 0,
-          fill: currentColor,
-          stroke: {
-            width: 3,
-            color: currentColor
-          },
-          opacity: 1
-        });
-        var rippleAnimation = anime({
-          targets: ripple,
-          r: rippleSize,
-          opacity: 0,
-          easing: "easeOutExpo",
-          duration: 1100,
-          complete: removeAnimation
         });
         
         var particles = [];
@@ -153,7 +132,7 @@ export default class App extends React.Component {
           duration: anime.random(1000,1300),
           complete: removeAnimation
         });
-        animations.push(fillAnimation, rippleAnimation, particlesAnimation);
+        animations.push(fillAnimation, particlesAnimation);
       }
     }
 
@@ -224,7 +203,7 @@ export default class App extends React.Component {
   alternateOpacityChevron() {
       const object = document.getElementById('down');
       let currentOpacity  = object.style.opacity;
-      if (currentOpacity == 1) { // IMPORTANT: keep as 2 equal signs
+      if (currentOpacity == 1) { // IMPORTANT: keep as 2 equal signs because we want to type coerce string opacity
           object.style.opacity = .4;
       } else {
           object.style.opacity = 1;
