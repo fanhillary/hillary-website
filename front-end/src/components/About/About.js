@@ -128,8 +128,12 @@ const particlesOptions = {
                               And sharing music I love
                           </p>
                       </div>
-                      <h1 className="lh-copy">Currently listening to:</h1> 
-                      <RecentlyPlayed recentTracks={this.state.recentTracks}/>
+                      <div className="music-container">
+                        <div className="music-header">
+                          <h1 className="lh-copy">I am currently listening to:</h1> 
+                        </div>
+                        <RecentlyPlayed recentTracks={this.state.recentTracks}/>
+                      </div>
                   </div>
               </div>
           </div>

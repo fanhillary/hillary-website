@@ -1,5 +1,4 @@
 import React from 'react';
-import './RecentlyPlayed.css';
 import PreviousTrack from './PreviousTrack/PreviousTrack.js';
 
 let RecentlyPlayed = ({recentTracks}) => {
@@ -16,7 +15,7 @@ let RecentlyPlayed = ({recentTracks}) => {
 
 
     return (
-        <div >
+        <div>
           {prevTracks}
         </div>
     )

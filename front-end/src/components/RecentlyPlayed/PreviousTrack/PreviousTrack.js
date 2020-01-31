@@ -1,5 +1,4 @@
 import React from 'react';
-import './PreviousTrack.css';
 
 let PreviousTrack = ({track, opacity}) => {
     const trackStyle = {
@@ -7,7 +6,7 @@ let PreviousTrack = ({track, opacity}) => {
       };
     return (
         <div >
-          <h1 className="f3 lh-copy" style={trackStyle}>{track}</h1>
+          <h1 className="f3 lh-copy w3-animate-fading" style={trackStyle}>{track}</h1>
         </div>
     )
 }
