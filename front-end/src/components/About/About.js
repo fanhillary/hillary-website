@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 import Particles from 'react-particles-js';
-
+import RecentlyPlayed from '../RecentlyPlayed/RecentlyPlayed.js';
 const particlesOptions = {
     canvas: {
       w: "100%",
@@ -55,70 +55,84 @@ const particlesOptions = {
       }
     }
   }
-
-let About = ({particlesVisible}) => {
-    // fetch('https://api.spotify.com/v1/me/player/recently-played', {
-    //   method: 'get',
-    //   headers: { 
-    //     'Content-Type': 'application/json',
-    //     'Authorization': token
-    //   },
-    //   body: JSON.stringify({
-
-    //   })
-    // }).then((response) => response.json())
-    // .then((response) => console.log(response));
-
-    fetch('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=fanhillary&api_key=6976974c003be6d3bc0da5e50fffd7cf&format=json', {
-      method: 'get',
-    }).then((response) => response.json())
-    .then((response) => {
-      var recentTracks = response['recenttracks']['track'];
-      console.log(recentTracks)});
+  export default class About extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        recentTracks: [],
+      }
+    }
     
-  
-    return (
-        <div className="container">
-            {/* <Particles className={'particles ' + particlesVisible} params={particlesOptions} /> */}
-            <h1 className="subheader lh-title">About Me</h1>
-            <div className = "about-content"> 
-                <div className="pa5-ns tc">
-                    <div className="pb2">
-                        <p className="f2 b"> Hi! I'm Hillary, again </p>
-                        <p className="f3 lh-copy">
-                            I'm a full-stack developer.
-                            I enjoy working on web applications, finding solutions to complex problems, and designing intuitive user experiences.
-                            Some of my favorite technologies are ReactJS, Angular, Java, Python, and MongoDB. 
-                        </p>
-                        <p className="f3 lh-copy">
-                            People describe me as patient, mediator, flexible, and calm like water.
-                        </p>
-                    </div>
-                    <div className="pb2">
-                      <p className="f2 b"> My Life Motto </p>
-                        <p className="f3 lh-copy">
-                            To end everyday knowing that I have learned something new or improved upon myself.
-                        </p>
-                    </div>
-                    <div className="pb2">
-                      <p className="f2 b"> Things I love </p>
-                        <p className="f3 lh-copy">
-                            Late night walks in the city
-                        </p>
-                        <p className="f3 lh-copy">
-                            Finding hidden rooftops to view stars
-                        </p>
-                        <p className="f3 lh-copy">
-                            And sharing music I love
-                        </p>
-                    </div>
-                    <p className="f4 lh-copy">Here's what I'm listening to right now:</p> 
-                    <p className="f4 lh-copy"> spotify </p>
-                    <p className="f4 lh-copy"> spotify </p>
-                    <p className="f4 lh-copy"> spotify </p>
-                </div>
-            </div>
-        </div>
-    )
+    componentDidMount() {
+      this.getRecentlyPlayed();
+      this.interval = setInterval(() => this.getRecentlyPlayed(), 15000);
+    }
+
+    componentWillUnmount() {
+      clearInterval(this.interval);
+    }
+
+    getRecentlyPlayed() {
+      fetch('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=fanhillary&api_key=6976974c003be6d3bc0da5e50fffd7cf&format=json', {
+        method: 'get',
+      }).then((response) => response.json())
+      .then((response) => {
+        var recentTracksResponse = response['recenttracks']['track'];
+        var recentTracks = [];
+
+        for (let i = 0; i < 7; i++ ) {
+          let artist = recentTracksResponse[i].artist['#text'];
+          let song = recentTracksResponse[i].name;
+          recentTracks.push(artist + ' - ' + song);
+        }
+        this.setState({recentTracks: recentTracks});
+        console.log(this.state.recentTracks);
+      });
+    }
+    
+    render() {
+      let {particlesVisible} = this.props;
+
+      return (
+          <div className="container">
+              {/* <Particles className={'particles ' + particlesVisible} params={particlesOptions} /> */}
+              <h1 className="subheader lh-title">About Me</h1>
+              <div className = "about-content"> 
+                  <div className="pa5-ns tc">
+                      <div className="pb2">
+                          <p className="f2 b"> Hi! I'm Hillary, again </p>
+                          <p className="f3 lh-copy">
+                              I'm a full-stack developer.
+                              I enjoy working on web applications, finding solutions to complex problems, and designing intuitive user experiences.
+                              Some of my favorite technologies are ReactJS, Angular, Java, Python, and MongoDB. 
+                          </p>
+                          <p className="f3 lh-copy">
+                              People describe me as patient, mediator, flexible, and calm like water.
+                          </p>
+                      </div>
+                      <div className="pb2">
+                        <p className="f2 b"> My Life Motto </p>
+                          <p className="f3 lh-copy">
+                              To end everyday knowing that I have learned something new or improved upon myself.
+                          </p>
+                      </div>
+                      <div className="pb2">
+                        <p className="f2 b"> Things I love </p>
+                          <p className="f3 lh-copy">
+                              Late night walks in the city
+                          </p>
+                          <p className="f3 lh-copy">
+                              Finding hidden rooftops to view stars
+                          </p>
+                          <p className="f3 lh-copy">
+                              And sharing music I love
+                          </p>
+                      </div>
+                      <h1 className="lh-copy">Currently listening to:</h1> 
+                      <RecentlyPlayed recentTracks={this.state.recentTracks}/>
+                  </div>
+              </div>
+          </div>
+      )
+    }
 }
-export default About;

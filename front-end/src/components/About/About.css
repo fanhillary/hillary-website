@@ -33,10 +33,14 @@
     z-index: 99;
   }
   
-  .particles-visible {
-    visibility: visible;
-  }
-  
-  .particles-hidden {
-    visibility: hidden;
-  }
+.particles-visible {
+  visibility: visible;
+}
+
+.particles-hidden {
+  visibility: hidden;
+}
+
+.recently-played {
+  height: 500px;
+}
