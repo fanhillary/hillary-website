@@ -87,7 +87,7 @@ export default class App extends React.Component {
         var currentColor = colorPicker.current();
         var nextColor = colorPicker.next();
         var targetR = calcPageFillRadius(e.pageX, e.pageY);
-        var rippleSize = Math.min(200, (cW * .5));
+        var rippleSize = Math.min(200, (cW * .4));
         var minCoverDuration = 750;
         
         var pageFill = new Circle({

@@ -57,6 +57,26 @@ const particlesOptions = {
   }
 
 let About = ({particlesVisible}) => {
+    // fetch('https://api.spotify.com/v1/me/player/recently-played', {
+    //   method: 'get',
+    //   headers: { 
+    //     'Content-Type': 'application/json',
+    //     'Authorization': token
+    //   },
+    //   body: JSON.stringify({
+
+    //   })
+    // }).then((response) => response.json())
+    // .then((response) => console.log(response));
+
+    fetch('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=fanhillary&api_key=6976974c003be6d3bc0da5e50fffd7cf&format=json', {
+      method: 'get',
+    }).then((response) => response.json())
+    .then((response) => {
+      var recentTracks = response['recenttracks']['track'];
+      console.log(recentTracks)});
+    
+  
     return (
         <div className="container">
             {/* <Particles className={'particles ' + particlesVisible} params={particlesOptions} /> */}

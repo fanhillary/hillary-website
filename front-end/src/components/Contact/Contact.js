@@ -85,7 +85,8 @@ export default class Contact extends React.Component {
                 body: JSON.stringify(this.state),
                 headers: {
                 'Accept': 'application/json',
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
                 },
             }).then((response) => response.json())
             .then((response)=> {
