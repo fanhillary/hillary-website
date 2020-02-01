@@ -107,7 +107,7 @@ const particlesOptions = {
                               Some of my favorite technologies are ReactJS, Angular, Java, Python, and MongoDB. 
                           </p>
                           <p className="f3 lh-copy">
-                              People describe me as patient, mediator, flexible, and calm like water.
+                              People describe me as patient, mediator, and adaptive.
                           </p>
                       </div>
                       <div className="pb2">
@@ -118,15 +118,30 @@ const particlesOptions = {
                       </div>
                       <div className="pb2">
                         <p className="f2 b"> Things I love </p>
-                          <p className="f3 lh-copy">
-                              Late night walks in the city
-                          </p>
-                          <p className="f3 lh-copy">
-                              Finding hidden rooftops to view stars
-                          </p>
-                          <p className="f3 lh-copy">
-                              And sharing music I love
-                          </p>
+                          <div className="flex justify-center items-center"> 
+                            <div className="mr2">
+                              <i className="fas fa-cloud-moon f3"></i>
+                            </div> 
+                            <div>
+                              <p className="f3 lh-copy ">Late night walks in the city </p>
+                            </div>
+                          </div>
+                          <div className="flex justify-center items-center"> 
+                            <div className="mr2">
+                              <i className="fas fa-star f3"></i>
+                            </div> 
+                            <div>
+                              <p className="f3 lh-copy ">Finding hidden rooftops to view stars </p>
+                            </div>
+                          </div>
+                          <div className="flex justify-center items-center"> 
+                            <div className="mr2">
+                              <i className="fas fa-music f3"></i>
+                            </div> 
+                            <div>
+                              <p className="f3 lh-copy ">And sharing music I love </p>
+                            </div>
+                          </div>
                       </div>
                       <div className="music-container">
                         <div className="music-header">
