@@ -13,17 +13,16 @@
     color: #e5d3c8;
 }
 
-@media screen and (max-width: 1000px) {
-  .about-content {
-    width: 80%
-  }
-}
-
 @media screen and (min-width: 1001px) {
   .about-content {
     width: 60%;
     padding-top: 50px;
   }
+}
+
+#recently-played {
+  opacity: 1;
+  transition: .5s all;
 }
 
 .particles {
@@ -47,12 +46,13 @@
   transition: .3s all;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   border-radius: 7px; /* 5px rounded corners */
-  background: #1bb751;
+  background: #407253;
   color: black;
 }
 
 .music-header {
-  background: #169542;
-  border-radius: 7px; /* 5px rounded corners */
+  background: #0F4730;
+  border-radius: 7px 7px 0px 0px; /* 5px rounded corners */
   padding: 5px;
+  color: #F5F6DB;
 }

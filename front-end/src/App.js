@@ -43,11 +43,11 @@ export default class App extends React.Component {
     var ctx = c.getContext("2d");
     var cH;
     var cW;
-    var bgColor = "#8ea6e7";
+    var bgColor = "#a889d8";
     var animations = [];
 
     var colorPicker = (function() {
-      var colors = ["#8ea6e7", "#d37071","#a889d8", "#e1b7a2"];
+      var colors = ["#a889d8", "#e1b7a2", "#8ea6e7", "#d37071"];
       var index = 0;
       function next() {
         index = index++ < colors.length-1 ? index : 0;
@@ -203,7 +203,7 @@ export default class App extends React.Component {
   alternateOpacityChevron() {
       const object = document.getElementById('down');
       let currentOpacity  = object.style.opacity;
-      if (currentOpacity == 1) { // IMPORTANT: keep as 2 equal signs because we want to type coerce string opacity
+      if (currentOpacity == 1) { // IMPORTANT: keep as 2 equal signs bc we want to type coerce string opacity
           object.style.opacity = .4;
       } else {
           object.style.opacity = 1;

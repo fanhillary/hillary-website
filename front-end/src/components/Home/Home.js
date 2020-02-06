@@ -5,9 +5,9 @@ export default class Home extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            lightestWave: "#282F6B",
-            mediumWave: "#151755",
-            darkestWave: "#090839",
+            lightestWave: "#9754CA",
+            mediumWave: "#6337A1",
+            darkestWave: "#280F4F",
             waveColorIndex: 0,
         }
         this.changeWaveColor = this.changeWaveColor.bind(this);
@@ -16,7 +16,7 @@ export default class Home extends React.Component {
 
     changeWaveColor(e) {
         if (e.pageY < 1500) {
-            var colors = ["blue", "brown", "purple", "pink"];
+            var colors = ["purple", "pink", "blue", "brown"];
             let nextColor = this.state.waveColorIndex < colors.length -1 ? this.state.waveColorIndex + 1 : 0;
             this.setState({waveColorIndex: nextColor});
             let currColor = colors[this.state.waveColorIndex];

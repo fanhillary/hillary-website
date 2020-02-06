@@ -1,21 +1,17 @@
 import React from 'react';
 import PreviousTrack from './PreviousTrack/PreviousTrack.js';
-
+import './RecentlyPlayed.css';
 let RecentlyPlayed = ({recentTracks}) => {
     var opacity = 1;
     var prevTracks = [];
 
-    // var reversedTracks = recentTracks.slice(0).reverse();
-
     for (const [index,track] of recentTracks.entries()) {
-
         prevTracks.push(<PreviousTrack track={track} opacity={opacity} />);
         opacity = opacity-.15;
     }
 
-
     return (
-        <div>
+        <div className="recently-played-modal">
           {prevTracks}
         </div>
     )

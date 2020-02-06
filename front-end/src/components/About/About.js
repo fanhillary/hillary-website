@@ -66,6 +66,7 @@ const particlesOptions = {
     componentDidMount() {
       this.getRecentlyPlayed();
       this.interval = setInterval(() => this.getRecentlyPlayed(), 15000);
+      window.setInterval(this.alternateOpacityRecentlyPlayed, 500);
     }
 
     componentWillUnmount() {
@@ -90,6 +91,16 @@ const particlesOptions = {
       });
     }
     
+    alternateOpacityRecentlyPlayed() {
+      const object = document.getElementById('recently-played');
+      let currentOpacity  = object.style.opacity;
+      if (currentOpacity == 1) { // IMPORTANT: keep as 2 equal signs bc we want to type coerce string opacity
+          object.style.opacity = .7;
+      } else {
+          object.style.opacity = 1;
+      }
+  }
+  
     render() {
       let {particlesVisible} = this.props;
 
@@ -145,7 +156,7 @@ const particlesOptions = {
                       </div>
                       <div className="music-container">
                         <div className="music-header">
-                          <h1 className="lh-copy">I am currently listening to:</h1> 
+                          <h1 id="recently-played" className="lh-copy">Currently listening to ...</h1> 
                         </div>
                         <RecentlyPlayed recentTracks={this.state.recentTracks}/>
                       </div>
