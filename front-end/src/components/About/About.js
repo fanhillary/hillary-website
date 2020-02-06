@@ -75,6 +75,8 @@ const particlesOptions = {
     }
 
     getRecentlyPlayed() {
+      console.log(process.env.SCROBBLE_KEY);
+      console.log(process.env.SCROBBLE_USER);
       fetch('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + process.env.SCROBBLE_USER + '&api_key=' + process.env.SCROBBLE_KEY + '&format=json', {
         method: 'get',
       }).then((response) => response.json())

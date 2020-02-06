@@ -1,7 +1,7 @@
 import React from 'react';
 import './Navigation.css';
 
-let Navigation = ({screenWidth}) => {
+let Navigation = () => {
     return (
         <div className="nav-container">
             <div className="flex">
