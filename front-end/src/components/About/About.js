@@ -75,7 +75,7 @@ const particlesOptions = {
     }
 
     getRecentlyPlayed() {
-      fetch('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=fanhillary&api_key=6976974c003be6d3bc0da5e50fffd7cf&format=json', {
+      fetch('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + process.env.SCROBBLE_USER + '&api_key=' + process.env.SCROBBLE_KEY + '&format=json', {
         method: 'get',
       }).then((response) => response.json())
       .then((response) => {
@@ -92,7 +92,7 @@ const particlesOptions = {
         this.setState({recentTracks: recentTracks});
       })
       .catch((error) => {
-        console.log('error getting recently played');
+        console.log('error getting recently played' + error);
       });
     }
     
