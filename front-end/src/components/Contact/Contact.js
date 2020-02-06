@@ -131,7 +131,7 @@ export default class Contact extends React.Component {
 
     render() {
         return (
-            <div className="container contact-container ">
+            <div className="contact-container ">
                 <h1 className="subheader pb5">Contact Me</h1>
                 <form className="mb5" method="POST" autoComplete="off"> 
                     <div className="round-input relative flex items-center">

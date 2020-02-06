@@ -29,7 +29,7 @@
     }
   }
 
-@media screen and (max-width: 710px) {
+@media screen and (max-width: 730px) {
     .header-link {
         display: none;
     }
