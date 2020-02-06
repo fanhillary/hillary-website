@@ -23,13 +23,13 @@ let Skills = () => {
             let skillName = skill.name;
             let skillIcon = skill.icon;
             if (element === "frontend") {
-                frontSkill.push(<div className="flex justify-center items-center"> <div className="mr2"><i class={"fab f4 " + skillIcon}></i></div> <div><p className="f5 lh-copy measure" key={"front" + index}> {skillName} </p></div></div>);
+                frontSkill.push(<div className="flex justify-center items-center" key={"front" + index}> <div className="mr2"><i className={"fab f4 " + skillIcon}></i></div> <div><p className="f5 lh-copy measure"> {skillName} </p></div></div>);
             } else if (element === "backend") {
-                backSkill.push(<div className="flex justify-center items-center"> <div className="mr2"><i class={"fab f4 " + skillIcon}></i></div> <div><p className="f5 lh-copy measure" key={"back" + index}> {skillName} </p></div></div>);
+                backSkill.push(<div className="flex justify-center items-center"  key={"back" + index}> <div className="mr2"><i className={"fab f4 " + skillIcon}></i></div> <div><p className="f5 lh-copy measure"> {skillName} </p></div></div>);
             } else if (element === "languages") {
-                languageSkill.push(<div className="flex justify-center items-center"> <div className="mr2"><i class={"fab f4 " + skillIcon}></i></div> <div><p className="f5 lh-copy measure" key={"lang" + index}> {skillName} </p></div></div>);
+                languageSkill.push(<div className="flex justify-center items-center" key={"lang" + index}> <div className="mr2"><i className={"fab f4 " + skillIcon}></i></div> <div><p className="f5 lh-copy measure"> {skillName} </p></div></div>);
             } else if (element === "misc") {
-                miscSkill.push(<div className="flex justify-center items-center"> <div className="mr2"><i class={"fab f4 " + skillIcon}></i></div> <div><p className="f5 lh-copy measure" key={"misc" + index}> {skillName} </p></div></div>);
+                miscSkill.push(<div className="flex justify-center items-center" key={"misc" + index}> <div className="mr2"><i className={"fab f4 " + skillIcon}></i></div> <div><p className="f5 lh-copy measure" > {skillName} </p></div></div>);
             }
         }
     }

@@ -60,6 +60,7 @@ const particlesOptions = {
       super(props);
       this.state = {
         recentTracks: [],
+        currentlyPlaying: false,
       }
     }
     
@@ -80,14 +81,18 @@ const particlesOptions = {
       .then((response) => {
         var recentTracksResponse = response['recenttracks']['track'];
         var recentTracks = [];
-
         for (let i = 0; i < 7; i++ ) {
+          if (i === 0) {
+            this.setState({currentlyPlaying: recentTracksResponse[i]['@attr']['nowplaying']});
+          }
           let artist = recentTracksResponse[i].artist['#text'];
           let song = recentTracksResponse[i].name;
           recentTracks.push(artist + ' - ' + song);
         }
         this.setState({recentTracks: recentTracks});
-        console.log(this.state.recentTracks);
+      })
+      .catch((error) => {
+        console.log('error getting recently played');
       });
     }
     
@@ -156,7 +161,9 @@ const particlesOptions = {
                       </div>
                       <div className="music-container">
                         <div className="music-header">
-                          <h1 id="recently-played" className="lh-copy">Currently listening to ...</h1> 
+                          {this.currentlyPlaying ? <h1 id="recently-played" className="lh-copy">Now listening to ...</h1> :
+                            <h1 id="recently-played" className="lh-copy">Previously listening to ...</h1> 
+                          }
                         </div>
                         <RecentlyPlayed recentTracks={this.state.recentTracks}/>
                       </div>

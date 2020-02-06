@@ -6,7 +6,7 @@ let RecentlyPlayed = ({recentTracks}) => {
     var prevTracks = [];
 
     for (const [index,track] of recentTracks.entries()) {
-        prevTracks.push(<PreviousTrack track={track} opacity={opacity} />);
+        prevTracks.push(<PreviousTrack track={track} key={index} opacity={opacity} />);
         opacity = opacity-.15;
     }
 

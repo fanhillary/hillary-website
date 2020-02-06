@@ -133,14 +133,14 @@ export default class Contact extends React.Component {
         return (
             <div className="container contact-container ">
                 <h1 className="subheader pb5">Contact Me</h1>
-                <form className="mb5" method="POST" autocomplete="off"> 
+                <form className="mb5" method="POST" autoComplete="off"> 
                     <div className="round-input relative flex items-center">
                         <input className="contact-input" type="text" name="name" placeholder="Your Name*" value={this.state.name} onChange={this.changeName.bind(this)}/>
-                        <div className="validation"><p className="mr2">Missing Name</p><i class="mr2 fas f4 fa-exclamation-circle"></i></div>
+                        <div className="validation"><p className="mr2">Missing Name</p><i className="mr2 fas f4 fa-exclamation-circle"></i></div>
                     </div>
                     <div className="round-input relative flex items-center">
                         <input className="contact-input" type="text" name="email" placeholder="Your E-mail*"  value={this.state.email} onChange={this.changeEmail.bind(this)}/>
-                        <div className="validation"><p className="mr2">Invalid Email</p><i class="mr2 fas f4 fa-exclamation-circle"></i></div>
+                        <div className="validation"><p className="mr2">Invalid Email</p><i className="mr2 fas f4 fa-exclamation-circle"></i></div>
                     </div>
                     <div className="round-input relative">
                         <textarea className="contact-input w-100" name="message" placeholder="Your Message"  value={this.state.message} onChange={this.changeMessage.bind(this)}></textarea>
