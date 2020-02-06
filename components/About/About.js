@@ -68,7 +68,6 @@ const particlesOptions = {
       this.getRecentlyPlayed();
       this.interval = setInterval(() => this.getRecentlyPlayed(), 15000);
       window.setInterval(this.alternateOpacityRecentlyPlayed, 500);
-      console.log(process.env.SCROBBLE_API_KEY);
     }
 
     componentWillUnmount() {
