@@ -1,0 +1,64 @@
+.about-blue {
+    background: #2d55aa;
+    color:white;
+}
+
+.about-black {
+    background:#0C1419;
+    color: white;
+}
+
+.about-green {
+    background: #142a28;
+    color: #e5d3c8;
+}
+
+@media screen and (min-width: 1001px) {
+  .about-content {
+    width: 60%;
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .about-content {
+    width: 100%;
+    padding-top: 50px;
+  }
+}
+#recently-played {
+  opacity: 1;
+  transition: .8s all;
+}
+
+.particles {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+  }
+  
+.particles-visible {
+  visibility: visible;
+}
+
+.particles-hidden {
+  visibility: hidden;
+}
+
+.music-container {
+  height: 500px;
+  background-color: darkslategray;
+  transition: .3s all;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  border-radius: 7px; /* 5px rounded corners */
+  background: #407253;
+  color: black;
+}
+
+.music-header {
+  background: #0F4730;
+  border-radius: 7px 7px 0px 0px; /* 5px rounded corners */
+  padding: 5px;
+  color: #F5F6DB;
+}
