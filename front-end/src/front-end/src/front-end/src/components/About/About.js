@@ -68,7 +68,6 @@ const particlesOptions = {
       this.getRecentlyPlayed();
       this.interval = setInterval(() => this.getRecentlyPlayed(), 15000);
       window.setInterval(this.alternateOpacityRecentlyPlayed, 500);
-      console.log(process.env.SCROBBLE_API_KEY);
     }
 
     componentWillUnmount() {
@@ -76,6 +75,8 @@ const particlesOptions = {
     }
 
     getRecentlyPlayed() {
+      console.log(process.env.SCROBBLE_KEY);
+      console.log(process.env.SCROBBLE_USER);
       fetch('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=' + process.env.SCROBBLE_USER + '&api_key=' + process.env.SCROBBLE_KEY + '&format=json', {
         method: 'get',
       }).then((response) => response.json())
