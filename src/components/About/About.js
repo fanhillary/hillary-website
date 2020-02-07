@@ -165,7 +165,7 @@ const particlesOptions = {
                       </div>
                       <div className="music-container">
                         <div className="music-header">
-                          {this.currentlyPlaying ? <h1 id="recently-played" className="lh-copy">Now listening to ...</h1> :
+                          {this.state.currentlyPlaying ? <h1 id="recently-played" className="lh-copy">Now listening to ...</h1> :
                             <h1 id="recently-played" className="lh-copy">Previously listening to ...</h1> 
                           }
                         </div>
