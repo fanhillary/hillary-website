@@ -68,7 +68,6 @@ const particlesOptions = {
       this.getRecentlyPlayed();
       this.interval = setInterval(() => this.getRecentlyPlayed(), 15000);
       window.setInterval(this.alternateOpacityRecentlyPlayed, 500);
-      console.log(process.env.SCROBBLE_KEY);
     }
 
     componentWillUnmount() {
@@ -80,7 +79,8 @@ const particlesOptions = {
         method: 'get',
       }).then((response) => response.json())
       .then((response) => {
-        console.log(response);
+        console.log(process.env.SCROBBLE_KEY);
+        console.log(process.env.SCROBBLE_USER);
         var recentTracksResponse = response['recenttracks']['track'];
         var recentTracks = [];
         for (let i = 0; i < 7; i++ ) {
