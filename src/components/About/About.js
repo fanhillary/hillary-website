@@ -120,9 +120,11 @@ const particlesOptions = {
                       <div className="pb2">
                           <p className="f2 b"> Hi! I'm Hillary, again </p>
                           <p className="f3 lh-copy">
-                              I'm a full-stack developer.
-                              I enjoy working on web apps and designing intuitive experiences.
-                              Some of my favorite technologies are ReactJS, Angular, Java, Python, and MongoDB. 
+                              I'm a full-stack developer who is always hungry for more knowledge, self-improvement, and ice cream.
+                          </p>
+                          <p className="f3 lh-copy">
+                            I enjoy working on web apps and designing intuitive experiences.
+                            Some of my favorite technologies are ReactJS, Angular, Java, Python, and MongoDB. 
                           </p>
                           <p className="f3 lh-copy">
                               People describe me as patient, team mediator, and adaptive.
