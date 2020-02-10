@@ -79,6 +79,7 @@ export default class Contact extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        console.log('submit');
         if (this.validateForm()) {
             fetch('https://hillary-fan-server.herokuapp.com/sendEmail',{
                 method: "POST",
@@ -133,7 +134,7 @@ export default class Contact extends React.Component {
         return (
             <div className="contact-container ">
                 <h1 className="subheader pb5">Contact Me</h1>
-                <p className="f4 lh-copy "> or email hillary.fan123@gmail.com </p>
+                <p className="f5 lh-copy "> or email hillary.fan123@gmail.com </p>
 
                 <form className="mb5" method="POST" autoComplete="off"> 
                     <div className="round-input relative flex items-center">
@@ -161,7 +162,7 @@ export default class Contact extends React.Component {
                     </div>
                 </form>
                 <div className="mt2"> 
-                    <p> "Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning." -- Albert Einstein </p>
+                    <p> "Learn from yesterday, live for today, hope for tomorrow. The important thing is not to stop questioning." </p>
                 </div>
             </div>
         )
