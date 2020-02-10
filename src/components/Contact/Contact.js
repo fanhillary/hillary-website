@@ -133,6 +133,8 @@ export default class Contact extends React.Component {
         return (
             <div className="contact-container ">
                 <h1 className="subheader pb5">Contact Me</h1>
+                <p className="f4 lh-copy "> or email hillary.fan123@gmail.com </p>
+
                 <form className="mb5" method="POST" autoComplete="off"> 
                     <div className="round-input relative flex items-center">
                         <input className="contact-input" type="text" name="name" placeholder="Your Name*" value={this.state.name} onChange={this.changeName.bind(this)}/>
