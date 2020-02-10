@@ -89,7 +89,6 @@ const particlesOptions = {
         if (response === 'Error') {
           console.log('error getting recently played')
         } else {
-          console.log(response);
           var recentTracksResponse = response['recenttracks']['track'];
           var recentTracks = [];
           for (let i = 0; i < 7; i++ ) {
