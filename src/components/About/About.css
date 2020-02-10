@@ -54,6 +54,7 @@
   border-radius: 7px; /* 5px rounded corners */
   background: #407253;
   color: black;
+  padding-bottom: 15px;
 }
 
 .music-header {
