@@ -76,7 +76,14 @@ const particlesOptions = {
     }
 
     getRecentlyPlayed() {
-      fetch('https://hillary-fan-server.herokuapp.com/getRecentTracks',{ method: "GET"})
+      fetch('https://hillary-fan-server.herokuapp.com/getRecentTracks',{ 
+        method: "GET",
+        headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                },
+      })
       .then((response) => response.json())
       .then((response) => {
         if (response === 'Error') {
