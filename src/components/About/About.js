@@ -2,6 +2,7 @@ import React from 'react';
 import './About.css';
 import Particles from 'react-particles-js';
 import RecentlyPlayed from '../RecentlyPlayed/RecentlyPlayed.js';
+
 const particlesOptions = {
     canvas: {
       w: "100%",
@@ -75,10 +76,13 @@ const particlesOptions = {
     }
 
     getRecentlyPlayed() {
-      console.log(process.env.SCROBBLE_KEY);
-      console.log(process.env.SCROBBLE_USER);
-      fetch('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=fanhillary&api_key=6976974c003be6d3bc0da5e50fffd7cf&format=json&limit=10', {
-        method: 'get',
+      fetch('https://hillary-fan-server.herokuapp.com/getRecentTracks',{
+              method: "GET",
+              headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*',
+              },
       }).then((response) => response.json())
       .then((response) => {
         var recentTracksResponse = response['recenttracks']['track'];
