@@ -76,29 +76,24 @@ const particlesOptions = {
     }
 
     getRecentlyPlayed() {
-      fetch('https://hillary-fan-server.herokuapp.com/getRecentTracks',{
-              method: "GET",
-              headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
-              },
-      }).then((response) => response.json())
+      fetch('https://hillary-fan-server.herokuapp.com/getRecentTracks',{ method: "GET"})
+      .then((response) => response.json())
       .then((response) => {
-        var recentTracksResponse = response['recenttracks']['track'];
-        var recentTracks = [];
-        for (let i = 0; i < 7; i++ ) {
-          if (i === 0) {
-            this.setState({currentlyPlaying: recentTracksResponse[i].hasOwnProperty('@attr')});
+        if (response === 'Error') {
+          console.log('error getting recently played')
+        } else {
+          var recentTracksResponse = response['recenttracks']['track'];
+          var recentTracks = [];
+          for (let i = 0; i < 7; i++ ) {
+            if (i === 0) {
+              this.setState({currentlyPlaying: recentTracksResponse[i].hasOwnProperty('@attr')});
+            }
+            let artist = recentTracksResponse[i].artist['#text'];
+            let song = recentTracksResponse[i].name;
+            recentTracks.push(artist + ' - ' + song);
           }
-          let artist = recentTracksResponse[i].artist['#text'];
-          let song = recentTracksResponse[i].name;
-          recentTracks.push(artist + ' - ' + song);
+          this.setState({recentTracks: recentTracks});
         }
-        this.setState({recentTracks: recentTracks});
-      })
-      .catch((error) => {
-        console.log('error getting recently played' + error);
       });
     }
     
