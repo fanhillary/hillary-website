@@ -75,12 +75,12 @@ const particlesOptions = {
     }
 
     getRecentlyPlayed() {
+      console.log(process.env.SCROBBLE_KEY);
+      console.log(process.env.SCROBBLE_USER);
       fetch('http://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=fanhillary&api_key=6976974c003be6d3bc0da5e50fffd7cf&format=json&limit=10', {
         method: 'get',
       }).then((response) => response.json())
       .then((response) => {
-        console.log(process.env.SCROBBLE_KEY);
-        console.log(process.env.SCROBBLE_USER);
         var recentTracksResponse = response['recenttracks']['track'];
         var recentTracks = [];
         for (let i = 0; i < 7; i++ ) {
