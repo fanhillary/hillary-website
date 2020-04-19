@@ -1,3 +1,8 @@
+/* 
+* SkillsTag Component. 
+* A gray pill button showing text.
+* Called from Portoflio and Experience components.
+*/
 import React from 'react';
 import "./SkillsTag.css";
 let SkillsTag = ({skill}) => {

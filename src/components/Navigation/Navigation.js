@@ -1,3 +1,7 @@
+/*
+* Navigation bar component at top of page. 
+* Holds relevant anchor links and external links to github and linkedin pages.
+*/
 import React from 'react';
 import './Navigation.css';
 

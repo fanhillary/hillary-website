@@ -1,3 +1,7 @@
+/*
+* Portfolio Component. Displays projects and exgracurriculars previously worked on.
+* Holds array of Portfolio Tiles.
+*/
 import React from 'react';
 import './Portfolio.css';
 import PortfolioTile from './PortfolioTile/PortfolioTile.js';
@@ -10,6 +14,7 @@ import FlyeringRobotImage from '../../images/flyering-robot.png';
 import ComputerLiteracyImage from '../../images/computer-literacy.png';
 let Portfolio = () => {
     
+    // data for each of the projects to display
     const projects = [
         {
             name: 'Face Recognition Web App',
@@ -73,6 +78,7 @@ let Portfolio = () => {
     ]
 
     let items = [];
+    // create a porfolio tile for each of the projects listed in array
     for (const [index,project] of projects.entries()) {
         items.push(<PortfolioTile project={project} key={index}/>);
     }

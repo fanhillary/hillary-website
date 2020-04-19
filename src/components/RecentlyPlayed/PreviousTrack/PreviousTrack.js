@@ -1,3 +1,8 @@
+/*
+ * Previous Track component for displaying each song title and artist. 
+ * Props: track - track name and artist string
+ *        opacity - opacity of display song and title name in.
+ */
 import React from 'react';
 
 let PreviousTrack = ({track, opacity}) => {

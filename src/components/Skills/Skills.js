@@ -1,3 +1,6 @@
+/* 
+* Skills Component section showing 4 tiles for front, back, languages, and misc skills.
+*/
 import React from 'react';
 import './Skills.css';
 import frontEndImage from '../../images/front-end.png';
@@ -11,6 +14,7 @@ let Skills = () => {
     let languageSkill = [];
     let miscSkill = [];
 
+    // list of skills for each tile and relevant icons for each
     let skills = {
         frontend: [{name: "HTML/CSS", icon: "fa-html5"}, {name: 'Angular', icon: 'fa-angular'}, {name: 'React.js', icon: 'fa-react'}, {name: 'User Experience Design', icon: 'fas fa-paint-brush'}, {name: 'Responsive Web Design', icon: 'fas fa-mobile-alt'}],
         backend: [{name: 'Node.js', icon: 'fa-node-js'}, {name: 'Express.js', icon: 'fas fa-mug-hot'}, {name: 'PostgreSQL', icon: 'fas fa-database'}, {name: 'MongoDB', icon: 'fa-envira'}, {name: 'Django', icon: 'fa-python'}],
@@ -18,6 +22,7 @@ let Skills = () => {
         misc: [{name: 'Docker', icon: 'fa-docker'}, {name: 'Version Control/git', icon: 'fas fa-code-branch'}, {name: 'Jenkins', icon: 'b fa-jenkins'}, {name: 'Heroku', icon: 'fas fa-hippo'}, {name: 'Firebase', icon: 'fa-hotjar'}]
     }
    
+    // translate skills array to dynamic html for display
     for (const element in skills) {
         for (const [index,skill] of skills[element].entries()) {
             let skillName = skill.name;

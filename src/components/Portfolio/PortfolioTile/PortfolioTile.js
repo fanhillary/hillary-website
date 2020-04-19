@@ -1,3 +1,8 @@
+/*
+* Porfolio Tile Component. 
+* The tile itself containing image and individual project descriptions (tags, demo link, source, etc.)
+* Props: project - object containing information for each tile including tags, header image, tile color, descriptions, etc.
+*/
 import React from 'react';
 import './PortfolioTile.css';
 import SkillsTag from '../../SkillsTag/SkillsTag.js';

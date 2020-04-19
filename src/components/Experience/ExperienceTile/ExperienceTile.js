@@ -1,3 +1,7 @@
+/*
+* Experience Tile Component. 
+* The tile itself containing data for individual job positions (company, description, tags)
+*/
 import React from 'react';
 import './ExperienceTile.css';
 import SkillsTag from '../../SkillsTag/SkillsTag.js';
@@ -5,6 +9,8 @@ import SkillsTag from '../../SkillsTag/SkillsTag.js';
 let ExperienceTile = ({experience}) => {
     let header = Object.values(experience['header'])[0];
     let tags = [];
+
+    // from the position array in Experience.js, create skillstag component for each skill listed.
     if (experience['tags']) {
         for (const [index,skill] of experience['tags'].entries()) {
             tags.push(<SkillsTag skill={skill} key={index}/>);

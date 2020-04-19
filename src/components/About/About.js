@@ -1,5 +1,5 @@
 /* Component: About
-* About Me Section
+* About Me Section (Hobbies, Motto)
 */
 import React from 'react';
 import './About.css';

@@ -1,3 +1,6 @@
+/*
+* Logo Comopnent, sun svg. Not used anymore
+*/
 import React from 'react';
 import './Logo.css';
 let Logo = ({logoVisible})=> {
