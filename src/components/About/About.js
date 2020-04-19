@@ -1,8 +1,12 @@
+/* Component: About
+* About Me Section
+*/
 import React from 'react';
 import './About.css';
-import Particles from 'react-particles-js';
+// import Particles from 'react-particles-js';
 import RecentlyPlayed from '../RecentlyPlayed/RecentlyPlayed.js';
 
+// temporarily unused particles
 const particlesOptions = {
     canvas: {
       w: "100%",
@@ -60,21 +64,32 @@ const particlesOptions = {
     constructor(props) {
       super(props);
       this.state = {
-        recentTracks: [],
-        currentlyPlaying: false,
+        recentTracks: [], // list of the 7 most recently played songs, updated every 15 seconds
+        currentlyPlaying: false,  // boolean indicating whether music is playing currently.
       }
     }
     
+    /*
+    * On mount, get recently played songs from backend and set timer interval to check every 15 seconds.
+    */
     componentDidMount() {
       this.getRecentlyPlayed();
       this.interval = setInterval(() => this.getRecentlyPlayed(), 15000);
       window.setInterval(this.alternateOpacityRecentlyPlayed, 500);
     }
 
+    /*
+    * Discontinue timer interval on unmount
+    */
     componentWillUnmount() {
       clearInterval(this.interval);
     }
 
+    /*
+    * Gets most recently played songs on spotify account from the backend /getRecentTracks API. 
+    * Set recentTracks state to the top 7 most recent songs (titles and artist).
+    * Set currentlyPlaying state to true if most recent song is playing currently.
+    */
     getRecentlyPlayed() {
       fetch('https://hillary-fan-server.herokuapp.com/getRecentTracks',{ 
         method: "GET",
@@ -89,6 +104,7 @@ const particlesOptions = {
         if (response === 'Error') {
           console.log('error getting recently played')
         } else {
+          // parse for song name and artist for the top 7 most recently played songs
           var recentTracksResponse = response['recenttracks']['track'];
           var recentTracks = [];
           for (let i = 0; i < 7; i++ ) {
@@ -104,6 +120,9 @@ const particlesOptions = {
       });
     }
     
+    /*
+    * Alternates the opacity of "Recently Played" text for a blinking effect.
+    */
     alternateOpacityRecentlyPlayed() {
       const object = document.getElementById('recently-played');
       let currentOpacity  = object.style.opacity;
@@ -115,7 +134,7 @@ const particlesOptions = {
   }
   
     render() {
-      let {particlesVisible} = this.props;
+      // let {particlesVisible} = this.props;
 
       return (
           <div className="container">
@@ -124,32 +143,32 @@ const particlesOptions = {
               <div className = "about-content"> 
                   <div className="pa5-ns tc">
                       <div className="pb2">
-                          <p className="f2 b"> Hi! I'm Hillary, again </p>
+                          <p className="f2 b"> Hi! Nice to meet you. </p>
                           <p className="f3 lh-copy">
-                              I'm a full-stack developer who is always hungry for more knowledge, self-improvement, and ice cream.
+                              I'm a full-stack developer who is always hungry for knowledge and self-improvement.
                           </p>
                           <p className="f3 lh-copy">
                             I enjoy working on web apps and designing intuitive experiences.
-                            Some of my favorite technologies are ReactJS, Angular, Java, Python, and MongoDB. 
+                            Some of my favorite technologies are ReactJS, Angular, Python, and MongoDB. 
                           </p>
                           <p className="f3 lh-copy">
-                              People describe me as patient, team mediator, and adaptive.
+                            I spend most of my free time learning new things, playing board games, and watching Youtube.
                           </p>
                       </div>
                       <div className="pb2">
                         <p className="f2 b"> My Life Motto </p>
                           <p className="f3 lh-copy">
-                              To end everyday knowing that I have learned something new or improved upon myself.
+                              Motivation is useless without discipline. And discipline is wasted without motivation. Make sure it's something you want, then JUST DO IT™. 
                           </p>
                       </div>
                       <div className="pb2">
                         <p className="f2 b"> Things I love </p>
                           <div className="flex justify-center items-center"> 
                             <div className="mr2">
-                              <i className="fas fa-cloud-moon f3"></i>
+                              <i className="fas fa-gem f3"></i>
                             </div> 
                             <div>
-                              <p className="f3 lh-copy ">Late night walks in the city </p>
+                              <p className="f3 lh-copy ">Experimenting with Makeup </p>
                             </div>
                           </div>
                           <div className="flex justify-center items-center"> 

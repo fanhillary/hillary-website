@@ -1,10 +1,14 @@
+/*
+* Home component, title/landing screen.
+* Includes ripple effect, greeting message, resume download links.
+*/
 import React from 'react';
 import './Home.css';
 import resume from './Resume_HFan.pdf';
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
+        this.state = { // colors of each wave
             lightestWave: "#9754CA",
             mediumWave: "#6337A1",
             darkestWave: "#280F4F",
@@ -13,10 +17,14 @@ export default class Home extends React.Component {
         this.changeWaveColor = this.changeWaveColor.bind(this);
     }
 
-
+    /*
+    * Function Name: changeWaveColor(e)
+    * Description: Switches amongst colors of waves.
+    * Param: e - click event for determining whether to activate ripple or not.
+    */
     changeWaveColor(e) {
         if (e.pageY < 1500) {
-            var colors = ["purple", "pink", "blue", "brown"];
+            var colors = ["purple", "pink", "blue", "brown"]; // color array to rotate between
             let nextColor = this.state.waveColorIndex < colors.length -1 ? this.state.waveColorIndex + 1 : 0;
             this.setState({waveColorIndex: nextColor});
             let currColor = colors[this.state.waveColorIndex];
@@ -43,6 +51,9 @@ export default class Home extends React.Component {
         }
       }
 
+    /*
+    * On mount, set up click events for mobile and desktop and set waves to default color.
+    */
     componentDidMount() {
         document.addEventListener("touchstart", this.changeWaveColor);
         document.addEventListener("mousedown", this.changeWaveColor);
