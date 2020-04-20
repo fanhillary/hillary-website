@@ -168,7 +168,7 @@ const particlesOptions = {
                               <i className="fas fa-gem f3"></i>
                             </div> 
                             <div>
-                              <p className="f3 lh-copy ">Experimenting with Makeup </p>
+                              <p className="f3 lh-copy ">Experimenting with makeup </p>
                             </div>
                           </div>
                           <div className="flex justify-center items-center"> 
