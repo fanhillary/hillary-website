@@ -1,3 +1,8 @@
+/* 
+* Contact Component holding Contact Me Form.
+* Accesses backend server to send email to my personal email with user's desired content.
+* Has short anime.js timeline on submission success.
+*/
 import React from 'react';
 import './Contact.css';
 import anime from 'animejs/lib/anime.es.js';
@@ -13,9 +18,13 @@ export default class Contact extends React.Component {
             name: '',
             email: '',
             message: '',
+            errorSubmit: false,
         }
     }
 
+    /*
+    * On mount, instantiate basic anime.js timeline.
+    */
     componentDidMount() { 
         var pathEls = $(".check");
 
@@ -26,12 +35,12 @@ export default class Contact extends React.Component {
         }
         
         basicTimeline
-        .add({
+        .add({  // change opacity of text to 0
             targets: ".text",
             duration: 1,
             opacity: "0"
         })
-        .add({
+        .add({ // shrink button vertically to merge with progress bar
             targets: ".button",
             duration: 1300,
             height: 10,
@@ -40,18 +49,18 @@ export default class Contact extends React.Component {
             border: "0",
             borderRadius: 100
         })
-        .add({
+        .add({  // have progress bar expand linearly
             targets: ".progress-bar",
             duration: 2000,
             width: 300,
             easing: "linear"
         })
-        .add({
+        .add({ // remove button from view
             targets: ".button",
             width: 0,
             duration: 1
         })
-        .add({
+        .add({ // have lighter caller progress bar expand for effect of loading
             targets: ".progress-bar",
             width: 80,
             height: 80,
@@ -60,13 +69,15 @@ export default class Contact extends React.Component {
             borderRadius: 80,
             backgroundColor: "#71DFBE"
         })
-        .add({
+        .add({ // check mark ease in 
             targets: pathEl,
             strokeDashoffset: [offset, 0],
             duration: 200,
             easing: "easeInOutSine"
         })
     }
+
+    /* Handlers for name, email, message state value changes */
     changeName(e) {
         this.setState({name: e.target.value});
     }
@@ -77,6 +88,10 @@ export default class Contact extends React.Component {
         this.setState({message: e.target.value});
     }
 
+    /* 
+    * On click of submit button, first validate user input then access POST /sendEmail from backend. 
+    * If success, play animation. Otherwise, display error message.
+    */
     handleSubmit(e) {
         e.preventDefault();
         console.log('submit');
@@ -92,21 +107,29 @@ export default class Contact extends React.Component {
             }).then((response) => response.json())
             .then((response)=> {
                 if (response === 'Success'){
+                    this.setState({errorSubmit: false})
                     setTimeout(() => {  this.resetForm(); }, 2000);
                     basicTimeline.play();
                 }else {
                     console.log("Error sending email.");
+                    this.setState({errorSubmit: true})
                 }
             })
         }
     }
 
+    /* 
+    * Reset all the values on the form on success of form submit
+    */
     resetForm() {
         this.setState({name: ""});
         this.setState({email: ""});
         this.setState({message: ""});
     }
 
+    /*
+    * Validate's user input by checking for basics of email, or empty strings. Activates form error messages accordingly
+    */
     validateForm() {
         var nameValidation = document.getElementsByClassName('validation')[0];
         var emailValidation = document.getElementsByClassName('validation')[1];
@@ -133,6 +156,8 @@ export default class Contact extends React.Component {
         return (
             <div className="contact-container ">
                 <h1 className="subheader pb5">Contact Me</h1>
+                <p className="f3 lh-copy ">For any inquiries, contact me through the below form. I will get back to you in a few days! </p>
+                {this.state.errorSubmit ? <p className="f5 lh-copy red">Oops! Sorry, error sending email. Please try again or email me at hillary.fan123@gmail.com.</p> : ''}
                 <form className="mb5" method="POST" autoComplete="off"> 
                     <div className="round-input relative flex items-center">
                         <input className="contact-input" type="text" name="name" placeholder="Your Name*" value={this.state.name} onChange={this.changeName.bind(this)}/>
