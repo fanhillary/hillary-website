@@ -87,12 +87,14 @@ export default class Home extends React.Component {
                                 </div> 
                                 <span className="f6 ml3 pr2">Resume</span>
                             </a>
-                            <a className="title-button no-underline near-white bg-animate bg-dark-gray hover-bg-gray inline-flex items-center ma2 tc br2 pa2"  href="#contact" title="Contact">
-                                <div className="home-icon">
-                                    <i class="fas fa-paper-plane"></i>
-                                </div>
-                                <span className="f6 ml3 pr2">Contact</span>
-                            </a>
+                            <Link to="contact-section" smooth={true} duration={700}>
+                                <a className="title-button no-underline near-white bg-animate bg-dark-gray hover-bg-gray inline-flex items-center ma2 tc br2 pa2"  href="#contact" title="Contact">
+                                    <div className="home-icon">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </div>
+                                    <span className="f6 ml3 pr2">Contact</span>
+                                </a>
+                            </Link>
                         </div>
                     </div>
                     <svg className="editorial"
