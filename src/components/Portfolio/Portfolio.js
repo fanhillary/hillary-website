@@ -30,7 +30,7 @@ let Portfolio = () => {
             description: 'SPA application that gives user a randomly generated challenge everyday and fun analytics to track progress',
             image: {DailyChallengeImage},
             sourceLink: 'https://github.com/fanhillary/daily-challenge',
-            demoLink: 'https://daily-random-challenge.herokuapp.com/#/',
+            demoLink: 'https://fanhillary.github.io/daily-challenge/',
             tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Google Charts API'],
             tileColor: 'DAD5EB',
         },
