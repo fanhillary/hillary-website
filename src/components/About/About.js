@@ -137,67 +137,71 @@ const particlesOptions = {
       // let {particlesVisible} = this.props;
 
       return (
-          <div className="container">
+          <div id="about-section" className="container">
               {/* <Particles className={'particles ' + particlesVisible} params={particlesOptions} /> */}
               <h1 className="subheader lh-title">About Me</h1>
               <div className = "about-content"> 
-                  <div className="pa5-ns tc">
-                      <div className="pb2">
-                          <p className="f2 b"> Hi! Nice to meet you. </p>
-                          <p className="f3 lh-copy">
-                              I'm a full-stack developer who is always hungry for knowledge and self-improvement.
-                          </p>
-                          <p className="f3 lh-copy">
-                            I enjoy working on web apps and designing intuitive experiences.
-                            Some of my favorite technologies are ReactJS, Angular, Python, and MongoDB. 
-                          </p>
-                          <p className="f3 lh-copy">
-                            I spend most of my free time learning new things, playing board games, and watching Youtube.
-                          </p>
-                      </div>
-                      <div className="pb2">
-                        <p className="f2 b"> My Life Motto </p>
-                          <p className="f3 lh-copy">
-                              Motivation is useless without discipline. And discipline is wasted without motivation. Make sure it's something you want, then JUST DO IT™. 
-                          </p>
-                      </div>
-                      <div className="pb2">
-                        <p className="f2 b"> Things I love </p>
-                          <div className="flex justify-center items-center"> 
-                            <div className="mr2">
-                              <i className="fas fa-gem f3"></i>
-                            </div> 
-                            <div>
-                              <p className="f3 lh-copy ">Experimenting with makeup </p>
-                            </div>
-                          </div>
-                          <div className="flex justify-center items-center"> 
-                            <div className="mr2">
-                              <i className="fas fa-star f3"></i>
-                            </div> 
-                            <div>
-                              <p className="f3 lh-copy ">Finding hidden rooftops to view stars </p>
-                            </div>
-                          </div>
-                          <div className="flex justify-center items-center"> 
-                            <div className="mr2">
-                              <i className="fas fa-music f3"></i>
-                            </div> 
-                            <div>
-                              <p className="f3 lh-copy ">And sharing music I love </p>
-                            </div>
-                          </div>
-                      </div>
-                      <div className="music-container">
-                        <div className="music-header">
-                          {this.state.currentlyPlaying ? <h1 id="recently-played" className="lh-copy">Now listening to ...</h1> :
-                            <h1 id="recently-played" className="lh-copy">Previously listening to ...</h1> 
-                          }
-                        </div>
-                        <RecentlyPlayed recentTracks={this.state.recentTracks}/>
-                      </div>
+                <div className="pa5-ns">
+                  <div className="tl">
+                    <div className="pb2">
+                        <p className="f2 b"> Hi! Nice to meet you. </p>
+                        <p className="f3 lh-copy">
+                            I'm a full-stack developer who is always hungry for knowledge and self-improvement.
+                        </p>
+                        <p className="f3 lh-copy">
+                          I enjoy working on web apps and designing intuitive experiences.
+                          Some of my favorite technologies are ReactJS, Angular, Python, and MongoDB. 
+                        </p>
+                        <p className="f3 lh-copy">
+                          I spend most of my free time learning new things, playing board games, and watching Youtube.
+                        </p>
+                    </div>
+                    <div className="pb2">
+                      <p className="f2 b"> My Life Motto </p>
+                        <p className="f3 lh-copy">
+                            Motivation is useless without discipline. And discipline is wasted without motivation. Make sure it's something you want, then JUST DO IT. 
+                        </p>
+                    </div>
                   </div>
-              </div>
+                  <div className="tc mt6">
+                    <div className="pb2">
+                      <p className="f2 b"> Things I love </p>
+                        <div className="flex justify-center items-center"> 
+                          <div className="mr2">
+                            <i className="fas fa-gem f3"></i>
+                          </div> 
+                          <div>
+                            <p className="f3 lh-copy ">Experimenting with makeup </p>
+                          </div>
+                        </div>
+                        <div className="flex justify-center items-center"> 
+                          <div className="mr2">
+                            <i className="fas fa-star f3"></i>
+                          </div> 
+                          <div>
+                            <p className="f3 lh-copy ">Finding hidden rooftops to view stars </p>
+                          </div>
+                        </div>
+                        <div className="flex justify-center items-center"> 
+                          <div className="mr2">
+                            <i className="fas fa-music f3"></i>
+                          </div> 
+                          <div>
+                            <p className="f3 lh-copy ">And sharing music I love </p>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                    <div className="music-container">
+                      <div className="music-header">
+                        {this.state.currentlyPlaying ? <h1 id="recently-played" className="lh-copy">Now listening to ...</h1> :
+                          <h1 id="recently-played" className="lh-copy">Previously listening to ...</h1> 
+                        }
+                      </div>
+                      <RecentlyPlayed recentTracks={this.state.recentTracks}/>
+                    </div>
+                </div>
+            </div>
           </div>
       )
     }

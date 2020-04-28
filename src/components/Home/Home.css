@@ -90,5 +90,16 @@
 }
 
 .title-button {
-  margin: 30px;
+  width: 125px;
+  height: 50px;
+}
+
+.home-icon {
+  font-size: 30px;
+  padding: 2px;
+}
+
+.title-button-container {
+    display: flex;
+    flex-wrap: wrap;
 }

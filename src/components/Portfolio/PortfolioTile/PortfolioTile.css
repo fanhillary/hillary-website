@@ -21,6 +21,9 @@
   opacity: .7;
 }
 
+.portfolio-button {
+  margin: 20px;
+}
 .overlay {
   background: black;
   color: whitesmoke;

@@ -83,7 +83,7 @@ let Portfolio = () => {
         items.push(<PortfolioTile project={project} key={index}/>);
     }
     return (
-        <div className="container">
+        <div id="portfolio-section" className="container">
             <h1 className="subheader lh-title pb5">Portfolio</h1>
             <div>
                 <div>

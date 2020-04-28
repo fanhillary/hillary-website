@@ -5,6 +5,8 @@
 import React from 'react';
 import './Home.css';
 import resume from './Resume_HFan.pdf';
+import { Link } from "react-scroll";
+
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
@@ -24,7 +26,7 @@ export default class Home extends React.Component {
     */
     changeWaveColor(e) {
         if (e.pageY < 1500) {
-            var colors = ["purple", "pink", "blue", "brown"]; // color array to rotate between
+            var colors = ["purple", "blue"]; // color array to rotate between
             let nextColor = this.state.waveColorIndex < colors.length -1 ? this.state.waveColorIndex + 1 : 0;
             this.setState({waveColorIndex: nextColor});
             let currColor = colors[this.state.waveColorIndex];
@@ -36,15 +38,6 @@ export default class Home extends React.Component {
                 this.setState({lightestWave: "#9754CA"});
                 this.setState({mediumWave: "#6337A1"});
                 this.setState({darkestWave: "#280F4F"});
-            } else if (currColor === "brown") {
-                this.setState({lightestWave: "#7a5f52"});
-                this.setState({mediumWave:  "#463730"});
-                this.setState({darkestWave: "#1c1613"});
-            } else if (currColor === "pink") {
-                this.setState({lightestWave: "#eb828c"});
-                this.setState({mediumWave:  "#dc6882"});
-                this.setState({darkestWave: "#c84f6a"});
-                
             }
 
             document.getElementById("under-ocean").style.background = this.state.darkestWave;
@@ -70,11 +63,37 @@ export default class Home extends React.Component {
                             <h1 id="hey-title" className="greeting f-headline lh-title">Hey!</h1>
                             <h1 className="greeting f-headline lh-title pl3">I'm Hillary</h1>
                         </div>
-                        <h2> A developer and nature lover </h2>
+                        <h2> A developer who listens.</h2>
                     </div>
-                    <div>
-                        <a className="title-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 mr2 dib near-white" href={resume} download>Resume</a>
-                        <a className="title-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 dib near-white" href="#contact">Contact</a>
+                    <div className="title-button-container justify-center">
+                        <div>
+                            <a className="title-button no-underline near-white bg-animate bg-dark-gray hover-bg-gray inline-flex items-center ma2 tc br2 pa2" href="https://github.com/fanhillary" target="_blank" rel="noopener noreferrer" title="GitHub">
+                                <div className="home-icon">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <span className="f6 ml3 pr2">GitHub</span>
+                            </a>
+                            <a className="title-button no-underline near-white bg-animate bg-dark-gray hover-bg-gray inline-flex items-center ma2 tc br2 pa2" href="https://www.linkedin.com/in/fanhillary/" target="_blank" rel="noopener noreferrer"  title="LinkedIn">
+                                <div className="home-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                            <span className="f6 ml3 pr2">LinkedIn</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a className="title-button no-underline near-white bg-animate bg-dark-gray hover-bg-gray inline-flex items-center ma2 tc br2 pa2" href={resume} download title="Resume">
+                                <div className="home-icon">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </div> 
+                                <span className="f6 ml3 pr2">Resume</span>
+                            </a>
+                            <a className="title-button no-underline near-white bg-animate bg-dark-gray hover-bg-gray inline-flex items-center ma2 tc br2 pa2"  href="#contact" title="Contact">
+                                <div className="home-icon">
+                                    <i class="fas fa-paper-plane"></i>
+                                </div>
+                                <span className="f6 ml3 pr2">Contact</span>
+                            </a>
+                        </div>
                     </div>
                     <svg className="editorial"
                         viewBox="0 24 150 28"
@@ -95,9 +114,9 @@ export default class Home extends React.Component {
                     </g>
                     </svg>   
                     <span className="chevron">
-                        <a href="#about">
+                        <Link to="about-section" smooth={true} duration={300}>
                             <i id ="down" className="fa fa-chevron-down"></i>
-                        </a>
+                        </Link>
                     </span>
                 </div>
             </div>

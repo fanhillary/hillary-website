@@ -1,16 +1,13 @@
 .header-link {
-    text-decoration: none;
-    padding: 20px;
     color: white;
-    
-}
-
-.header-link:focus {
-    outline: 0;
 }
 
 .header-link:hover {
     color: black;
+    cursor: pointer;
+}
+.link-padding {
+    padding: 20px;
 }
 
 .nav-container {
@@ -26,11 +23,5 @@
 @media screen and (max-width: 800px) {
     .header-link {
         padding: 20px 10px;
-    }
-  }
-
-@media screen and (max-width: 730px) {
-    .header-link {
-        display: none;
     }
 }

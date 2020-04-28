@@ -29,8 +29,8 @@ let PortfolioTile = ({project}) => {
             <div className="overlay">
                 <p className="f4 lh-copy measure"> {project['description']} </p>
                 <div>
-                    {project['sourceLink'] ? (<a className="title-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 dib near-white" href={project['sourceLink']} target="_blank" rel="noopener noreferrer" >Source</a>) : ""} 
-                    {project['demoLink'] ? (<a className="title-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 dib near-white" href={project['demoLink']} target="_blank" rel="noopener noreferrer" >Demo</a>) : ""}
+                    {project['sourceLink'] ? (<a className="portfolio-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 dib near-white" href={project['sourceLink']} target="_blank" rel="noopener noreferrer" >Source</a>) : ""} 
+                    {project['demoLink'] ? (<a className="portfolio-button f4 grow no-underline br-pill ba bw1 ph3 pv2 mb4 dib near-white" href={project['demoLink']} target="_blank" rel="noopener noreferrer" >Demo</a>) : ""}
                 </div>
             </div>
         </div>

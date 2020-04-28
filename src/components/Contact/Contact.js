@@ -154,7 +154,7 @@ export default class Contact extends React.Component {
 
     render() {
         return (
-            <div className="contact-container ">
+            <div id="contact-section" className="contact-container ">
                 <h1 className="subheader pb5">Contact Me</h1>
                 <p className="f3 lh-copy ">For any inquiries, contact me through the below form. I will get back to you in a few days! </p>
                 {this.state.errorSubmit ? <p className="f5 lh-copy red">Oops! Sorry, error sending email. Please try again or email me at hillary.fan123@gmail.com.</p> : ''}

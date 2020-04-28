@@ -40,7 +40,7 @@ let Skills = () => {
     }
 
     return (
-        <div className="container">
+        <div id="skills-section" className="container">
             <h1 className="subheader lh-title pb5">Skills</h1>
             <div className="ml4 flex flex-wrap justify-center">
                 <div className="skill-card card">

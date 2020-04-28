@@ -12,7 +12,6 @@ import Portfolio from './components/Portfolio/Portfolio.js';
 import Contact from './components/Contact/Contact.js';
 import Skills from './components/Skills/Skills.js';
 import anime from 'animejs/lib/anime.es.js';
-
 export default class App extends React.Component {
   constructor() {
     super();
@@ -54,7 +53,7 @@ export default class App extends React.Component {
 
     // rotates between color array
     var colorPicker = (function() {
-      const colors = ["#a889d8", "#e1b7a2", "#8ea6e7", "#d37071"];
+      const colors = ["#a889d8", "#8ea6e7"];
       let index = 0;
       function next() {
         index = index++ < colors.length-1 ? index : 0;
@@ -239,18 +238,12 @@ export default class App extends React.Component {
         <div className="relative">
           <canvas id="canvas"></canvas>
           <a name="home">
-            {this.state.width > 400 ?
-              <div>
-                <Navigation/>
-              </div>
-              : ""}
+            <Navigation/>
             <Home/>
           </a>
         </div>
         <div id="under-ocean">
-          <a name="about">
-            <About particlesVisible={this.state.particlesVisible}/>
-          </a>
+          <About particlesVisible={this.state.particlesVisible}/>
           <a name="experience">
             <Experience leafVisibility={this.state.leafVisibility}/>
           </a>
