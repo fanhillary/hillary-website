@@ -13,23 +13,47 @@
     color: #e5d3c8;
 }
 
-@media screen and (min-width: 1001px) {
-  .about-content {
-    width: 60%;
-    padding-top: 50px;
-  }
+
+.introduction-container {
+  display: flex;
+  justify-content: center;
 }
 
+.headshot {
+  width: 40%;
+  object-fit: cover;
+  max-height: 800px;
+}
+
+.about-content {
+  width: 80%;
+  padding-top: 50px;
+}
 @media screen and (max-width: 700px) {
   .about-content {
     width: 100%;
     padding-top: 50px;
   }
 }
+
+@media screen and (max-width: 1100px) {
+  .introduction-container {
+    display: block;
+  }
+  .headshot {
+    max-width: 80%;
+    object-fit: cover;
+    max-height: 600px;
+  }
+}
+
+
 #recently-played {
   opacity: 1;
   transition: .8s all;
 }
+
+
 
 .particles {
     position: absolute;
@@ -55,6 +79,7 @@
   background: #407253;
   color: black;
   padding-bottom: 15px;
+  width: 800px;
 }
 
 .music-header {

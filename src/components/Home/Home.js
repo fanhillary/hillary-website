@@ -63,7 +63,7 @@ export default class Home extends React.Component {
                             <h1 id="hey-title" className="greeting f-headline lh-title">Hey!</h1>
                             <h1 className="greeting f-headline lh-title pl3">I'm Hillary</h1>
                         </div>
-                        <h2> A developer who listens.</h2>
+                        <h2> A developer who puts the customers first.</h2>
                     </div>
                     <div className="title-button-container justify-center">
                         <div>
@@ -87,16 +87,9 @@ export default class Home extends React.Component {
                                 </div> 
                                 <span className="f6 ml3 pr2">Resume</span>
                             </a>
-                            <Link to="contact-section" smooth={true} duration={700}>
-                                <a className="title-button no-underline near-white bg-animate bg-dark-gray hover-bg-gray inline-flex items-center ma2 tc br2 pa2"  href="#contact" title="Contact">
-                                    <div className="home-icon">
-                                        <i class="fas fa-paper-plane"></i>
-                                    </div>
-                                    <span className="f6 ml3 pr2">Contact</span>
-                                </a>
-                            </Link>
                         </div>
                     </div>
+                    <p>Email @ <b>hillary.fan123@gmail.com</b></p>
                     <svg className="editorial"
                         viewBox="0 24 150 28"
                         preserveAspectRatio="none">

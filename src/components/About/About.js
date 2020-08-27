@@ -5,7 +5,7 @@ import React from 'react';
 import './About.css';
 // import Particles from 'react-particles-js';
 import RecentlyPlayed from '../RecentlyPlayed/RecentlyPlayed.js';
-
+import ProfessionalHeadshot from '../../images/professional-headshot.jpg';
 // temporarily unused particles
 const particlesOptions = {
     canvas: {
@@ -141,28 +141,38 @@ const particlesOptions = {
               {/* <Particles className={'particles ' + particlesVisible} params={particlesOptions} /> */}
               <h1 className="subheader lh-title">About Me</h1>
               <div className = "about-content"> 
-                <div className="pa5-ns">
-                  <div className="tl">
-                    <div className="pb2">
-                        <p className="f2 b"> Hi! Nice to meet you. </p>
-                        <p className="f3 lh-copy">
-                            I'm a full-stack developer who is always hungry for knowledge and self-improvement.
-                        </p>
-                        <p className="f3 lh-copy">
-                          I enjoy working on web apps and designing intuitive experiences.
-                          Some of my favorite technologies are ReactJS, Angular, Python, and MongoDB. 
-                        </p>
-                        <p className="f3 lh-copy">
-                          I spend most of my free time learning new things, playing board games, and watching Youtube.
-                        </p>
-                    </div>
-                    <div className="pb2">
-                      <p className="f2 b"> My Life Motto </p>
-                        <p className="f3 lh-copy">
-                            Motivation is useless without discipline. And discipline is wasted without motivation. Make sure it's something you want, then JUST DO IT. 
-                        </p>
-                    </div>
+                  <div className="introduction-container">
+                      <img className="headshot" src={ProfessionalHeadshot} alt="header"/>
+                      <div>
+                          <div className="tc">
+                            <div className="pb2 flex justify-center">
+                                <div className="w-80">
+                                  <p className="f2 b tc"> A Short Introduction </p>
+                                  <p className="f3 lh-copy">
+                                    Hi! Nice to meet you. I'm a full-stack developer who is always looking for a challenge and constantly striving towards self-improvement.
+                                  </p>
+                                  <p className="f3 lh-copy">
+                                    I enjoy building and designing intuitive web apps.
+                                    My favorite technologies are ReactJS, Angular, Python, and MongoDB. 
+                                  </p>
+                                  <p className="f3 lh-copy">
+                                    I spend most of my free time building side projects, playing board games, and hilariously failing at yoga poses.
+                                  </p>
+                                </div>
+                            </div>
+                            <div className="pb2">
+                              <p className="f2 b tc"> My Motto </p>
+                                <p className="f3 lh-copy">
+                                  Keep it intuitive and simple.
+                                </p>
+                                <p className="f3 lh-copy">
+                                  Listen to the customer's needs.
+                                </p>
+                            </div>
+                          </div>
+                      </div>
                   </div>
+                <div>
                   <div className="tc mt6">
                     <div className="pb2">
                       <p className="f2 b"> Things I love </p>
@@ -192,6 +202,7 @@ const particlesOptions = {
                         </div>
                     </div>
                   </div>
+                  <div className="flex justify-center">
                     <div className="music-container">
                       <div className="music-header">
                         {this.state.currentlyPlaying ? <h1 id="recently-played" className="lh-copy">Now listening to ...</h1> :
@@ -200,6 +211,7 @@ const particlesOptions = {
                       </div>
                       <RecentlyPlayed recentTracks={this.state.recentTracks}/>
                     </div>
+                  </div>
                 </div>
             </div>
           </div>

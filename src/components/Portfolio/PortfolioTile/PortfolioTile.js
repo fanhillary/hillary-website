@@ -20,7 +20,7 @@ let PortfolioTile = ({project}) => {
             <div className={"default-display " + project['tileColor']}>
                 <div>
                     <h1 className="f3 lh-copy">{project['name']}</h1>
-                    <img className="project-icon" src={icon} alt="header"/>
+                    <img className="project-image" src={icon} alt="header"/>
                 </div>
                 <div className="absolute bottom-1 flex flex-wrap justify-center">
                     {items}

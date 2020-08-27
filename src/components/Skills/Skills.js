@@ -17,9 +17,9 @@ let Skills = () => {
     // list of skills for each tile and relevant icons for each
     let skills = {
         frontend: [{name: "HTML/CSS", icon: "fa-html5"}, {name: 'Angular', icon: 'fa-angular'}, {name: 'React.js', icon: 'fa-react'}, {name: 'User Experience Design', icon: 'fas fa-paint-brush'}, {name: 'Responsive Web Design', icon: 'fas fa-mobile-alt'}],
-        backend: [{name: 'Node.js', icon: 'fa-node-js'}, {name: 'Express.js', icon: 'fas fa-mug-hot'}, {name: 'PostgreSQL', icon: 'fas fa-database'}, {name: 'MongoDB', icon: 'fa-envira'}, {name: 'Django', icon: 'fa-python'}],
+        backend: [{name: 'Node.js', icon: 'fa-node-js'}, {name: 'Express.js', icon: 'fas fa-mug-hot'}, {name: 'MongoDB', icon: 'fa-envira'}, {name: 'PostgreSQL', icon: 'fas fa-database'}, {name: 'Django', icon: 'fa-python'}],
         languages: [{name:'Python', icon: 'fa-python'}, {name: 'JavaScript', icon: 'fa-js-square'}, {name: 'Java', icon: 'b fa-java'}, {name: 'TypeScript', icon: 'fa-angular'}, {name: 'C', icon: 'fas fa-code'}],
-        misc: [{name: 'Docker', icon: 'fa-docker'}, {name: 'Version Control/git', icon: 'fas fa-code-branch'}, {name: 'Jenkins', icon: 'b fa-jenkins'}, {name: 'Heroku', icon: 'fas fa-hippo'}, {name: 'Firebase', icon: 'fa-hotjar'}]
+        misc: [{name: 'Docker', icon: 'fa-docker'}, {name: 'Version Control/git', icon: 'fas fa-code-branch'}, {name: 'Jenkins', icon: 'b fa-jenkins'}, {name: 'socket.io', icon: 'fas fa-bolt'}, {name: 'Firebase', icon: 'fa-hotjar'}]
     }
    
     // translate skills array to dynamic html for display

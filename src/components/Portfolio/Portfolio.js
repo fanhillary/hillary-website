@@ -12,10 +12,18 @@ import WhatToEatImage from '../../images/what-to-eat.png';
 import TritonTransitImage from '../../images/triton-transit.png';
 import FlyeringRobotImage from '../../images/flyering-robot.png';
 import ComputerLiteracyImage from '../../images/computer-literacy.png';
+import ForehueImage from '../../images/forehue.png';
 let Portfolio = () => {
     
     // data for each of the projects to display
     const projects = [
+        {
+            name: 'Forehue Artist Platform',
+            description: 'Social platform for artists to share and sell art. Populates user’s feed with artworks, shows trending pieces, facilitates commission requests via chat platform.',
+            image: {ForehueImage},
+            tags: ['Angular', 'MongoDB', 'Socket.io', 'Node.js',  'Express.js'],
+            tileColor: 'e9e6f3',
+        },
         {
             name: 'Face Recognition Web App',
             description: 'Uses Clarifai API to allow users to enter a picture image to detect the face in the photo',
@@ -23,7 +31,7 @@ let Portfolio = () => {
             sourceLink: 'https://github.com/fanhillary/face-recognition',
             demoLink: 'https://face-recognition-hifan.herokuapp.com',
             tags: ['JavaScript', 'React', 'PostgreSQL', 'Node.js',  'Express.js'],
-            tileColor: 'bg-near-white',
+            tileColor: 'DAD5EB',
         },
         {
             name: 'Daily Challenge Web App',
@@ -32,7 +40,7 @@ let Portfolio = () => {
             sourceLink: 'https://github.com/fanhillary/daily-challenge',
             demoLink: 'https://fanhillary.github.io/daily-challenge/',
             tags: ['React', 'Firebase', 'HTML/CSS', 'Heroku', 'Google Charts API'],
-            tileColor: 'DAD5EB',
+            tileColor: 'bg-near-white',
         },
         {
             name: 'Time Capsule Web App',
@@ -49,7 +57,7 @@ let Portfolio = () => {
             image: {WhatToEatImage},
             tags: ['Yelp API', 'Conversational Bot', 'HTML/CSS', 'Express.js', 'Node.js'],
             sourceLink: 'https://github.com/fanhillary/what-to-eat',
-            tileColor: 'bg-light-gray',
+            tileColor: 'e9e6f3',
         },
         {
             name: 'Triton Transit Android App',
@@ -57,15 +65,14 @@ let Portfolio = () => {
             image: {TritonTransitImage},
             tags: ['Android Studio', 'Java', 'XML', 'Google Map API', 'HTML/CSS'],
             sourceLink: 'https://github.com/fanhillary/TritonTransit',
-            tileColor: 'e9e6f3',
+            tileColor: 'bcb2db',
         },
         {
             name: 'Flyering Robot',
             description: 'A bluetooth-controlled arduino robot that helped my club organization flyer posters and attract newcomers during recruiting week',
             image: {FlyeringRobotImage},
             tags: ['Arduino', 'Java', 'XML', 'Project Management'],
-            demoLink: '',
-            tileColor: 'bcb2db',
+            tileColor: 'bg-light-gray',
         },
         {
             name: 'Computer Literacy Initiative',

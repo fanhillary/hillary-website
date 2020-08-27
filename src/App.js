@@ -9,7 +9,6 @@ import Navigation from './components/Navigation/Navigation.js';
 import About from './components/About/About.js';
 import Experience from './components/Experience/Experience.js';
 import Portfolio from './components/Portfolio/Portfolio.js';
-import Contact from './components/Contact/Contact.js';
 import Skills from './components/Skills/Skills.js';
 import anime from 'animejs/lib/anime.es.js';
 export default class App extends React.Component {
@@ -234,7 +233,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div className = "app-container">
+      <div className = "app-container tc">
         <div className="relative">
           <canvas id="canvas"></canvas>
           <a name="home">
@@ -247,15 +246,13 @@ export default class App extends React.Component {
           <a name="experience">
             <Experience leafVisibility={this.state.leafVisibility}/>
           </a>
-          <a name="skills">
-            <Skills/>
-          </a>
           <a name="portfolio">
             <Portfolio/>
           </a>
-          <a name="contact">
-            <Contact/>
+           <a name="skills">
+            <Skills/>
           </a>
+          <p className="f5 mb0 pb3"> Feel free to email me @ <b>hillary.fan123@gmail.com </b> | Hillary Fan © 2019 </p>
         </div>
       </div>
     )}

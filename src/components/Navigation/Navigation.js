@@ -16,14 +16,11 @@ let Navigation = () => {
                 <Link className="link-padding" to="experience-section" smooth={true} duration={500}>
                     <p className="header-link">Experience</p> 
                 </Link>
-                <Link className="link-padding" to="skills-section" smooth={true} duration={600}>
-                    <p className="header-link">Skills</p> 
-                </Link>
                 <Link className="link-padding" to="portfolio-section" smooth={true} duration={700}>
                     <p className="header-link">Portfolio</p> 
                 </Link>
-                <Link className="link-padding" to="contact-section" smooth={true} duration={700}>
-                    <p className="header-link">Contact</p> 
+                <Link className="link-padding" to="skills-section" smooth={true} duration={600}>
+                    <p className="header-link">Skills</p> 
                 </Link>
             </div>
         </div>

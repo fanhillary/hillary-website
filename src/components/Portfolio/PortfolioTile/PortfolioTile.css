@@ -1,6 +1,6 @@
 .portfolio-card {
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
     position: relative;
   }
   
@@ -41,6 +41,18 @@
 
 .project-icon {
     width:40%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+}
+
+
+.project-image {
+    width: 250px;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
     position: absolute;
     top: 50%;
     left: 50%;
